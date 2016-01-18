@@ -1,0 +1,46 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c+c1}{// Declarar el UUID del perfil ATT (Atribute Protocol)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}define PROFILE\PYGdefaultZus{}VEHICULAR POS   5}
+
+\PYGdefault{c+c1}{// Declarar el UUID del servicio}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}define SIMPLEPROFILE\PYGdefaultZus{}SERV\PYGdefaultZus{}UUID 0xFFF0}
+
+\PYGdefault{c+c1}{//Declarar el UUID de la característica, darle un tamaño y asignar}
+\PYGdefault{c+c1}{//permisos de escritura}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}define PROFILE\PYGdefaultZus{}VEHICULARPOS\PYGdefaultZus{}UUID 0xFFF6}
+\PYGdefault{n}{CONST} \PYGdefault{n}{uint8} \PYGdefault{n}{simpleVehicularPositionProfileUUID}\PYGdefault{p}{[}\PYGdefault{n}{ATT\PYGdefaultZus{}BT\PYGdefaultZus{}UUID\PYGdefaultZus{}SIZE}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{p}{\PYGdefaultZob{}}
+\PYGdefault{o}{\PYGdefaultZca{}\PYGdefaultZca{}}\PYGdefault{n}{ILO\PYGdefaultZus{}UINT16}\PYGdefault{p}{(}\PYGdefault{n}{PROFILE\PYGdefaultZus{}VEHICULARPOS\PYGdefaultZus{}UUID}\PYGdefault{p}{),} \PYGdefault{n}{HI\PYGdefaultZus{}UINT16}\PYGdefault{p}{(}\PYGdefault{n}{PROFILE\PYGdefaultZus{}VEHICULARPOS\PYGdefaultZus{}UUID}\PYGdefault{p}{)}
+\PYGdefault{p}{\PYGdefaultZcb{};}
+\PYGdefault{k}{static} \PYGdefault{n}{uint8} \PYGdefault{n}{vehicularPositionProps} \PYGdefault{o}{=} \PYGdefault{n}{GATT\PYGdefaultZus{}PROP\PYGdefaultZus{}WRITE}\PYGdefault{p}{;}
+\PYGdefault{k}{static} \PYGdefault{n}{uint8} \PYGdefault{n}{vehicularPosition} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+
+\PYGdefault{c+c1}{// gestionar que se ha hecho una escritura en la característica}
+\PYGdefault{k}{static} \PYGdefault{n}{bStatus\PYGdefaultZus{}t} \PYGdefault{n+nf}{simpleProfile\PYGdefaultZus{}writeAttrCB}\PYGdefault{p}{(}\PYGdefault{n}{uint16} \PYGdefault{n}{connHandle}\PYGdefault{p}{,} \PYGdefault{n}{gattAttribute\PYGdefaultZus{}t} \PYGdefault{o}{*}\PYGdefault{n}{PAttr}\PYGdefault{p}{,}
+    \PYGdefault{n}{uint8} \PYGdefault{o}{*}\PYGdefault{n}{pValue}\PYGdefault{p}{,} \PYGdefault{n}{uint8} \PYGdefault{n}{len}\PYGdefault{p}{,} \PYGdefault{n}{uint16} \PYGdefault{n}{offset}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+\PYGdefault{p}{[...]}
+\PYGdefault{n}{notifyApp} \PYGdefault{o}{=} \PYGdefault{n}{PROFILE\PYGdefaultZus{}VEHICULARPOS}\PYGdefault{p}{;}
+\PYGdefault{p}{[...]}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+
+\PYGdefault{c+c1}{// gestionar la petición}
+\PYGdefault{k}{static} \PYGdefault{k+kt}{void} \PYGdefault{n+nf}{simpleProfileChangeCB}\PYGdefault{p}{(}\PYGdefault{n}{uint8} \PYGdefault{n}{paramID}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+\PYGdefault{p}{[...]}
+\PYGdefault{k}{case} \PYGdefault{n+nl}{PROFILE\PYGdefaultZus{}VEHICULARPOS}\PYGdefault{p}{:}
+  \PYGdefault{n}{SimpleProfile\PYGdefaultZus{}GetParameter}\PYGdefault{p}{(}\PYGdefault{n}{PROFILE\PYGdefaultZus{}VEHICULARPOS}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{n}{newValue}\PYGdefault{p}{);}
+  \PYGdefault{n}{cambiarLED}\PYGdefault{p}{(}\PYGdefault{n}{paramID}\PYGdefault{p}{);}
+\PYGdefault{p}{[...]}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+
+\PYGdefault{c+c1}{// escritura de la característica}
+\PYGdefault{n}{bStatus\PYGdefaultZus{}t} \PYGdefault{n+nf}{SimpleProfile\PYGdefaultZus{}SetParameter}\PYGdefault{p}{(}\PYGdefault{n}{uint8} \PYGdefault{n}{param}\PYGdefault{p}{,} \PYGdefault{n}{uint8} \PYGdefault{n}{len}\PYGdefault{p}{,} \PYGdefault{k+kt}{void}\PYGdefault{o}{*} \PYGdefault{n}{value}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+\PYGdefault{p}{[...]}
+  \PYGdefault{k}{case} \PYGdefault{n+nl}{PROFILE\PYGdefaultZus{}VEHICULARPOS}\PYGdefault{p}{:}
+    \PYGdefault{k}{if} \PYGdefault{p}{(}\PYGdefault{n}{len} \PYGdefault{o}{==} \PYGdefault{n}{SIMPLEPROFILE\PYGdefaultZus{}CHAR5\PYGdefaultZus{}LEN}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{n}{vehicularPosition} \PYGdefault{o}{=} \PYGdefault{o}{*}\PYGdefault{p}{((}\PYGdefault{n}{uint8} \PYGdefault{o}{*}\PYGdefault{p}{)} \PYGdefault{n}{value}\PYGdefault{p}{);}
+    \PYGdefault{p}{\PYGdefaultZcb{}} \PYGdefault{k}{else} \PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{n}{ret} \PYGdefault{o}{=} \PYGdefault{n}{bleInvalidRange}\PYGdefault{p}{;}
+    \PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{k}{break}\PYGdefault{p}{;}
+\PYGdefault{p}{[...]}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+\end{Verbatim}

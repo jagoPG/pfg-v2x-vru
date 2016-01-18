@@ -1,0 +1,47 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {spanish}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\vskip 10pt
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Antecedentes}{3}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Solución}{5}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\vskip 10pt
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Arquitectura del sistema}{5}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Nube de Conductores}{5}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Comunicación entre plataformas}{6}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mensajes a ciclistas}{6}{subsubsection*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mensajes a vehículos a motor}{7}{subsubsection*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Formato de los mensajes}{7}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mensaje de posición de vehículo a motor}{7}{subsubsection*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mensaje de posición de ciclista}{8}{subsubsection*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mensaje de alerta}{8}{subsubsection*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Procesos}{8}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Aplicación de ciclistas}{9}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Modos de funcionamiento}{9}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Comunicación con la nube}{11}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}Comunicación del grupo}{11}{subsection.2.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.4}Casco BLE}{12}{subsection.2.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Verificación del sistema}{19}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Apéndice}{21}{appendix.Alph1}

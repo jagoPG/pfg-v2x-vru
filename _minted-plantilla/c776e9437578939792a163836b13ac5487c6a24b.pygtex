@@ -1,0 +1,43 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n}{DataOutputStream} \PYGdefault{n}{out}\PYGdefault{o}{;}
+\PYGdefault{n}{HttpURLConnection} \PYGdefault{n}{httpRequest}\PYGdefault{o}{;}
+\PYGdefault{n}{String} \PYGdefault{n}{inputLine}\PYGdefault{o}{;}
+\PYGdefault{n}{StringBuffer} \PYGdefault{n}{response}\PYGdefault{o}{;}
+\PYGdefault{n}{BufferedReader} \PYGdefault{n}{in}\PYGdefault{o}{;}
+\PYGdefault{k+kd}{final} \PYGdefault{n}{String} \PYGdefault{n}{KEY} \PYGdefault{o}{=} \PYGdefault{n}{AIzaSyAu2LXHXn7\PYGdefaultZus{}rP0OUinzizQg5r5mgln4Q}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{Y}\PYGdefault{o}{;}
+
+\PYGdefault{k}{try} \PYGdefault{o}{\PYGdefaultZob{}}
+  \PYGdefault{c+c1}{// abrir conexión con el gestor GCM}
+  \PYGdefault{n}{URL} \PYGdefault{n}{url} \PYGdefault{o}{=} \PYGdefault{k}{new} \PYGdefault{n}{URL}\PYGdefault{o}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}https://android.googleapis.com/gcm/send\PYGdefaultZdq{}}\PYGdefault{o}{);}
+
+  \PYGdefault{n}{httpRequest} \PYGdefault{o}{=} \PYGdefault{o}{(}\PYGdefault{n}{HttpURLConnection}\PYGdefault{o}{)} \PYGdefault{n}{url}\PYGdefault{o}{.}\PYGdefault{n+na}{openConnection}\PYGdefault{o}{();}
+
+  \PYGdefault{c+c1}{// enviar datos mediante POST}
+  \PYGdefault{n}{httpRequest}\PYGdefault{o}{.}\PYGdefault{n+na}{setRequestMethod}\PYGdefault{o}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}POST\PYGdefaultZdq{}}\PYGdefault{o}{);}
+
+  \PYGdefault{c+c1}{// establecer el encabezado}
+  \PYGdefault{n}{httpRequest}\PYGdefault{o}{.}\PYGdefault{n+na}{setRequestProperty}\PYGdefault{o}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Content\PYGdefaultZhy{}Type\PYGdefaultZdq{}}\PYGdefault{o}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}application/json\PYGdefaultZdq{}}\PYGdefault{o}{);}
+  \PYGdefault{n}{httpRequest}\PYGdefault{o}{.}\PYGdefault{n+na}{setRequestProperty}\PYGdefault{o}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Authorization\PYGdefaultZdq{}}\PYGdefault{o}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}key=\PYGdefaultZdq{}} \PYGdefault{o}{+} \PYGdefault{n}{KEY}\PYGdefault{o}{);}
+  \PYGdefault{n}{httpRequest}\PYGdefault{o}{.}\PYGdefault{n+na}{setDoOutput}\PYGdefault{o}{(}\PYGdefault{k+kc}{true}\PYGdefault{o}{);}
+
+  \PYGdefault{c+c1}{// prepararar información}
+  \PYGdefault{n}{out} \PYGdefault{o}{=}  \PYGdefault{k}{new} \PYGdefault{n}{DataOutputStream}\PYGdefault{o}{(}\PYGdefault{n}{httpRequest}\PYGdefault{o}{.}\PYGdefault{n+na}{getOutputStream}\PYGdefault{o}{());}
+
+  \PYGdefault{c+c1}{// enviar información}
+  \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n+na}{write}\PYGdefault{o}{(}\PYGdefault{n}{message}\PYGdefault{o}{.}\PYGdefault{n+na}{getBytes}\PYGdefault{o}{());}
+  \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n+na}{flush}\PYGdefault{o}{();}
+  \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n+na}{close}\PYGdefault{o}{();}
+  \PYGdefault{n}{logger}\PYGdefault{o}{.}\PYGdefault{n+na}{debug}\PYGdefault{o}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Sending \PYGdefaultZsq{}POST\PYGdefaultZsq{} request to URL : \PYGdefaultZdq{}} \PYGdefault{o}{+} \PYGdefault{n}{url}\PYGdefault{o}{);}
+
+  \PYGdefault{c+c1}{// obtener respuesta}
+  \PYGdefault{n}{in} \PYGdefault{o}{=} \PYGdefault{k}{new} \PYGdefault{n}{BufferedReader}\PYGdefault{o}{(}\PYGdefault{k}{new} \PYGdefault{n}{InputStreamReader}\PYGdefault{o}{(}\PYGdefault{n}{httpRequest}\PYGdefault{o}{.}\PYGdefault{n+na}{getInputStream}\PYGdefault{o}{()));}
+  \PYGdefault{n}{response} \PYGdefault{o}{=} \PYGdefault{k}{new} \PYGdefault{n}{StringBuffer}\PYGdefault{o}{();}
+
+  \PYGdefault{k}{while} \PYGdefault{o}{((}\PYGdefault{n}{inputLine} \PYGdefault{o}{=} \PYGdefault{n}{in}\PYGdefault{o}{.}\PYGdefault{n+na}{readLine}\PYGdefault{o}{())} \PYGdefault{o}{!=} \PYGdefault{k+kc}{null}\PYGdefault{o}{)} \PYGdefault{n}{response}\PYGdefault{o}{.}\PYGdefault{n+na}{append}\PYGdefault{o}{(}\PYGdefault{n}{inputLine}\PYGdefault{o}{);}
+  \PYGdefault{n}{in}\PYGdefault{o}{.}\PYGdefault{n+na}{close}\PYGdefault{o}{();}
+  \PYGdefault{n}{logger}\PYGdefault{o}{.}\PYGdefault{n+na}{debug}\PYGdefault{o}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Response code :\PYGdefaultZdq{}} \PYGdefault{o}{+} \PYGdefault{n}{response}\PYGdefault{o}{.}\PYGdefault{n+na}{toString}\PYGdefault{o}{());}
+
+\PYGdefault{o}{\PYGdefaultZcb{}} \PYGdefault{k}{catch} \PYGdefault{o}{(}\PYGdefault{n}{IOException} \PYGdefault{n}{e}\PYGdefault{o}{)} \PYGdefault{o}{\PYGdefaultZob{}}
+  \PYGdefault{n}{logger}\PYGdefault{o}{.}\PYGdefault{n+na}{error}\PYGdefault{o}{(}\PYGdefault{n}{e}\PYGdefault{o}{.}\PYGdefault{n+na}{getMessage}\PYGdefault{o}{());}
+\PYGdefault{o}{\PYGdefaultZcb{}}
+\end{Verbatim}

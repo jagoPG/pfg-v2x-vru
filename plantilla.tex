@@ -1,0 +1,68 @@
+\documentclass{DeustoFDP}
+
+\usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
+\usepackage{spverbatim}
+
+
+\graphicspath{ {fig/diagramas/}, {fig/}, {fig/screenshots/}  }
+\DeclareGraphicsExtensions{ .png, .jpg, .jpeg, .pdf }
+
+\hypersetup{
+  pdfauthor={Jagoba Pérez},
+  pdftitle={Investigación y desarrollo de un sistema de alerta para Usuarios Vehículares Vulnerables en el contexto de una Ciudad Inteligente},
+}
+
+\bibliography{bib}
+
+\begin{document}
+
+\frontmatter 
+\pagestyle{plain}
+
+% Las siguientes lineas (21--26) se pueden eliminar del documento final.
+% Notese que en ese caso es necesario descomentar la linea 28 para que las
+% paginas esten correctamente numeradas.
+\begin{titlepage} 
+  \newgeometry{left=0cm,right=0cm,bottom=0cm,top=0cm}
+  \includegraphics{fig/portada}
+  \restoregeometry
+\end{titlepage}
+\cleardoublepage
+
+%\setcounter{page}{3}
+
+\chapter*{Resumen}
+El desarrollo y despliegue de sistemas inteligentes en la carretera (ITS) trae consigo un incremento de la seguridad y una mayor rapidez a la hora de responder a eventos de emergencia. Este tipo de tecnologías han demostrado ser lo suficientemente robustas para utilizarse como apoyo para lidiar con la gestión de tráfico, mejora de la seguridad vial... y actualmente están apareciendo vehículos que además de tener un propio sistema de auto-diagnostico, pueden interactuar con su entorno.
+
+\vspace{2em}
+
+{\Large\bfseries\sectionfont Descriptores}
+\vspace{3\medskipamount}
+
+redes vehiculares, agentes vulnerables, ciudades inteligentes.
+
+\cleardoublepage\tableofcontents
+\cleardoublepage\listoffigures
+\cleardoublepage\listoftables
+\cleardoublepage\listoflistings
+
+\mainmatter
+\pagestyle{phdthesis}
+
+\input{content/introduccion}
+\input{content/solucion}
+\input{content/verificacion_sistema}
+
+% incluir la bibliografía
+\printbibliography[heading=bibintoc]
+
+\appendix
+
+\chapter{Apéndice}\label{an:normativa}
+
+% Con \input se incluye el el contenido de otro documento de latex en el actual.
+% \input{normativa}
+
+\backmatter
+
+\end{document}

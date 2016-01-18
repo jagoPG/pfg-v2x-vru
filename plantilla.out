@@ -1,0 +1,15 @@
+\BOOKMARK [0][]{chapter.1}{Introducción}{}% 1
+\BOOKMARK [1][]{section.1.1}{Antecedentes}{chapter.1}% 2
+\BOOKMARK [0][]{chapter.2}{Solución}{}% 3
+\BOOKMARK [1][]{section.2.1}{Arquitectura\040del\040sistema}{chapter.2}% 4
+\BOOKMARK [1][]{section.2.2}{Nube\040de\040Conductores}{chapter.2}% 5
+\BOOKMARK [2][]{subsection.2.2.1}{Comunicación entre plataformas}{section.2.2}% 6
+\BOOKMARK [2][]{subsection.2.2.2}{Formato\040de\040los\040mensajes}{section.2.2}% 7
+\BOOKMARK [2][]{subsection.2.2.3}{Procesos}{section.2.2}% 8
+\BOOKMARK [1][]{section.2.3}{Aplicación de ciclistas}{chapter.2}% 9
+\BOOKMARK [2][]{subsection.2.3.1}{Modos\040de\040funcionamiento}{section.2.3}% 10
+\BOOKMARK [2][]{subsection.2.3.2}{Comunicación con la nube}{section.2.3}% 11
+\BOOKMARK [2][]{subsection.2.3.3}{Comunicación del grupo}{section.2.3}% 12
+\BOOKMARK [2][]{subsection.2.3.4}{Casco\040BLE}{section.2.3}% 13
+\BOOKMARK [0][]{chapter.3}{Verificación del sistema}{}% 14
+\BOOKMARK [0][]{appendix.Alph1}{Apéndice}{}% 15
