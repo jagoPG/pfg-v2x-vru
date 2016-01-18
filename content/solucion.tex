@@ -8,7 +8,7 @@ Los vehículos a motor no se comunican directamente con la \emph{Nube de Conduct
 
 Por otro lado, los ciclistas envían información a la \emph{Nube de Conductores} a través de 3G o 4G; dependiendo de la disponibilidad. \'Estos también pueden agruparse empleando \emph{Wi-Fi 802.11} mediante la creación de un \emph{HUB} de dispositivos móviles, en el cual se envían notificaciones sobre los eventos que aparezcan.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.4]{arquitectura_global}
 		\caption{Arquitectura del sistema}
@@ -30,7 +30,8 @@ La conexión entre la parte de los vehículos a motor y de los ciclistas hacia l
 \subsubsection{Mensajes a ciclistas}\label{sssection:mensajes_ciclistas}
 Se ha desarrollado una aplicación \emph{Android} desde la cual se manda a la nube actualizaciones sobre la posición del usuario o el grupo que el usuario haya creado. \'Este recibe notificaciones sobre las posiciones de los vehículos próximos, y otros diferentes eventos que pueden darse en la carretera; por ejemplo, un accidente de tráfico. Se ha contemplado la posibilidad de salidas en grupo de ciclistas, para ello se ha habilitado una modalidad específica mediante la cual se crea un grupo que se comunica entre sus miembros a través de una red privada \emph{Wi-Fi 802.11}. Los diferentes miembros se mantienen actualizados sobre los diferentes eventos a través de un nodo denominado líder, el cual es el enlace a la nube tanto para reportar la posición del grupo de ciclistas como para recibir mensajes de la nube y retransmitir éstos al resto de miembros.
 
-Para comunicarse con los dispositivos Android se emplea la plataforma Google Cloud Messaging (GCM), la cual se encarga de gestionar que los mensajes lleguen al destino aunque el destino este temporalmente inaccesible mediante notificaciones \emph{Push}. El mensaje debe respetar el formato que la API de GCM indica y puede observarse en el algoritmo \ref{alg:gcmformato}, donde \emph{ID\_ANDROID} es el identificador del dispositivo Android al que se le va a enviar el mensaje, y \emph{DATOS} un objeto \emph{JSON} con la información se que desea enviar.
+Para comunicarse con los dispositivos Android se emplea la plataforma Google Cloud Messaging (GCM), la cual se encarga de gestionar que los mensajes lleguen al destino aunque el destino este temporalmente inaccesible mediante notificaciones \emph{Push} [\ref{alg:gcmFuncionamientoMensajes}]. El mensaje debe respetar el formato que la API de GCM indica y puede observarse en el algoritmo \ref{alg:gcmformato}, donde \emph{ID\_ANDROID} es el identificador del dispositivo Android al que se le va a enviar el mensaje, y \emph{DATOS} un objeto \emph{JSON} con la información se que desea enviar.
+% FALTA añadir referencia al código
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
 		\begin{minted}[linenos=true]{java}
@@ -38,55 +39,6 @@ Para comunicarse con los dispositivos Android se emplea la plataforma Google Clo
 		\end{minted}
 	\end{minipage}
 	\caption{Envío de mensajes mediante GCM}\label{alg:gcmformato}
-\end{listing}
-
-\begin{listing}
-	\begin{minipage}{.4\textwidth}
-		\begin{minted}[linenos=true]{java}
-DataOutputStream out;
-HttpURLConnection httpRequest;
-String inputLine;
-StringBuffer response;
-BufferedReader in;
-final String KEY = AIzaSyAu2LXHXn7_rP0OUinzizQg5r5mgln4Q-Y;
-
-try {
-  // abrir conexión con el gestor GCM
-  URL url = new URL("https://android.googleapis.com/gcm/send");
-
-  httpRequest = (HttpURLConnection) url.openConnection();
-
-  // enviar datos mediante POST
-  httpRequest.setRequestMethod("POST");
-
-  // establecer el encabezado
-  httpRequest.setRequestProperty("Content-Type", "application/json");
-  httpRequest.setRequestProperty("Authorization", "key=" + KEY);
-  httpRequest.setDoOutput(true);
-
-  // prepararar información
-  out =  new DataOutputStream(httpRequest.getOutputStream());
-
-  // enviar información
-  out.write(message.getBytes());
-  out.flush();
-  out.close();
-  logger.debug("Sending 'POST' request to URL : " + url);
-
-  // obtener respuesta
-  in = new BufferedReader(new InputStreamReader(httpRequest.getInputStream()));
-  response = new StringBuffer();
-
-  while ((inputLine = in.readLine()) != null) response.append(inputLine);
-  in.close();
-  logger.debug("Response code :" + response.toString());
-
-} catch (IOException e) {
-  logger.error(e.getMessage());
-}
-		\end{minted}
-	\end{minipage}
-	\caption{Envío de mensajes mediante GCM}\label{alg:proximidadVehiculos}
 \end{listing}
 
 \subsubsection{Mensajes a vehículos a motor}\label{sssection:mensajesvehiculomotor}
@@ -102,7 +54,10 @@ Para poder realizar la conexión desde diferentes plataformas y entornos de desa
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
 		\begin{minted}[linenos=true]{java}
-		{ "type": "motorist_position", "id": "a3553743", "timestamp": "12343242344", "latitude": "43.270880", "longitude": "-2.937973", "altitude": "20", "heading": "53", "speed": "5" }			\end{minted}
+{ "type": "motorist_position", "id": "a3553743", "timestamp": "12343242344", 
+"latitude": "43.270880", "longitude": "-2.937973", "altitude": "20", 
+"heading": "53", "speed": "5" }			
+		\end{minted}
 	\end{minipage}
 	\caption{Formato de mensajes}\label{alg:formatoMensajes}
 \end{listing}
@@ -112,7 +67,7 @@ En las siguientes secciones se explica en detalle el formato de los mensajes que
 \subsubsection{Mensaje de posición de vehículo a motor}\label{sssection:MensajePosVehMotor}
 Indican la información geográfica de un vehículo. Los mensajes entrantes en la \emph{Nube de Conductores} tienen que tener todos los campos indicados, mientras que los mensajes salientes se usarán los campos que sean necesarios.
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Formato de mensaje Vehículo a Motor}\label{tab:CamposMensajePosVehMotNubeConductores}
 	\begin{tabular}{lll}
@@ -134,7 +89,7 @@ Indican la información geográfica de un vehículo. Los mensajes entrantes en l
 \subsubsection{Mensaje de posición de ciclista}\label{sssection:MensajePosCiclista}
 Indican la información geográfica de uno o más ciclistas. Los mensajes entrantes en la \emph{Nube de Conductores} tienen que tener todos los campos indicados, mientras que los mensajes salientes se usarán los campos que sean necesarios
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Formato de mensaje Ciclista}\label{tab:CamposMensajePosCiclistaNubeConductores}
 	\begin{tabular}{lll}
@@ -159,7 +114,7 @@ Indican la información geográfica de uno o más ciclistas. Los mensajes entran
 Cuando la \emph{Nube de Conductores} detecta que un ciclista y un vehículo a motor tienen una gran probabilidad de encontrarse, se envía este tipo de mensaje para comunicar la distancia entre los vehículos y su posición relativa. 
 
 % TODO INCLUIR UNA REFERENCIA A LA EXPLICACIÓN DEL ÁNGULO RELATIVO.
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Formato de mensaje Ciclista}\label{tab:CamposMensajePosCiclistaNubeConductores}
 	\begin{tabular}{lll}
@@ -195,14 +150,14 @@ for (Motorist m : lMotorist) {
 	\caption{Cálculo de la proximidad de los vehículos}\label{alg:proximidadVehiculos}
 \end{listing}
 \section{Aplicación de ciclistas}\label{section:appCiclistas}
-Con el objetivo de incrementar la seguridad de los ciclistas en las carreteras, se ha desarrollado una aplicación móvil. Esta aplicación permite propagar información sobre el tránsito de vehículos en la carretera y de esta forma, el ciclista puede colocarse en una mejor posición a la hora de ser adelantado por otro vehículo, ó puede saber qué se va a encontrar en una zona de visibilidad reducida antes de aproximarse.
+Con el objetivo de incrementar la seguridad de los ciclistas en las carreteras, se ha desarrollado una aplicación móvil. Ésta permite propagar información sobre el tránsito de vehículos en la carretera y de esta forma, el ciclista puede colocarse en una mejor posición a la hora de ser adelantado por otro vehículo, ó puede saber qué se va a encontrar en una zona de visibilidad reducida antes de aproximarse.
 
 Se ha elegido la plataforma Android debido al predominio de este sistema en el mercado actual, de esta forma se puede maximizar la recepción. Para este desarrollo se ha usado la API 23 de Android con retro-compatibilidad hasta la API 15.
 
 Esta solución requiere de la \emph{Nube de Conductores} para funcionar, ya que la información de los ciclistas es enviada a la misma y, de la misma forma, se puede recibir información sobre otros vehículos en la carretera.
 
 \subsection{Modos de funcionamiento}\label{ssection:commHUB}
-Existen dos modalidades de funcionamiento diferentes de la aplicación, ambas muestran la misma información al ciclista aunque su modo de proceder variará:
+Existen dos modalidades de funcionamiento diferentes, en se muestra la misma información al ciclista aunque su modo de proceder variará:
 		
 \begin{enumerate}
 	\item Modo individual: el usuario manda mensajes con su posición a través de \emph{HTTP/1.1} a \emph{Driver's Cloud}. Los mensajes provenientes de la nube son mandados al dispositivo mediante el servicio \emph{GCM} de \emph{Google}.	
@@ -218,7 +173,7 @@ Existen dos modalidades de funcionamiento diferentes de la aplicación, ambas mu
 
 En las figuras \ref{figure:Hub} y \ref{figure:FollowerJoin} se muestra la interfaz gráfica con la que se encuentra el usuario. Nótese en la interfaz del seguidor que puede buscar un grupo de dos maneras: (1) buscando el grupo de manera manual a través de una lista, ó (2) dejando que la aplicación auto-detecte una red y trate de unirse a ella.			
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{minipage}{.5\textwidth}
 		\begin{center}
 			\includegraphics[scale=0.2]{leader_sync}
@@ -238,7 +193,7 @@ En las figuras \ref{figure:Hub} y \ref{figure:FollowerJoin} se muestra la interf
 Para mantener un registro de la ruta que se esta realizando, un controlador mantiene toda la información sobre la salida que se esta realizando. En la figura \ref{figure:DiagramController} se observa la estructura de este controlador, el funcionamiento es como siguiente:
 \begin{description}
 	\item[AJourney y AGroupJourney] interfáz gráfica que se muestra al usuario (figura \ref{figure:Journey}).
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale=0.2]{journey}
 			\caption{UI de la salida}
@@ -250,7 +205,7 @@ Para mantener un registro de la ruta que se esta realizando, un controlador mant
 	\item[JourneyController] gestor de la salida. Controla los datos relacionados con la salida: tiempo, distancia recorrida, ruta y calorías quemadas. Permite ser pausada y reanudada.
 \end{description}
 		
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale=0.4]{fDiagramJourneyController}
 	\caption{Controlador de la salida}
@@ -296,7 +251,7 @@ Para la recepción de mensajes, la aplicación tiene que pedir un \"token\" de r
 \subsection{Comunicación del grupo}\label{ssection:comunicacion_grupo}
 Entre los seguidores y el líder se enviarán notificaciones sobre el estado actual de cada nodo (Tabla \ref{table:groupMessages}) a través de del modo \emph{Hub} que tienen los dispositivos; la explicación completa puede encontrarse en la subsección % TODO AÑADIR LA REFERENCIA A LA SUBSECCIÓN
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Tipo de mensajes en grupo}\label{tab:MensajesGrupo}
 	\begin{tabular}{lll}
@@ -315,9 +270,9 @@ Entre los seguidores y el líder se enviarán notificaciones sobre el estado act
 		\bottomrule
 	\end{tabular}
 \end{table}
-Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para que la recepción de mensajes sea lo más rápido posible. Al ser un canal poco fiable se ha implementado una capa para garantizar la recepción del mensaje: cuando un mensaje es enviado, es guardado en un HashTable utilizando como clave la IP del destinatario y un número identificativo del mensaje\footnote{El HashTable solo permite una clave, por lo que se ha creado una clase que calcula un Hash en base a las dos claves con que deseamos identificar el datagrama.}. El receptor mandará un ACK al emisor cuando un mensaje le llegue, y este último eliminará del HashMap el registro previamente almacenado. En caso de que un mensaje no llegue, un \emph{timeout} provocará que el emisor vuelva a enviar el mismo mensaje al receptor; el \emph{timeout} se incrementará al doble cada re-envío. En caso de que un mensaje no sea recibido al quinto intento, se dejará de intentarlo (figura \ref{figure:groupComm}).
+Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para que la recepción de mensajes sea lo más rápido posible. Al ser un canal poco fiable se ha implementado una capa para garantizar la recepción del mensaje: cuando un mensaje es enviado, se almacena en un HashTable utilizando como clave la IP del destinatario y un número identificativo del mensaje\footnote{El HashTable solo permite una clave, por lo que se ha creado una clase que calcula un Hash en base a las dos claves con que deseamos identificar el datagrama.}. El receptor mandará un ACK al emisor cuando un mensaje le llegue, y este último eliminará del HashMap el registro previamente almacenado. En caso de que un mensaje no llegue, un \emph{timeout} provocará que el emisor vuelva a enviar el mismo mensaje al receptor; el \emph{timeout} se incrementará al doble cada re-envío. En caso de que un mensaje no sea recibido al quinto intento, se dejará de intentarlo (figura \ref{figure:groupComm}).
 		
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{fGroupMessaging}
 		\caption{Comunicación líder-seguidor}
@@ -328,69 +283,19 @@ Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para 
 \subsection{Casco BLE}\label{ssection:cascoBLE}
 El ciclista no puede estar pendiente de los avisos de su Smartphone continuamente, ya que esto puede poner en riesgo su seguridad. Para que el ciclista pueda mantener la vista en la vía y tenga la posibilidad de saber si hay algún vehículo que pueda ponerle en riesgo, se ha integrado una \emph{mota Texas CC2540} en el casco del ciclista conectado a varios LEDs que según un código de colores le informan al ciclista sobre eventos que sean peligrosos. Si por ejemplo hay un vehículo acercándose por el lado izquierdo, un LED amarillo o rojo se encenderá, dependiendo si la distancia es menor de 50 ó 20 metros respectivamente.
 
-Este dispositivo utiliza el estándar BLE para comunicarse con la aplicación móvil mediante cortos mensajes de 8 bytes, los cuales contienen un código hexadecimal que representa la combinación de LEDs que deben encenderse. % TODO Añadir en el apéndice información sobre BLE
+Este dispositivo utiliza el estándar BLE para comunicarse con la aplicación móvil mediante cortos mensajes de 8 bytes, los cuales contienen un código hexadecimal que representa la combinación de LEDs que deben encenderse. % %TODO Añadir en el apéndice información sobre BLE
 
 \begin{description}
 	\item[Programación de la mota] La mota contiene un pequeño programa escrito en lenguaje C que se encuentra flasheado en su ROM (Read Only Memory). Este programa configura el micro-controlador para actuar como servidor (denominado \emph{Central}), a la espera de ser emparejado y recibir mensajes. Hasta que se sincroniza con un dispositivo, cada 50 mili segundos propaga una señal para que los dispositivos puedan emparejarse. Cuando un dispositivo se conecta, el micro controlador espera a recibir un pequeño mensaje con el código de la señal que le especificará qué LEDs debe encender. Cuando llega el mensaje, si el código recibido es el correcto enciende el LED correspondiente. Para el desarrollo  de este programa se ha trabajado sobre una plantilla, que provee Texas Instrument junto con el dispositivo CC2540, al que se ha añadido el servicio necesario para encender el LED al recibir una señal. En el algoritmo \ref{alg:mota} se explica cómo se ha implementado un nuevo servicio para gestionar los mensajes entrantes.
 	
-	\begin{listing}
-		\begin{minipage}{.4\textwidth}
-			\begin{minted}[linenos=true]{c}
-// Declarar el UUID del perfil ATT (Atribute Protocol)
-#define PROFILE_VEHICULAR POS   5
-
-// Declarar el UUID del servicio
-#define SIMPLEPROFILE_SERV_UUID 0xFFF0
-
-//Declarar el UUID de la característica, darle un tamaño y asignar 
-//permisos de escritura
-#define PROFILE_VEHICULARPOS_UUID 0xFFF6
-CONST uint8 simpleVehicularPositionProfileUUID[ATT_BT_UUID_SIZE] = {
-	LO_UINT16(PROFILE_VEHICULARPOS_UUID), HI_UINT16(PROFILE_VEHICULARPOS_UUID)	
-};
-static uint8 vehicularPositionProps = GATT_PROP_WRITE;
-static uint8 vehicularPosition = 0;
-
-// gestionar que se ha hecho una escritura en la característica
-static bStatus_t simpleProfile_writeAttrCB(uint16 connHandle, gattAttribute_t *PAttr,
-    uint8 *pValue, uint8 len, uint16 offset) {
-[...]    	
-notifyApp = PROFILE_VEHICULARPOS;
-[...]
-}
-
-// gestionar la petición
-static void simpleProfileChangeCB(uint8 paramID) {
-[...]
-case PROFILE_VEHICULARPOS:
-  SimpleProfile_GetParameter(PROFILE_VEHICULARPOS, &newValue);
-  cambiarLED(paramID);
-[...]	
-}
-
-// escritura de la característica
-bStatus_t SimpleProfile_SetParameter(uint8 param, uint8 len, void* value) {
-[...]	
-  case PROFILE_VEHICULARPOS:
-    if (len == SIMPLEPROFILE_CHAR5_LEN) {
-      vehicularPosition = *((uint8 *) value);	
-    } else {
-      ret = bleInvalidRange;
-    }
-    break;
-[...]
-}
-			\end{minted}
-		\end{minipage}
-		\caption{Servicio de cambio de LED}\label{alg:mota}
-	\end{listing}
+	
 	\item[Programación de la app] La aplicación de ciclistas actúa como cliente, por lo que el usuario debe primero emparejarse con el casco para que pueda comenzar a comunicarse con la mota. El proceso de conexión y envío de mensajes consiste:
 		\begin{enumerate}
 			\item Buscar los servicios Bluetooth disponibles.
 			\item Conectar al dispositivo en cuestión.
 			\item Descubrir los servicios que ofrece el dispositivo. Esto devolverá varios UUIDs con los servicios que tiene disponibles la mota. Una vez se sabe cuál es el servicio que controla la recepción de mensajes, hay que obtener una referencia. 
-			\item Descubrir las características que contiene el servicio. Empleando la referencia del servicio, se pueden obtener uno o varios UUID que representan variables en las que se puede escribir un valor. Aquí es donde se depositará el código de combinación de LEDs que se desea encender.
-			\item Escribir sobre la característica que gestiona los LEDs.
+			\item Descubrir las características que contiene el servicio. Empleando la referencia del servicio, se pueden obtener uno o varios UUID que representan variables en las que se puede escribir un valor. Aquí es donde se depositará el código de combinación de LEDs que se desea encender [\ref{alg:mota1}].
+			\item Escribir sobre la característica que gestiona los LEDs [\ref{alg:mota2}].
 		\end{enumerate}
 		
 		\begin{listing}
@@ -414,12 +319,88 @@ public void mandarMensajeBLE(byte msg) {
   caracteristica.setValor(msg);
   
   // aplicar cambios en el dispositivo remoto
-  bluetoothGatt.writeCharacteristic(caracteristica);
-  
-	
-}				
+  bluetoothGatt.writeCharacteristic(caracteristica);	
+}	
 				\end{minted}
 			\end{minipage}
 		\caption{Envío de mensajes LED desde la aplicación de ciclistas}\label{alg:appciclistasBLE}
 	\end{listing}
 \end{description}
+
+\begin{table}[H]
+	\centering
+	\caption{Tabla de la verdad de señales LED}\label{tab:tablaVerdadLED}
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{SEÑAL} & \emph{MNEMÓNICO} & DESCRIPCIÓN \\
+		\midrule
+		
+		0x00    & NONE    & Sin peligro. Apagar los LED \\
+		0x01    & AL\_RIGHT & Vehículo a menos de 20 metros por la derecha. Encender luz roja derecha. \\
+		0x02    & AL\_LEFT & Vehículo a menos de 20 metros por la izquierda. Encender luz roja izquierda. \\
+		0x03    & AL\_BACK & Vehículo a menos de 20 metros por detrás. Ambas luces rojas encendidas. \\
+		0x04    & AL\_FRONT & Vehículo a menos de 20 metros por delante. Ambas luces rojas encendidas parpadeando. \\
+		0x11    & W\_RIGHT & Vehículo a menos de 50 metros por la derecha. Encender luz amarilla derecha. \\
+		0x12    & W\_LEFT & Vehículo a menos de 50 metros por la izquierda. Endernder luz amarilla izquierda. \\
+		0x13    & W\_BACK & Vehículo a menos de 50 metros por detrás. Ambas luces amarillas encendidas. \\
+		0x14    & W\_FRONT & Vehículo a menos de 50 metros por delante. Ambas luces amarillas parpadeando encendidas.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\section{Comunicación vehicular}
+Los RSU y OBU son los encargados de proveer las posiciones de los vehículos a motor de la \emph{Nube de Conductores}. El OBU se encuentra integrado en el vehículo, y envía a través de \emph{IEEE 802.11p} las posiciones de los vehículos a la RSU. La RSU recoge los datos enviados por la OBU y los retransmite a la nube, al igual que recibe datos de la nube y los retransmite al OBU.
+
+	\subsection{Unidad en carretera}
+	Formato por un router que se comunica a través de \emph{IEEE 802.11p}, y un computador conectado tanto al router como a una red LTE. Actúan como puente entre las OBU instaladas en los vehículos y la nube. El RSU escucha y escribe a través de dos canales:
+	
+	\begin{enumerate}
+		\item En el canal LTE recibe los mensajes HTTP/1.1 que provienen de la Nube de Conductores, así como envía las posiciones de los vehículos a la nube. Un Servicio web posibilita la gestión de estos mensajes; el formato es el mismo que el explicado en la sección \ref{ssection:FormatoMensajesNC}.
+		
+		\item Escucha el canal IEEE 802.11p los mensajes que son enviados por los vehículos, y los redirige a la nube a través de mensajes HTTP/1.1.
+	\end{enumerate}
+		\subsubsection{Funcionamiento}
+		\begin{enumerate}
+			\item Se comprueba que el formato del mensaje es correcto. Si no lo es, se descarta.
+			\item Lectura del campo \"TYPE\" del mensaje. Dependiendo de su contenido se aplica un proceso diferente: el mensaje puede ser retransmitido a través de Broadcast, se puede mostrar una notificación en un panel informativo en carretera...
+		\end{enumerate}
+		
+		Una propuesta para añadir funciones adicionales consiste en conectar el RSU a elementos informáticos que pueden existir en la carretera, por ejemplo los paneles informativos, y al enviar un mensaje desde la Nube de Conductores a una RSU en concreto se muestra la información deseada.
+
+\subsection{Unidad en el vehículo}
+Dentro del ecosistema vehicular existen varias unidades con diferentes papeles: el OBU, el HMI (Human-Machine interface) y la interfaz OpenXC (o tecnología equivalente). Para darse la comunicación con todas las plataformas se depende de la existencia de RSU desplegadas en la carretera.
+
+	\subsubsection{OBU}
+	Formado por un router que se comunica a través de IEEE 802.11p, un dispositivo GPS conectado al router, y un computador conectado al router a través de un conector RJ-45. A traves de esta red se reciben mensajes de diferentes RSU que se encuentran desplegadas en la carretera, al igual que se envían mensajes informando sobre la posición del vehículo a través de Broadcast. Su funcionamiento consiste en:
+	\begin{itemize}
+		\item Obtener la posición del vehículo realizando peticiones al router.
+		\item Mandar periódicamente las posiciones a través de broadcast.
+		\item Escuchar los mensajes que mandan las RSU.
+		\item Ofrecer y proveer al usuario la información de los mensajes a través del HMI.
+	\end{itemize}
+	
+	\subsubsection{Información al usuario}
+	Para proveer información al conductor se emplea el HMI, el cual consiste enun ordenador de a bordo que contiene diferentes apps. Adicionalmente, se puede conectar al OBDII (On-Board Diagnostic) a través de un puerto RS 232 para obtener información del vehículo; como por ejemplo, el estado de los neumáticos.
+	
+	Se ha desarrollado una plaicación conectada por Bluetooth al OBU con la que se muestra al vehículo un mapa con las posiciones de los ciclistas cercanos [Imagen \ref{figure:HMI}]. Cuando un vehículo se acerca a un ciclista o grupo de ciclistas una notificación salta para informar al conductor. Las posiciones de los ciclistas son obtenidas a través de la nube, y almacenadas en el vehículo durante un período de 30 segundos; según llegan las nuevas posiciones desde la nube, se van actualizando. Pasado ese tiempo, los registros que no hayan sido refrescados son eliminados, ya que esto significaría que los nodos han dejado de transmitir.
+	
+	\begin{figure}[H]
+			\begin{center}
+				\includegraphics[scale=0.4]{HMI}
+				\caption{UI de la aplicación instalada en el HMI}
+				\label{figure:HMI}
+			\end{center}
+	\end{figure}
+	
+	\subsubsection{Comunicación HMI-OBU}
+	Para crear el servidor Bluetooth que envíe los mensajes recibidos por el OBU a la aplicación instalada en el HMI, se ha utilizado la librería Bluecove. En el \ref{alg:puntoAccesoHMI_OBU} se abre un punto de acceso para clientes Bluetooth, y se envían los mensajes que se han recibido en el OBU y deben ser mostrados al usuario.
+
+		\begin{listing}
+			\begin{minipage}{.4\textwidth}
+				\begin{minted}[linenos=true]{java}
+	
+				\end{minted}
+			\end{minipage}
+			\caption{Creación de un punto de acceso Bluetooth en el OBU}\label{alg:puntoAccesoHMI_OBU}
+		\end{listing}
+

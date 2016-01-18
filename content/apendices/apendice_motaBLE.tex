@@ -1,0 +1,59 @@
+\section{Código fuente Casco BLE}
+\begin{listing}
+		\begin{minipage}{.4\textwidth}
+			\begin{minted}[linenos=true]{c}
+// Declarar el UUID del perfil ATT (Atribute Protocol)
+#define PROFILE_VEHICULAR POS   5
+
+// Declarar el UUID del servicio
+#define SIMPLEPROFILE_SERV_UUID 0xFFF0
+
+//Declarar el UUID de la característica, darle un tamaño y asignar 
+//permisos de escritura
+#define PROFILE_VEHICULARPOS_UUID 0xFFF6
+CONST uint8 simpleVehicularPositionProfileUUID[ATT_BT_UUID_SIZE] = {
+	LO_UINT16(PROFILE_VEHICULARPOS_UUID), HI_UINT16(PROFILE_VEHICULARPOS_UUID)	
+};
+static uint8 vehicularPositionProps = GATT_PROP_WRITE;
+static uint8 vehicularPosition = 0;
+		\end{minted}
+	\end{minipage}
+	\caption{Declaración del servicio LED}\label{alg:mota1}
+\end{listing}
+
+\begin{listing}
+	\begin{minipage}{.4\textwidth}
+		\begin{minted}[linenos=true]{c}
+// gestionar que se ha hecho una escritura en la característica
+static bStatus_t simpleProfile_writeAttrCB(uint16 connHandle, gattAttribute_t *PAttr,
+    uint8 *pValue, uint8 len, uint16 offset) {
+[...]    	
+notifyApp = PROFILE_VEHICULARPOS;
+[...]
+}
+
+// gestionar la petición
+static void simpleProfileChangeCB(uint8 paramID) {
+[...]
+case PROFILE_VEHICULARPOS:
+  SimpleProfile_GetParameter(PROFILE_VEHICULARPOS, &newValue);
+  cambiarLED(paramID);
+[...]	
+}
+
+// escritura de la característica
+bStatus_t SimpleProfile_SetParameter(uint8 param, uint8 len, void* value) {
+[...]	
+  case PROFILE_VEHICULARPOS:
+    if (len == SIMPLEPROFILE_CHAR5_LEN) {
+      vehicularPosition = *((uint8 *) value);	
+    } else {
+      ret = bleInvalidRange;
+    }
+    break;
+[...]
+}
+		\end{minted}
+	\end{minipage}
+	\caption{Implementación del callback para el servicio LED}\label{alg:mota2}
+\end{listing}

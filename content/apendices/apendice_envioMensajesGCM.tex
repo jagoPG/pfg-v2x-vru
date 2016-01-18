@@ -1,0 +1,30 @@
+\section{Código fuente del funcionamiento de mensajes GCM}
+\begin{listing}
+\begin{minipage}{.4\textwidth}
+\begin{minted}[linenos=true]{java}
+HttpURLConnection httpRequest;
+final String KEY = AIzaSyAu2LXHXn7_rP0OUinzizQg5r5mgln4Q-Y;
+
+try {
+  // abrir conexión con el gestor GCM
+  URL url = new URL("https://android.googleapis.com/gcm/send");
+
+  httpRequest = (HttpURLConnection) url.openConnection();
+
+  // enviar datos mediante POST
+  httpRequest.setRequestMethod("POST");
+
+  // establecer el encabezado
+  httpRequest.setRequestProperty("Content-Type", "application/json");
+  httpRequest.setRequestProperty("Authorization", "key=" + KEY);
+  httpRequest.setDoOutput(true);
+  
+  // enviar mensaje y leer respuesta
+  [...]
+} catch (IOException e) {
+  logger.error(e.getMessage());
+}
+\end{minted}
+\end{minipage}
+\caption{Envío de mensajes mediante GCM}\label{alg:gcmFuncionamientoMensajes}
+\end{listing}

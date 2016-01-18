@@ -2,6 +2,7 @@
 
 \usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
 \usepackage{spverbatim}
+\usepackage{placeins}
 
 
 \graphicspath{ {fig/diagramas/}, {fig/}, {fig/screenshots/}  }
@@ -31,6 +32,7 @@
 
 %\setcounter{page}{3}
 
+% Resumen del proyecto
 \chapter*{Resumen}
 El desarrollo y despliegue de sistemas inteligentes en la carretera (ITS) trae consigo un incremento de la seguridad y una mayor rapidez a la hora de responder a eventos de emergencia. Este tipo de tecnologías han demostrado ser lo suficientemente robustas para utilizarse como apoyo para lidiar con la gestión de tráfico, mejora de la seguridad vial... y actualmente están apareciendo vehículos que además de tener un propio sistema de auto-diagnostico, pueden interactuar con su entorno.
 
@@ -49,20 +51,21 @@ redes vehiculares, agentes vulnerables, ciudades inteligentes.
 \mainmatter
 \pagestyle{phdthesis}
 
+% Incluir las páginas del proyecto
 \input{content/introduccion}
 \input{content/solucion}
 \input{content/verificacion_sistema}
 
-% incluir la bibliografía
+% Incluir la bibliografía
 \printbibliography[heading=bibintoc]
 
 \appendix
-
 \chapter{Apéndice}\label{an:normativa}
-
-% Con \input se incluye el el contenido de otro documento de latex en el actual.
-% \input{normativa}
-
+	\input{content/apendices/apendice_envioMensajesGCM}
+	\FloatBarrier
+	
+	\input{content/apendices/apendice_motaBLE}
+	\FloatBarrier
 \backmatter
 
 \end{document}
