@@ -32,46 +32,21 @@
 
 %\setcounter{page}{3}
 
-% Resumen del proyecto
-\chapter*{Resumen}
-El desarrollo y despliegue de sistemas inteligentes en la carretera (ITS) trae consigo un incremento de la seguridad y una mayor rapidez a la hora de responder a eventos de emergencia. Este tipo de tecnologías han demostrado ser lo suficientemente robustas para utilizarse como apoyo para lidiar con la gestión de tráfico, mejora de la seguridad vial... y actualmente están apareciendo vehículos que además de tener un propio sistema de auto-diagnostico, pueden interactuar con su entorno.
-
-\vspace{2em}
-
-{\Large\bfseries\sectionfont Descriptores}
-\vspace{3\medskipamount}
-
-redes vehiculares, agentes vulnerables, ciudades inteligentes.
-
-\cleardoublepage\tableofcontents
-\cleardoublepage\listoffigures
-\cleardoublepage\listoftables
-\cleardoublepage\listoflistings
-
-\mainmatter
-\pagestyle{phdthesis}
-
 % Incluir las páginas del proyecto
+\input{content/resumen}
 \input{content/introduccion}
-\input{content/solucion}
-\input{content/verificacion_sistema}
+\input{content/definicion_objetivos}
+\input{content/planificacion}
+\input{content/metodologia}
+\input{content/desarrollo}
+\input{content/resultados}
+\input{content/conclusiones}
 
 % Incluir la bibliografía
 \printbibliography[heading=bibintoc]
 
-\appendix
-\chapter{Apéndice}\label{an:normativa}
-	\input{content/apendices/apendice_envioMensajesGCM}
-	\FloatBarrier
-	
-	\input{content/apendices/apendice_motaBLE}
-	\FloatBarrier
-	
-	\input{content/apendices/apendice_posicionVehicularRelativa}
-	\FloatBarrier
-	
-	\input{content/apendices/apendice_ble}
-	\FloatBarrier
-\backmatter
+% Incluir apendices
+\input{content/apendices}
 
+\backmatter
 \end{document}
