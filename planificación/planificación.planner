@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<project name="PFG Nube de Conductores" company="DeustoTech - Mobility" manager="Jagoba P&#xE9;rez" phase="" project-start="20141001T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Jornada laboral" description="Un d&#xED;a de trabajo predeterminado"/>
+      <day-type id="1" name="Jornada de descanso" description="Un d&#xED;a de descanso predeterminado"/>
+      <day-type id="2" name="Usar base" description="Usar d&#xED;a del calendario base"/>
+    </day-types>
+    <calendar id="1" name="Predeterminado">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Recolecci&#xF3;n de requisitos" note="" work="86400" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="2" name="Requisitos de la plataforma" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="3" name="Requisitos aplicaci&#xF3;n de ciclistas" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="4" name="Requisitos aplicaci&#xF3;n de conductores" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="5" name="Dise&#xF1;o de aplicaciones" note="" work="201600" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="Dise&#xF1;o de Nube de Conductores" note="" work="57600" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="7" name="Base de datos" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="8" name="Acceso a datos remoto" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="9" name="Dise&#xF1;o de OBU/RSU" note="" work="86400" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="10" name="Arquitectura" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="11" name="Aplicaci&#xF3;n de OBU/RSU" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="12" name="Aplicaci&#xF3;n de HMI" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="13" name="Dise&#xF1;o de CiclistasApp" note="" work="57600" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="14" name="Arquitectura de la aplicaci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="15" name="Dise&#xF1;o del casco" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="16" name="Desarrollo" note="" work="403200" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="17" name="Desarrollo de Nube de Conductores" note="" work="115200" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="18" name="Servlets" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="19" name="Algoritmos de predicci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="20" name="Acceso a datos" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="21" name="Aplicaci&#xF3;n de testeo" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="22" name="Desarrollo de OBU/RSU" note="" work="86400" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="23" name="Aplicaci&#xF3;n de RSU" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="24" name="Aplicaci&#xF3;n de OBU" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="25" name="Aplicaci&#xF3;n de HMI" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="26" name="Desarrollo de CiclistasApp" note="" work="201600" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="27" name="Dise&#xF1;o de Activities" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="28" name="Monitor de actividad" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="29" name="GPS" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="30" name="Implementaci&#xF3;n de Activities" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="31" name="Red de ciclistas" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="32" name="Producci&#xF3;n del casco" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="33" name="BLE" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="34" name="Depuraci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="35" name="Pruebas" note="" work="316800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="36" name="Rendimiento de comunicaci&#xF3;n V2X" note="" work="115200" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="37" name="Planificaci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="38" name="Desarrollo apps de pruebas" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="39" name="Ejecuci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="40" name="Estad&#xED;sticas y conclusiones" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="41" name="Comunicaci&#xF3;n V2X en entornos urbanos" note="" work="115200" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="42" name="Planificaci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="43" name="Desarrollo apps de pruebas" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="44" name="Ejecuci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="45" name="Estad&#xED;sticas y conclusiones" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="46" name="Sistema completo" note="" work="86400" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="47" name="Planificaci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="48" name="Ejecuci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="49" name="Conclusiones" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="50" name="Generar documentaci&#xF3;n" note="" work="28800" start="20141001T000000Z" end="20141001T170000Z" work-start="20141001T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+  </tasks>
+  <resource-groups/>
+  <resources/>
+  <allocations/>
+</project>
