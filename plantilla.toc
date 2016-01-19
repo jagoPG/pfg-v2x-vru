@@ -65,3 +65,11 @@
 \contentsline {section}{\numberline {A.1}Código fuente del funcionamiento de mensajes GCM}{23}{section.Alph1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.2}Código fuente Casco BLE}{23}{section.Alph1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.3}Posición vehicular relativa}{25}{section.Alph1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.4}Posición vehicular relativa}{26}{section.Alph1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.4.1}GATT}{26}{subsection.Alph1.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.4.2}UUID}{26}{subsection.Alph1.4.2}

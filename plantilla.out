@@ -18,3 +18,7 @@
 \BOOKMARK [0][]{appendix.Alph1}{Apéndice}{}% 18
 \BOOKMARK [1][]{section.Alph1.1}{Código fuente del funcionamiento de mensajes GCM}{appendix.Alph1}% 19
 \BOOKMARK [1][]{section.Alph1.2}{Código fuente Casco BLE}{appendix.Alph1}% 20
+\BOOKMARK [1][]{section.Alph1.3}{Posición vehicular relativa}{appendix.Alph1}% 21
+\BOOKMARK [1][]{section.Alph1.4}{Posición vehicular relativa}{appendix.Alph1}% 22
+\BOOKMARK [2][]{subsection.Alph1.4.1}{GATT}{section.Alph1.4}% 23
+\BOOKMARK [2][]{subsection.Alph1.4.2}{UUID}{section.Alph1.4}% 24
