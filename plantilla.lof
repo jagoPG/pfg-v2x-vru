@@ -10,25 +10,27 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+{\bfseries Cap\'itulo 4\vskip 10pt}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitectura del sistema\relax }}{10}{figure.caption.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \emph {Hub} del líder\relax }}{15}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ingreso al grupo del seguidor\relax }}{15}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces UI de la salida\relax }}{16}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Controlador de la salida\relax }}{17}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Estructura de la comunicación GCM\relax }}{18}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Comunicación líder-seguidor\relax }}{19}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces UI de la aplicación instalada en el HMI\relax }}{23}{figure.caption.25}
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-{\bfseries Cap\'itulo 5\vskip 10pt}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura del sistema\relax }}{12}{figure.caption.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \emph {Hub} del líder\relax }}{17}{figure.caption.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Ingreso al grupo del seguidor\relax }}{17}{figure.caption.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces UI de la salida\relax }}{18}{figure.caption.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Controlador de la salida\relax }}{19}{figure.caption.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Estructura de la comunicación GCM\relax }}{20}{figure.caption.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Comunicación líder-seguidor\relax }}{21}{figure.caption.20}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces UI de la aplicación instalada en el HMI\relax }}{25}{figure.caption.25}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -38,6 +40,6 @@
 \defcounter {refsection}{0}\relax 
 {\bfseries Cap\'itulo A\vskip 10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Rumbo: el ángulo 0º está desplazado 90º con respecto al eje cartesiano.\relax }}{33}{figure.caption.27}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Rumbo: el ángulo 0º está desplazado 90º con respecto al eje cartesiano.\relax }}{37}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Posición relativa vehicular.\relax }}{33}{figure.caption.27}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Posición relativa vehicular.\relax }}{37}{figure.caption.31}

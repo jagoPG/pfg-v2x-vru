@@ -10,74 +10,76 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Definición de objetivos}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Planificación: fases y calendario}{7}{chapter.3}
+\contentsline {chapter}{\numberline {3}Metodología}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Metodología}{9}{chapter.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Desarrollo}{11}{chapter.5}
+\contentsline {chapter}{\numberline {4}Desarrollo}{9}{chapter.4}
 \defcounter {refsection}{0}\relax 
 \vskip 10pt
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Arquitectura del sistema}{11}{section.5.1}
+\contentsline {section}{\numberline {4.1}Arquitectura del sistema}{9}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Nube de Conductores}{12}{section.5.2}
+\contentsline {section}{\numberline {4.2}Nube de Conductores}{10}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Comunicación entre plataformas}{13}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Comunicación entre plataformas}{11}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mensajes a ciclistas}{13}{subsubsection*.7}
+\contentsline {subsubsection}{Mensajes a ciclistas}{11}{subsubsection*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mensajes a vehículos a motor}{13}{subsubsection*.8}
+\contentsline {subsubsection}{Mensajes a vehículos a motor}{11}{subsubsection*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Formato de los mensajes}{14}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Formato de los mensajes}{12}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mensaje de posición de vehículo a motor}{14}{subsubsection*.9}
+\contentsline {subsubsection}{Mensaje de posición de vehículo a motor}{12}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mensaje de posición de ciclista}{15}{subsubsection*.11}
+\contentsline {subsubsection}{Mensaje de posición de ciclista}{13}{subsubsection*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mensaje de alerta}{15}{subsubsection*.13}
+\contentsline {subsubsection}{Mensaje de alerta}{13}{subsubsection*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Procesos}{15}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Procesos}{13}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Aplicación de ciclistas}{16}{section.5.3}
+\contentsline {section}{\numberline {4.3}Aplicación de ciclistas}{14}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Modos de funcionamiento}{16}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Modos de funcionamiento}{14}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Comunicación con la nube}{19}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Comunicación con la nube}{17}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.3}Comunicación del grupo}{20}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Comunicación del grupo}{18}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.4}Casco BLE}{21}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {4.3.4}Casco BLE}{19}{subsection.4.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Comunicación vehicular}{23}{section.5.4}
+\contentsline {section}{\numberline {4.4}Comunicación vehicular}{21}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.1}Unidad en carretera}{23}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Unidad en carretera}{21}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Funcionamiento}{23}{subsubsection*.22}
+\contentsline {subsubsection}{Funcionamiento}{21}{subsubsection*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.2}Unidad en el vehículo}{24}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Unidad en el vehículo}{22}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{OBU}{24}{subsubsection*.23}
+\contentsline {subsubsection}{OBU}{22}{subsubsection*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Información al usuario}{24}{subsubsection*.24}
+\contentsline {subsubsection}{Información al usuario}{22}{subsubsection*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Comunicación HMI-OBU}{25}{subsubsection*.26}
+\contentsline {subsubsection}{Comunicación HMI-OBU}{23}{subsubsection*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Resultados y pruebas}{27}{chapter.6}
+\contentsline {chapter}{\numberline {5}Resultados y pruebas}{25}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusiones}{29}{chapter.7}
+\contentsline {chapter}{\numberline {6}Planificación: fases y calendario}{27}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Apéndice}{31}{appendix.Alph1}
+\contentsline {chapter}{\numberline {7}Presupuestos}{29}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Conclusiones}{33}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Apéndice}{35}{appendix.Alph1}
 \defcounter {refsection}{0}\relax 
 \vskip 10pt
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Código fuente del funcionamiento de mensajes GCM}{31}{section.Alph1.1}
+\contentsline {section}{\numberline {A.1}Código fuente del funcionamiento de mensajes GCM}{35}{section.Alph1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Código fuente Casco BLE}{31}{section.Alph1.2}
+\contentsline {section}{\numberline {A.2}Código fuente Casco BLE}{35}{section.Alph1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Posición vehicular relativa}{33}{section.Alph1.3}
+\contentsline {section}{\numberline {A.3}Posición vehicular relativa}{37}{section.Alph1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Posición vehicular relativa}{34}{section.Alph1.4}
+\contentsline {section}{\numberline {A.4}Posición vehicular relativa}{38}{section.Alph1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.4.1}GATT}{34}{subsection.Alph1.4.1}
+\contentsline {subsection}{\numberline {A.4.1}GATT}{38}{subsection.Alph1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.4.2}UUID}{34}{subsection.Alph1.4.2}
+\contentsline {subsection}{\numberline {A.4.2}UUID}{38}{subsection.Alph1.4.2}
