@@ -1,0 +1,180 @@
+\ifglsentryexists{obu}{}%
+{%
+\gls@defglossaryentry{obu}%
+{%
+name={OBU},%
+sort={OBU},%
+type={main},%
+first={OBU},%
+firstplural={OBUs},%
+text={OBU},%
+plural={OBUs},%
+description={On-Board Unit},%
+descriptionplural={On-Board Unit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rsu}{}%
+{%
+\gls@defglossaryentry{rsu}%
+{%
+name={RSU},%
+sort={RSU},%
+type={main},%
+first={RSU},%
+firstplural={RSUs},%
+text={RSU},%
+plural={RSUs},%
+description={Road Side Unit},%
+descriptionplural={Road Side Unit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LTE}{}%
+{%
+\gls@defglossaryentry{LTE}%
+{%
+name={LTE},%
+sort={LTE},%
+type={main},%
+first={Long Term Evolution\glsspace (LTE)},%
+firstplural={Long Term Evolutions\glsspace (LTEs)},%
+text={LTE},%
+plural={LTEs},%
+description={Long Term Evolution},%
+descriptionplural={Long Term Evolution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long Term Evolution},%
+longplural={Long Term Evolutions},%
+short={LTE},%
+shortplural={LTEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{3G}{}%
+{%
+\gls@defglossaryentry{3G}%
+{%
+name={3G},%
+sort={3G},%
+type={main},%
+first={Third Generation\glsspace (3G)},%
+firstplural={Third Generations\glsspace (3Gs)},%
+text={3G},%
+plural={3Gs},%
+description={Third Generation},%
+descriptionplural={Third Generation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Third Generation},%
+longplural={Third Generations},%
+short={3G},%
+shortplural={3Gs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ieee-801.11p}{}%
+{%
+\gls@defglossaryentry{ieee-801.11p}%
+{%
+name={IEEE},%
+sort={IEEE},%
+type={main},%
+first={IEEE},%
+firstplural={IEEEs},%
+text={IEEE},%
+plural={IEEEs},%
+description={Un estándar registrado por Institute of Electrical and Electronics Engineers para las comunicaciones inalámbricas.},%
+descriptionplural={Un estándar registrado por Institute of Electrical and Electronics Engineers para las comunicaciones inalámbricas.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{http/1.1}{}%
+{%
+\gls@defglossaryentry{http/1.1}%
+{%
+name={HTTP/1.1},%
+sort={HTTP/1.1},%
+type={main},%
+first={HTTP/1.1},%
+firstplural={HTTP/1.1s},%
+text={HTTP/1.1},%
+plural={HTTP/1.1s},%
+description={Hypertext Transfer protocol. Protocolo de transferencia usado actualmente en la web (RFC2774).},%
+descriptionplural={Hypertext Transfer protocol. Protocolo de transferencia usado actualmente en la web (RFC2774).},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

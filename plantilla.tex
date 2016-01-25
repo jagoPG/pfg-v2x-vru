@@ -3,9 +3,10 @@
 \usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
 \usepackage{spverbatim}
 \usepackage{placeins}
+\usepackage{glossaries}
 
 
-\graphicspath{ {fig/diagramas/}, {fig/}, {fig/screenshots/}  }
+\graphicspath{ {fig/diagramas/}, {fig/diagramas/gantt/},{fig/}, {fig/screenshots/}  }
 \DeclareGraphicsExtensions{ .png, .jpg, .jpeg, .pdf }
 
 \hypersetup{
@@ -14,7 +15,7 @@
 }
 
 \bibliography{bib}
-
+\makeglossary
 \begin{document}
 
 \frontmatter 
@@ -48,6 +49,7 @@
 
 % Incluir apendices
 \input{content/apendices}
+\input{content/glosario}
 
 \backmatter
 \end{document}
