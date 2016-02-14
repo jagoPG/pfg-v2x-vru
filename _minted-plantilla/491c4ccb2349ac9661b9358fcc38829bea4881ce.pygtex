@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{HttpClient} \PYG{n}{httpClient}\PYG{o}{;}
+\PYG{n}{HttpPost} \PYG{n}{httpPost}\PYG{o}{;}
+\PYG{n}{String} \PYG{n}{data}\PYG{o}{;}
+
+\PYG{n}{data} \PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZob{}\PYGZbs{}\PYGZdq{}id\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getIdentifier}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}type\PYGZbs{}\PYGZdq{}\PYGZdq{}}\PYG{o}{:} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}cyclist\PYGZus{}position\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}latitude\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getPosition}\PYG{o}{().}\PYG{n+na}{getLatitud}\PYG{o}{()} \PYG{o}{+}  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}longitude\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getPosition}\PYG{o}{().}\PYG{n+na}{getLongitud}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}altitude\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getPosition}\PYG{o}{().}\PYG{n+na}{getAltura}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}heading\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getPosition}\PYG{o}{().}\PYG{n+na}{getRumbo}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}speed\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getSpeed}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}components\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{n}{cyclist}\PYG{o}{.}\PYG{n+na}{getPersonas}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{},\PYGZdq{}} \PYG{o}{+}
+  \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}timestamp\PYGZbs{}\PYGZdq{}:\PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{o}{+} \PYG{k}{new} \PYG{n}{Timestamp}\PYG{o}{(}\PYG{k}{new} \PYG{n}{Date}\PYG{o}{().}\PYG{n+na}{getTime}\PYG{o}{())} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZdq{}\PYGZcb{}\PYGZdq{}}\PYG{o}{;}
+\PYG{n}{httpClient} \PYG{o}{=} \PYG{k}{new} \PYG{n}{DefaultHttpClient}\PYG{o}{();}
+\PYG{n}{httpPost} \PYG{o}{=} \PYG{k}{new} \PYG{n}{HttpPost}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}http://cloud.mobility.deustotech.eu/cyclist\PYGZdq{}}\PYG{o}{);}
+\PYG{n}{httpPost}\PYG{o}{.}\PYG{n+na}{setEntity}\PYG{o}{(}\PYG{k}{new} \PYG{n}{StringEntity}\PYG{o}{(}\PYG{n}{data}\PYG{o}{));}
+\PYG{n}{httpClient}\PYG{o}{.}\PYG{n+na}{execute}\PYG{o}{(}\PYG{n}{httpPost}\PYG{o}{);}
+\end{Verbatim}
