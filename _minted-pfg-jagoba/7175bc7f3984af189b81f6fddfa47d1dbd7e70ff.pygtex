@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{HttpURLConnection} \PYG{n}{httpRequest}\PYG{o}{;}
+\PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{KEY} \PYG{o}{=} \PYG{n}{AIzaSyAu2LXHXn7\PYGZus{}rP0OUinzizQg5r5mgln4Q}\PYG{o}{\PYGZhy{}}\PYG{n}{Y}\PYG{o}{;}
+
+\PYG{k}{try} \PYG{o}{\PYGZob{}}
+  \PYG{c+c1}{// abrir conexión con el gestor GCM}
+  \PYG{n}{URL} \PYG{n}{url} \PYG{o}{=} \PYG{k}{new} \PYG{n}{URL}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}https://android.googleapis.com/gcm/send\PYGZdq{}}\PYG{o}{);}
+
+  \PYG{n}{httpRequest} \PYG{o}{=} \PYG{o}{(}\PYG{n}{HttpURLConnection}\PYG{o}{)} \PYG{n}{url}\PYG{o}{.}\PYG{n+na}{openConnection}\PYG{o}{();}
+
+  \PYG{c+c1}{// enviar datos mediante POST}
+  \PYG{n}{httpRequest}\PYG{o}{.}\PYG{n+na}{setRequestMethod}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}POST\PYGZdq{}}\PYG{o}{);}
+
+  \PYG{c+c1}{// establecer el encabezado}
+  \PYG{n}{httpRequest}\PYG{o}{.}\PYG{n+na}{setRequestProperty}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}Content\PYGZhy{}Type\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}application/json\PYGZdq{}}\PYG{o}{);}
+  \PYG{n}{httpRequest}\PYG{o}{.}\PYG{n+na}{setRequestProperty}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}Authorization\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}key=\PYGZdq{}} \PYG{o}{+} \PYG{n}{KEY}\PYG{o}{);}
+  \PYG{n}{httpRequest}\PYG{o}{.}\PYG{n+na}{setDoOutput}\PYG{o}{(}\PYG{k+kc}{true}\PYG{o}{);}
+
+  \PYG{c+c1}{// enviar mensaje y leer respuesta}
+  \PYG{o}{[...]}
+\PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+  \PYG{n}{logger}\PYG{o}{.}\PYG{n+na}{error}\PYG{o}{(}\PYG{n}{e}\PYG{o}{.}\PYG{n+na}{getMessage}\PYG{o}{());}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

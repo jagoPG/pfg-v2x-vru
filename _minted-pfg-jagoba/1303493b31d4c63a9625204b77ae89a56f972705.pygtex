@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{conectarBLE}\PYG{o}{(}\PYG{n}{Device} \PYG{n}{dispositivo}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+  \PYG{c+c1}{// El primer argumento indica que la propia clase gestionará los eventos,}
+  \PYG{c+c1}{// el segundo argumento que se autoconectará al dispositivo, y el tercer}
+  \PYG{c+c1}{// argumento a qué dispositivo va a conectarse.}
+  \PYG{n}{bluetoothGatt} \PYG{o}{=} \PYG{n}{device}\PYG{o}{.}\PYG{n+na}{connectGatt}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{k+kc}{false}\PYG{o}{,} \PYG{n}{dispositivo}\PYG{o}{);}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{mandarMensajeBLE}\PYG{o}{(}\PYG{k+kt}{byte} \PYG{n}{msg}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+  \PYG{c+c1}{// obtener el servicio que contiene la característica que se va a modificar}
+  \PYG{n}{servicio} \PYG{o}{=} \PYG{n}{bluetoothGatt}\PYG{o}{.}\PYG{n+na}{getService}\PYG{o}{(}\PYG{n}{UUID}\PYG{err}{\PYGZbs{}}\PYG{n}{\PYGZus{}SERVICIO}\PYG{o}{);}
+
+  \PYG{c+c1}{// obtener la característica (local)}
+  \PYG{n}{caracteristica}\PYG{o}{.}\PYG{n+na}{getCharacteristic}\PYG{o}{(}\PYG{n}{msg}\PYG{o}{);}
+
+  \PYG{c+c1}{// modificar el valor de la característica (local)}
+  \PYG{n}{caracteristica}\PYG{o}{.}\PYG{n+na}{setValor}\PYG{o}{(}\PYG{n}{msg}\PYG{o}{);}
+
+  \PYG{c+c1}{// aplicar cambios en el dispositivo remoto}
+  \PYG{n}{bluetoothGatt}\PYG{o}{.}\PYG{n+na}{writeCharacteristic}\PYG{o}{(}\PYG{n}{caracteristica}\PYG{o}{);}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

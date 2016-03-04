@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{calcularPosicionRelativa}\PYG{p}{(}\PYG{n+nx}{heading}\PYG{p}{,} \PYG{n+nx}{oLatitude}\PYG{p}{,} \PYG{n+nx}{oLongitude}\PYG{p}{,} \PYG{n+nx}{pLatitude}\PYG{p}{,} \PYG{n+nx}{pLongitude}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{degrees} \PYG{o}{=} \PYG{n+nx}{calculateAngleBetweenTwoPoints}\PYG{p}{(}\PYG{n+nx}{oLatitude}\PYG{p}{,} \PYG{n+nx}{oLongitude}\PYG{p}{,} \PYG{n+nx}{pLatitude}\PYG{p}{,} \PYG{n+nx}{pLongitude}\PYG{p}{);}
+  \PYG{k+kd}{var} \PYG{n+nx}{relativeAngle} \PYG{o}{=} \PYG{n+nx}{correctDegrees}\PYG{p}{(}\PYG{n+nx}{degrees} \PYG{o}{\PYGZhy{}} \PYG{n+nx}{heading}\PYG{p}{);}
+
+  \PYG{k+kd}{var} \PYG{n+nx}{tmp} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{relativeAngle} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{15} \PYG{o}{||} \PYG{n+nx}{relativeAngle} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{345}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}FRONT\PYGZdq{}}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{relativeAngle} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{120} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{relativeAngle} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{230}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}BACK\PYGZdq{}}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{relativeAngle} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{120} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{relativeAngle} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{15}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}LEFT\PYGZdq{}}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}RIGHT\PYGZdq{}}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{function} \PYG{n+nx}{calcularAnguloEntreDosPuntos}\PYG{p}{(}\PYG{n+nx}{ox}\PYG{p}{,} \PYG{n+nx}{oy}\PYG{p}{,} \PYG{n+nx}{x}\PYG{p}{,} \PYG{n+nx}{y}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k}{return} \PYG{n+nx}{toDegrees}\PYG{p}{(}\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{atan2}\PYG{p}{(}\PYG{n+nx}{y} \PYG{o}{\PYGZhy{}} \PYG{n+nx}{oy}\PYG{p}{,} \PYG{n+nx}{x} \PYG{o}{\PYGZhy{}} \PYG{n+nx}{ox}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
