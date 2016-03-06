@@ -11,8 +11,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {4.5}{\ignorespaces Envío de mensajes LED desde la aplicación de ciclistas\relax }}{22}{listing.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {4.6}{\ignorespaces Creación de un punto de acceso Bluetooth en el OBU\relax }}{26}{listing.4.6}
-\defcounter {refsection}{0}\relax 
 {\bfseries Cap\'itulo A\vskip 10pt}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {A.1}{\ignorespaces Envío de mensajes mediante GCM\relax }}{41}{listing.Alph1.1}

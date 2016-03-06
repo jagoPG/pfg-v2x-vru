@@ -1,11 +1,10 @@
 \chapter{Desarrollo}\label{cha:desarrollo}
-Tras obtener una descripción completa del proyecto, se han realizado varias reuniones en las cuales se han obtenido las especificaciones que se desea en el sistema a desarrollar. Durante la fase inicial de obtención de requisitos, se han recogido y priorizado de la siguiente forma los requisitos funcionales:
-
+Tras obtener una descripción completa del proyecto, se han realizado varias reuniones en las cuales se han obtenido las especificaciones que se desea en el sistema a desarrollar. Durante la fase inicial del proyecto se han recogido los requisitos funcionales y se han priorizado de la siguiente manera:
 \begin{enumerate}
 	\item Empleo de comunicaciones IEEE 802.11p y 3G entre dispositivos móviles y módulos de NEC.
 	\item Debe ser una comunicación bidireccional.
 	\item Baja latencia en el envío de mensajes; menor a 100 ms.
-	\item Incremento de la seguridad para los VRU.
+	\item Incremento de la seguridad para los \gls{vru}.
 	\item Comunicación de ciclistas individuales y en grupo.
 	\item Se debe conocer la posición de los ciclistas en los vehículos a motor, y recibir avisos.
 \end{enumerate}
@@ -18,7 +17,7 @@ Se han clasificado las siguientes especificaciones como requisitos no funcionale
 	\item Posibilidad de mandar mensajes desde el servidor central.
 \end{itemize}
 
-En el diagrama de casos de uso mostrado en \ref{fig:casos_de_uso} se pueden observar las tareas que se han pedido integrar en el proyecto: los ciclistas envían sus posiciones al iniciar la salida, pueden crear un grupo o no, monitorizar su actividad y emparejar sus dispositivos con el casco BLE. Los conductores al iniciar su aplicación son notificados de los eventos de alerta que se pueden dar en la carretera, mientras en segundo plano notifican su posición. La plataforma que es implementada en la nube recibe las notificaciones y cuando detecte alguna posibilidad de peligro, notifica a los ciclistas y conductores. Además, desde la aplicación de escritorio en la nube se pueden enviar mensajes de gestión de carretera a la \gls{rsu}.
+En el diagrama \ref{fig:casos_de_uso} se pueden observar las tareas que se han pedido integrar en el proyecto: los ciclistas envían sus posiciones al iniciar la salida, pueden crear un grupo o no, monitorizar su actividad y emparejar sus dispositivos con el casco \gls{ble}. Los conductores al iniciar su aplicación son notificados sobre los eventos de alerta que se pueden dar en la carretera, mientras en segundo plano notifican su posición. La plataforma que es implementada en la nube recibe las notificaciones y cuando detecte alguna posibilidad de peligro, notifica a los ciclistas y conductores. Además, desde la aplicación de escritorio en la nube se pueden enviar mensajes para la gestión de tráfico a la \gls{rsu}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.4]{casos_de_uso}
@@ -27,7 +26,13 @@ En el diagrama de casos de uso mostrado en \ref{fig:casos_de_uso} se pueden obse
 	\end{center}
 \end{figure}
 
-
 Una vez analizados los requisitos de la plataforma, se procede a diseñar la solución del sistema. Una primera decisión que se debe tomar es si el sistema debe ser distribuido o centralizado. El primero tiene la ventaja de proveer un mejor rendimiento, ya que tan solo debe encargarse de un área, pero puede perder información ya que no tiene un mapa completo del área total. Por el contrario, un sistema centralizado requiere de una mayor infraestructura cuanto más área provea de cobertura, pero tiene en todo momento una visión completa de los escenarios. Al ser una solución experimental que va a ser desplegada en un pequeño escenario y los requisitos de seguridad son prioritarios, se ha elegido un sistema centralizado.
 
 Se deberá crear diferentes aplicaciones: un servidor central que permita la comunicación entre diferentes tecnologías, una app móvil para ciclistas y conductores, y aplicaciones para ser desplegadas en unidades \gls{obu} y \gls{rsu}.
+
+\input{content/desarrollo/diseño_y_arquitectura_del_sistema}
+\input{content/desarrollo/comunicacion_plataformas}
+\input{content/desarrollo/formato_mensajes}
+\input{content/desarrollo/nube_conductores}
+\input{content/desarrollo/app_ciclistas}
+\input{content/desarrollo/comunicacion_vehicular}

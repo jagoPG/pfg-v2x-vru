@@ -1,4 +1,7 @@
-Warning: File 'pfg-jagoba.glo' is empty.
-Have you used any entries defined in glossary 'main'?
-Remember to use package option 'nomain' if you
-don't want to use the main glossary.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning style file ./pfg-jagoba.ist.............................done (29 attributes redefined, 0 ignored).
+Scanning input file pfg-jagoba.glo....done (21 entries accepted, 0 rejected).
+Sorting entries....done (111 comparisons).
+Generating output file pfg-jagoba.gls....done (28 lines written, 0 warnings).
+Output written in pfg-jagoba.gls.
+Transcript written in pfg-jagoba.glg.

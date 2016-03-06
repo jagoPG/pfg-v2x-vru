@@ -18,7 +18,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Arquitectura del sistema}{10}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Comunicación entre plataformas}{11}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Comunicación entre plataformas}{12}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Mensajes a ciclistas}{12}{subsubsection*.8}
 \defcounter {refsection}{0}\relax 
@@ -48,17 +48,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Comunicación vehicular}{23}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Unidad en carretera}{23}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Unidad de a bordo}{23}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Funcionamiento}{23}{subsubsection*.23}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Unidad en el vehículo}{24}{subsection.4.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{OBU}{24}{subsubsection*.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Información al usuario}{24}{subsubsection*.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Comunicación HMI-OBU}{25}{subsubsection*.27}
+\contentsline {subsection}{\numberline {4.4.2}Unidad de carretera}{24}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Resultados y pruebas}{27}{chapter.5}
 \defcounter {refsection}{0}\relax 
@@ -83,3 +75,5 @@
 \contentsline {subsection}{\numberline {A.4.1}GATT}{44}{subsection.Alph1.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {A.4.2}UUID}{44}{subsection.Alph1.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.5}Open-XC}{44}{section.Alph1.5}

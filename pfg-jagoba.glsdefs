@@ -58,9 +58,69 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{LTE}{}%
+\ifglsentryexists{ble}{}%
 {%
-\gls@defglossaryentry{LTE}%
+\gls@defglossaryentry{ble}%
+{%
+name={BLE},%
+sort={BLE},%
+type={main},%
+first={Bluetooth Low Energy\glsspace (BLE)},%
+firstplural={Bluetooth Low Energys\glsspace (BLEs)},%
+text={BLE},%
+plural={BLEs},%
+description={Bluetooth Low Energy},%
+descriptionplural={Bluetooth Low Energy\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bluetooth Low Energy},%
+longplural={Bluetooth Low Energys},%
+short={BLE},%
+shortplural={BLEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vru}{}%
+{%
+\gls@defglossaryentry{vru}%
+{%
+name={VRU},%
+sort={VRU},%
+type={main},%
+first={Vulnerable Road User\glsspace (VRU)},%
+firstplural={Vulnerable Road Users\glsspace (VRUs)},%
+text={VRU},%
+plural={VRUs},%
+description={Vulnerable Road User},%
+descriptionplural={Vulnerable Road User\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Vulnerable Road User},%
+longplural={Vulnerable Road Users},%
+short={VRU},%
+shortplural={VRUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{lte}{}%
+{%
+\gls@defglossaryentry{lte}%
 {%
 name={LTE},%
 sort={LTE},%
@@ -88,9 +148,9 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{3G}{}%
+\ifglsentryexists{3g}{}%
 {%
-\gls@defglossaryentry{3G}%
+\gls@defglossaryentry{3g}%
 {%
 name={3G},%
 sort={3G},%
@@ -118,19 +178,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{ieee-801.11p}{}%
+\ifglsentryexists{obd-ii}{}%
 {%
-\gls@defglossaryentry{ieee-801.11p}%
+\gls@defglossaryentry{obd-ii}%
 {%
-name={IEEE 801.11p},%
-sort={IEEE 801.11p},%
+name={OBD-II},%
+sort={OBD-II},%
 type={main},%
-first={IEEE 801.11p},%
-firstplural={IEEE 801.11ps},%
-text={IEEE 801.11p},%
-plural={IEEE 801.11ps},%
-description={Un estándar registrado por el Instituto Electrico y Electrónico de Ingenieros para las comunicaciones inalámbricas.},%
-descriptionplural={Un estándar registrado por el Instituto Electrico y Electrónico de Ingenieros para las comunicaciones inalámbricas.},%
+first={On-Board Diagnostics II\glsspace (OBD-II)},%
+firstplural={On-Board Diagnostics IIs\glsspace (OBD-IIs)},%
+text={OBD-II},%
+plural={OBD-IIs},%
+description={On-Board Diagnostics II},%
+descriptionplural={On-Board Diagnostics II\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -139,10 +199,40 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={},%
-longplural={},%
-short={},%
-shortplural={},%
+long={On-Board Diagnostics II},%
+longplural={On-Board Diagnostics IIs},%
+short={OBD-II},%
+shortplural={OBD-IIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hmi}{}%
+{%
+\gls@defglossaryentry{hmi}%
+{%
+name={HMI},%
+sort={HMI},%
+type={main},%
+first={Human-Machine Interface\glsspace (HMI)},%
+firstplural={Human-Machine Interfaces\glsspace (HMIs)},%
+text={HMI},%
+plural={HMIs},%
+description={Human-Machine Interface},%
+descriptionplural={Human-Machine Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Human-Machine Interface},%
+longplural={Human-Machine Interfaces},%
+short={HMI},%
+shortplural={HMIs},%
 counter={page},%
 parent={},%
 %

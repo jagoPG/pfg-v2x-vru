@@ -14,8 +14,8 @@
 \BOOKMARK [2][]{subsection.4.3.3}{Comunicación del grupo}{section.4.3}% 14
 \BOOKMARK [2][]{subsection.4.3.4}{Casco\040BLE}{section.4.3}% 15
 \BOOKMARK [1][]{section.4.4}{Comunicación vehicular}{chapter.4}% 16
-\BOOKMARK [2][]{subsection.4.4.1}{Unidad\040en\040carretera}{section.4.4}% 17
-\BOOKMARK [2][]{subsection.4.4.2}{Unidad en el vehículo}{section.4.4}% 18
+\BOOKMARK [2][]{subsection.4.4.1}{Unidad\040de\040a\040bordo}{section.4.4}% 17
+\BOOKMARK [2][]{subsection.4.4.2}{Unidad\040de\040carretera}{section.4.4}% 18
 \BOOKMARK [0][]{chapter.5}{Resultados\040y\040pruebas}{}% 19
 \BOOKMARK [0][]{chapter.6}{Planificación: fases y calendario}{}% 20
 \BOOKMARK [0][]{chapter.7}{Presupuestos}{}% 21
@@ -27,3 +27,4 @@
 \BOOKMARK [1][]{section.Alph1.4}{Posición vehicular relativa}{appendix.Alph1}% 27
 \BOOKMARK [2][]{subsection.Alph1.4.1}{GATT}{section.Alph1.4}% 28
 \BOOKMARK [2][]{subsection.Alph1.4.2}{UUID}{section.Alph1.4}% 29
+\BOOKMARK [1][]{section.Alph1.5}{Open-XC}{appendix.Alph1}% 30
