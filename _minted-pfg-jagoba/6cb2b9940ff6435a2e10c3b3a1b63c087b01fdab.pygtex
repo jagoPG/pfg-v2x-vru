@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c+c1}{// Declarar el UUID del perfil ATT (Atribute Protocol)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}define PROFILE\PYGdefaultZus{}VEHICULAR POS   5}
+
+\PYGdefault{c+c1}{// Declarar el UUID del servicio}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}define SIMPLEPROFILE\PYGdefaultZus{}SERV\PYGdefaultZus{}UUID 0xFFF0}
+
+\PYGdefault{c+c1}{//Declarar el UUID de la característica, darle un tamaño y asignar}
+\PYGdefault{c+c1}{//permisos de escritura}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}define PROFILE\PYGdefaultZus{}VEHICULARPOS\PYGdefaultZus{}UUID 0xFFF6}
+\PYGdefault{n}{CONST} \PYGdefault{n}{uint8} \PYGdefault{n}{simpleVehicularPositionProfileUUID}\PYGdefault{p}{[}\PYGdefault{n}{ATT\PYGdefaultZus{}BT\PYGdefaultZus{}UUID\PYGdefaultZus{}SIZE}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{p}{\PYGdefaultZob{}}
+\PYGdefault{o}{\PYGdefaultZca{}\PYGdefaultZca{}}\PYGdefault{n}{ILO\PYGdefaultZus{}UINT16}\PYGdefault{p}{(}\PYGdefault{n}{PROFILE\PYGdefaultZus{}VEHICULARPOS\PYGdefaultZus{}UUID}\PYGdefault{p}{),} \PYGdefault{n}{HI\PYGdefaultZus{}UINT16}\PYGdefault{p}{(}\PYGdefault{n}{PROFILE\PYGdefaultZus{}VEHICULARPOS\PYGdefaultZus{}UUID}\PYGdefault{p}{)}
+\PYGdefault{p}{\PYGdefaultZcb{};}
+\PYGdefault{k}{static} \PYGdefault{n}{uint8} \PYGdefault{n}{vehicularPositionProps} \PYGdefault{o}{=} \PYGdefault{n}{GATT\PYGdefaultZus{}PROP\PYGdefaultZus{}WRITE}\PYGdefault{p}{;}
+\PYGdefault{k}{static} \PYGdefault{n}{uint8} \PYGdefault{n}{vehicularPosition} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+\end{Verbatim}

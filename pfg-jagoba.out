@@ -1,30 +1,24 @@
 \BOOKMARK [0][]{chapter.1}{Introducción}{}% 1
 \BOOKMARK [1][]{section.1.1}{Antecedentes}{chapter.1}% 2
-\BOOKMARK [0][]{chapter.2}{Definición de objetivos}{}% 3
-\BOOKMARK [0][]{chapter.3}{Metodología}{}% 4
-\BOOKMARK [0][]{chapter.4}{Desarrollo}{}% 5
-\BOOKMARK [1][]{section.4.1}{Arquitectura\040del\040sistema}{chapter.4}% 6
-\BOOKMARK [2][]{subsection.4.1.1}{Comunicación entre plataformas}{section.4.1}% 7
-\BOOKMARK [2][]{subsection.4.1.2}{Formato\040de\040los\040mensajes}{section.4.1}% 8
-\BOOKMARK [1][]{section.4.2}{Nube\040de\040Conductores}{chapter.4}% 9
-\BOOKMARK [2][]{subsection.4.2.1}{Procesos}{section.4.2}% 10
-\BOOKMARK [1][]{section.4.3}{Aplicación de ciclistas}{chapter.4}% 11
-\BOOKMARK [2][]{subsection.4.3.1}{Modos\040de\040funcionamiento}{section.4.3}% 12
-\BOOKMARK [2][]{subsection.4.3.2}{Comunicación con la nube}{section.4.3}% 13
-\BOOKMARK [2][]{subsection.4.3.3}{Comunicación del grupo}{section.4.3}% 14
-\BOOKMARK [2][]{subsection.4.3.4}{Casco\040BLE}{section.4.3}% 15
-\BOOKMARK [1][]{section.4.4}{Comunicación vehicular}{chapter.4}% 16
-\BOOKMARK [2][]{subsection.4.4.1}{Unidad\040de\040a\040bordo}{section.4.4}% 17
-\BOOKMARK [2][]{subsection.4.4.2}{Unidad\040de\040carretera}{section.4.4}% 18
-\BOOKMARK [0][]{chapter.5}{Resultados\040y\040pruebas}{}% 19
-\BOOKMARK [0][]{chapter.6}{Planificación: fases y calendario}{}% 20
-\BOOKMARK [0][]{chapter.7}{Presupuestos}{}% 21
-\BOOKMARK [0][]{chapter.8}{Conclusiones}{}% 22
-\BOOKMARK [0][]{appendix.Alph1}{Apéndice}{}% 23
-\BOOKMARK [1][]{section.Alph1.1}{Código fuente del funcionamiento de mensajes GCM}{appendix.Alph1}% 24
-\BOOKMARK [1][]{section.Alph1.2}{Código fuente Casco BLE}{appendix.Alph1}% 25
-\BOOKMARK [1][]{section.Alph1.3}{Posición vehicular relativa}{appendix.Alph1}% 26
-\BOOKMARK [1][]{section.Alph1.4}{Posición vehicular relativa}{appendix.Alph1}% 27
-\BOOKMARK [2][]{subsection.Alph1.4.1}{GATT}{section.Alph1.4}% 28
-\BOOKMARK [2][]{subsection.Alph1.4.2}{UUID}{section.Alph1.4}% 29
-\BOOKMARK [1][]{section.Alph1.5}{Open-XC}{appendix.Alph1}% 30
+\BOOKMARK [0][]{chapter.2}{Alcance}{}% 3
+\BOOKMARK [0][]{chapter.3}{Definición de objetivos}{}% 4
+\BOOKMARK [0][]{chapter.4}{Producto\040final}{}% 5
+\BOOKMARK [0][]{chapter.5}{Metodología}{}% 6
+\BOOKMARK [1][]{section.5.1}{Tareas}{chapter.5}% 7
+\BOOKMARK [2][]{subsection.5.1.1}{T1\040-\040Requisitos}{section.5.1}% 8
+\BOOKMARK [2][]{subsection.5.1.2}{T2\040-\040Nube\040de\040conductores}{section.5.1}% 9
+\BOOKMARK [2][]{subsection.5.1.3}{T3\040-\040App\040de\040ciclistas}{section.5.1}% 10
+\BOOKMARK [2][]{subsection.5.1.4}{T4\040-\040Aplicaciones\040vehiculares}{section.5.1}% 11
+\BOOKMARK [2][]{subsection.5.1.5}{T5 - Validación}{section.5.1}% 12
+\BOOKMARK [2][]{subsection.5.1.6}{T6\040-\040Estudios\040adjuntos}{section.5.1}% 13
+\BOOKMARK [2][]{subsection.5.1.7}{T7 - Grabación de DEMO}{section.5.1}% 14
+\BOOKMARK [0][]{chapter.6}{Planificación: fases y calendario}{}% 15
+\BOOKMARK [0][]{chapter.7}{Presupuestos}{}% 16
+\BOOKMARK [0][]{appendix.Alph1}{Apéndice}{}% 17
+\BOOKMARK [1][]{section.Alph1.1}{Código fuente del funcionamiento de mensajes GCM}{appendix.Alph1}% 18
+\BOOKMARK [1][]{section.Alph1.2}{Código fuente Casco BLE}{appendix.Alph1}% 19
+\BOOKMARK [1][]{section.Alph1.3}{Posición vehicular relativa}{appendix.Alph1}% 20
+\BOOKMARK [1][]{section.Alph1.4}{Posición vehicular relativa}{appendix.Alph1}% 21
+\BOOKMARK [2][]{subsection.Alph1.4.1}{GATT}{section.Alph1.4}% 22
+\BOOKMARK [2][]{subsection.Alph1.4.2}{UUID}{section.Alph1.4}% 23
+\BOOKMARK [1][]{section.Alph1.5}{Open-XC}{appendix.Alph1}% 24

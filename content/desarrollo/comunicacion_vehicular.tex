@@ -2,7 +2,7 @@
 Los \gls{rsu} y \gls{obu} son los encargados de proveer la información sobre posiciones de los vehículos a motor a la \emph{Nube de Conductores}. Cada uno se ha implementado mediante un router Linkbird-MX y un ordenador portátil conectado a través de un conector RJ-45; aunque en un escenario real se puede prescindir del ordenador portátil. Cada uno tiene una aplicación Java ejecutándose, cada uno con una misión diferente. Para poder hacer uso de las funciones que provee el router Linkbird-MX, se emplea la API provista por NEC. Así mismo, se utiliza Ant para facilitar el despliegue de las aplicaciones.
 
 \subsection{Unidad de a bordo}
-Cada vehículo posee un \gls{obu} integrado: formado por un router, una unidad \emph{hmi} y, si se desea, puede poseer una unidad \Gls{odb-ii} [\ref{apendice:open-xc}]. Un GPS está conectado al router para recibir la posición, velocidad y dirección del vehículo. A través del canal Broadcast de la red \emph{IEEE 802.11p} se envía la información recibida sobre el vehículo al que está conectado a la \gls{rsu}, en forma de pequeños beacons. El funcionamiento de la aplicación consiste en:
+Cada vehículo posee un \gls{obu} integrado: formado por un router, una unidad \emph{hmi} y, si se desea, puede poseer una unidad \Gls{obd-ii} [\ref{apendice:open-xc}]. Un GPS está conectado al router para recibir la posición, velocidad y dirección del vehículo. A través del canal Broadcast de la red \emph{IEEE 802.11p} se envía la información recibida sobre el vehículo al que está conectado a la \gls{rsu}, en forma de pequeños beacons. El funcionamiento de la aplicación consiste en:
 \begin{itemize}
 	\item Obtener la posición del vehículo realizando peticiones al router.
 	\item Mandar periódicamente las posiciones a través de broadcast.

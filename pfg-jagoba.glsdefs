@@ -178,36 +178,6 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{obd-ii}{}%
-{%
-\gls@defglossaryentry{obd-ii}%
-{%
-name={OBD-II},%
-sort={OBD-II},%
-type={main},%
-first={On-Board Diagnostics II\glsspace (OBD-II)},%
-firstplural={On-Board Diagnostics IIs\glsspace (OBD-IIs)},%
-text={OBD-II},%
-plural={OBD-IIs},%
-description={On-Board Diagnostics II},%
-descriptionplural={On-Board Diagnostics II\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={On-Board Diagnostics II},%
-longplural={On-Board Diagnostics IIs},%
-short={OBD-II},%
-shortplural={OBD-IIs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
 \ifglsentryexists{hmi}{}%
 {%
 \gls@defglossaryentry{hmi}%
@@ -238,6 +208,246 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{gcm}{}%
+{%
+\gls@defglossaryentry{gcm}%
+{%
+name={GCM},%
+sort={GCM},%
+type={main},%
+first={Google Cloud Messaging\glsspace (GCM)},%
+firstplural={Google Cloud Messagings\glsspace (GCMs)},%
+text={GCM},%
+plural={GCMs},%
+description={Google Cloud Messaging},%
+descriptionplural={Google Cloud Messaging\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Google Cloud Messaging},%
+longplural={Google Cloud Messagings},%
+short={GCM},%
+shortplural={GCMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{its}{}%
+{%
+\gls@defglossaryentry{its}%
+{%
+name={ITS},%
+sort={ITS},%
+type={main},%
+first={Intelligent Transport System\glsspace (ITS)},%
+firstplural={Intelligent Transport Systems\glsspace (ITSs)},%
+text={ITS},%
+plural={ITSs},%
+description={Intelligent Transport System},%
+descriptionplural={Intelligent Transport System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intelligent Transport System},%
+longplural={Intelligent Transport Systems},%
+short={ITS},%
+shortplural={ITSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cam}{}%
+{%
+\gls@defglossaryentry{cam}%
+{%
+name={CAM},%
+sort={CAM},%
+type={main},%
+first={Cooperative Awareness Message\glsspace (CAM)},%
+firstplural={Cooperative Awareness Messages\glsspace (CAMs)},%
+text={CAM},%
+plural={CAMs},%
+description={Cooperative Awareness Message},%
+descriptionplural={Cooperative Awareness Message\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cooperative Awareness Message},%
+longplural={Cooperative Awareness Messages},%
+short={CAM},%
+shortplural={CAMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{v2x}{}%
+{%
+\gls@defglossaryentry{v2x}%
+{%
+name={V2X},%
+sort={V2X},%
+type={main},%
+first={Vehicle to X\glsspace (V2X)},%
+firstplural={Vehicle to Xs\glsspace (V2Xs)},%
+text={V2X},%
+plural={V2Xs},%
+description={Vehicle to X},%
+descriptionplural={Vehicle to X\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Vehicle to X},%
+longplural={Vehicle to Xs},%
+short={V2X},%
+shortplural={V2Xs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{v2i}{}%
+{%
+\gls@defglossaryentry{v2i}%
+{%
+name={V2I},%
+sort={V2I},%
+type={main},%
+first={Vehicle to Infraestructure\glsspace (V2I)},%
+firstplural={Vehicle to Infraestructures\glsspace (V2Is)},%
+text={V2I},%
+plural={V2Is},%
+description={Vehicle to Infraestructure},%
+descriptionplural={Vehicle to Infraestructure\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Vehicle to Infraestructure},%
+longplural={Vehicle to Infraestructures},%
+short={V2I},%
+shortplural={V2Is},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gcm}{}%
+{%
+\gls@defglossaryentry{gcm}%
+{%
+name={GCM},%
+sort={GCM},%
+type={main},%
+first={Google Cloud Messaging\glsspace (GCM)},%
+firstplural={Google Cloud Messagings\glsspace (GCMs)},%
+text={GCM},%
+plural={GCMs},%
+description={Google Cloud Messaging},%
+descriptionplural={Google Cloud Messaging\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Google Cloud Messaging},%
+longplural={Google Cloud Messagings},%
+short={GCM},%
+shortplural={GCMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ble}{}%
+{%
+\gls@defglossaryentry{ble}%
+{%
+name={BLE},%
+sort={BLE},%
+type={main},%
+first={Bluetooth Low Energy\glsspace (BLE)},%
+firstplural={Bluetooth Low Energys\glsspace (BLEs)},%
+text={BLE},%
+plural={BLEs},%
+description={Bluetooth Low Energy},%
+descriptionplural={Bluetooth Low Energy\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bluetooth Low Energy},%
+longplural={Bluetooth Low Energys},%
+short={BLE},%
+shortplural={BLEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{v2v}{}%
+{%
+\gls@defglossaryentry{v2v}%
+{%
+name={V2V},%
+sort={V2V},%
+type={main},%
+first={Vehicle to vehicle\glsspace (V2V)},%
+firstplural={Vehicle to vehicles\glsspace (V2Vs)},%
+text={V2V},%
+plural={V2Vs},%
+description={Vehicle to vehicle},%
+descriptionplural={Vehicle to vehicle\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Vehicle to vehicle},%
+longplural={Vehicle to vehicles},%
+short={V2V},%
+shortplural={V2Vs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{http/1.1}{}%
 {%
 \gls@defglossaryentry{http/1.1}%
@@ -251,6 +461,66 @@ text={HTTP/1.1},%
 plural={HTTP/1.1s},%
 description={Hypertext Transfer protocol. Protocolo de transferencia usado actualmente en la web (RFC2774).},%
 descriptionplural={Hypertext Transfer protocol. Protocolo de transferencia usado actualmente en la web (RFC2774).},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{802.11p}{}%
+{%
+\gls@defglossaryentry{802.11p}%
+{%
+name={IEEE 802.11p},%
+sort={IEEE 802.11p},%
+type={main},%
+first={IEEE 802.11p},%
+firstplural={IEEE 802.11ps},%
+text={IEEE 802.11p},%
+plural={IEEE 802.11ps},%
+description={Wireless Access Vehicular Environments. Es una estandarización de un grupo de protocolos de acceso inalámbrico en entornos vehiculares llevado a cabo por el IEEE.},%
+descriptionplural={Wireless Access Vehicular Environments. Es una estandarización de un grupo de protocolos de acceso inalámbrico en entornos vehiculares llevado a cabo por el IEEE.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{obd-ii}{}%
+{%
+\gls@defglossaryentry{obd-ii}%
+{%
+name={OBD-II},%
+sort={OBD-II},%
+type={main},%
+first={OBD-II},%
+firstplural={OBD-IIs},%
+text={OBD-II},%
+plural={OBD-IIs},%
+description={Se trata del sistema de diagnóstico del vehículo. Provee información sobre el estado de los diferentes subsistemas del vehículo.},%
+descriptionplural={Se trata del sistema de diagnóstico del vehículo. Provee información sobre el estado de los diferentes subsistemas del vehículo.},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

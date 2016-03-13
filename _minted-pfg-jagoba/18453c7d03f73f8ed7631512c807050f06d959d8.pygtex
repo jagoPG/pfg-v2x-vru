@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k+kd}{function} \PYGdefault{n+nx}{calcularPosicionRelativa}\PYGdefault{p}{(}\PYGdefault{n+nx}{heading}\PYGdefault{p}{,} \PYGdefault{n+nx}{oLatitude}\PYGdefault{p}{,} \PYGdefault{n+nx}{oLongitude}\PYGdefault{p}{,} \PYGdefault{n+nx}{pLatitude}\PYGdefault{p}{,} \PYGdefault{n+nx}{pLongitude}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+  \PYGdefault{k+kd}{var} \PYGdefault{n+nx}{degrees} \PYGdefault{o}{=} \PYGdefault{n+nx}{calculateAngleBetweenTwoPoints}\PYGdefault{p}{(}\PYGdefault{n+nx}{oLatitude}\PYGdefault{p}{,} \PYGdefault{n+nx}{oLongitude}\PYGdefault{p}{,} \PYGdefault{n+nx}{pLatitude}\PYGdefault{p}{,} \PYGdefault{n+nx}{pLongitude}\PYGdefault{p}{);}
+  \PYGdefault{k+kd}{var} \PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{=} \PYGdefault{n+nx}{correctDegrees}\PYGdefault{p}{(}\PYGdefault{n+nx}{degrees} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n+nx}{heading}\PYGdefault{p}{);}
+
+  \PYGdefault{k+kd}{var} \PYGdefault{n+nx}{tmp} \PYGdefault{o}{=} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}\PYGdefaultZdq{}}\PYGdefault{p}{;}
+  \PYGdefault{k}{if} \PYGdefault{p}{(}\PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{\PYGdefaultZlt{}=} \PYGdefault{l+m+mi}{15} \PYGdefault{o}{||} \PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{\PYGdefaultZgt{}=} \PYGdefault{l+m+mi}{345}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+    \PYGdefault{k}{return} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}FRONT\PYGdefaultZdq{}}\PYGdefault{p}{;}
+  \PYGdefault{p}{\PYGdefaultZcb{}} \PYGdefault{k}{else} \PYGdefault{k}{if} \PYGdefault{p}{(}\PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{\PYGdefaultZgt{}=} \PYGdefault{l+m+mi}{120} \PYGdefault{o}{\PYGdefaultZam{}\PYGdefaultZam{}} \PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{\PYGdefaultZlt{}=} \PYGdefault{l+m+mi}{230}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+    \PYGdefault{k}{return} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}BACK\PYGdefaultZdq{}}\PYGdefault{p}{;}
+  \PYGdefault{p}{\PYGdefaultZcb{}} \PYGdefault{k}{else} \PYGdefault{k}{if} \PYGdefault{p}{(}\PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{\PYGdefaultZlt{}} \PYGdefault{l+m+mi}{120} \PYGdefault{o}{\PYGdefaultZam{}\PYGdefaultZam{}} \PYGdefault{n+nx}{relativeAngle} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{15}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+    \PYGdefault{k}{return} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}LEFT\PYGdefaultZdq{}}\PYGdefault{p}{;}
+  \PYGdefault{p}{\PYGdefaultZcb{}} \PYGdefault{k}{else} \PYGdefault{p}{\PYGdefaultZob{}}
+    \PYGdefault{k}{return} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}RIGHT\PYGdefaultZdq{}}\PYGdefault{p}{;}
+  \PYGdefault{p}{\PYGdefaultZcb{}}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+
+\PYGdefault{k+kd}{function} \PYGdefault{n+nx}{calcularAnguloEntreDosPuntos}\PYGdefault{p}{(}\PYGdefault{n+nx}{ox}\PYGdefault{p}{,} \PYGdefault{n+nx}{oy}\PYGdefault{p}{,} \PYGdefault{n+nx}{x}\PYGdefault{p}{,} \PYGdefault{n+nx}{y}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZob{}}
+  \PYGdefault{k}{return} \PYGdefault{n+nx}{toDegrees}\PYGdefault{p}{(}\PYGdefault{n+nb}{Math}\PYGdefault{p}{.}\PYGdefault{n+nx}{atan2}\PYGdefault{p}{(}\PYGdefault{n+nx}{y} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n+nx}{oy}\PYGdefault{p}{,} \PYGdefault{n+nx}{x} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n+nx}{ox}\PYGdefault{p}{));}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+\end{Verbatim}

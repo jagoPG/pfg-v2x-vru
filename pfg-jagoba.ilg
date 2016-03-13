@@ -1,0 +1,61 @@
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file pfg-jagoba.gls...
+!! Input index error (file = pfg-jagoba.gls, line = 1):
+   -- Unknown index keyword \glossarysection[\glossarytoctitle].
+!! Input index error (file = pfg-jagoba.gls, line = 2):
+   -- Unknown index keyword \begin.
+!! Input index error (file = pfg-jagoba.gls, line = 3):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 4):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 5):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 6):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 7):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 8):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 9):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 10):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 11):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 12):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 13):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 14):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 15):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 16):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 17):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 18):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 19):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 20):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 21):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 22):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 23):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 24):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 25):
+   -- Unknown index keyword \glsgroupheading.
+!! Input index error (file = pfg-jagoba.gls, line = 26):
+   -- Unknown index keyword \glossentry.
+!! Input index error (file = pfg-jagoba.gls, line = 27):
+   -- Unknown index keyword \setentrycounter[].
+!! Input index error (file = pfg-jagoba.gls, line = 28):
+   -- Unknown index keyword \end.
+done (0 entries accepted, 28 rejected).
+Nothing written in pfg-jagoba.ind.
+Transcript written in pfg-jagoba.ilg.
