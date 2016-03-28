@@ -1,79 +1,117 @@
 \chapter{Metodología}\label{cha:metodologia}
-En el capítulo \ref{cha:alcance} se puede observar el EDT que ha sido seguido para la realización de este proyecto. Para el desarrollo de cada producto se sigue una metodología de desarrollo iterativa e incremental. Al final de cada iteración se genera un producto intermedio, con las características acordadas durante el  que funcione correctamente con el resto de productos.  A continuación se detallan las fases principales del proyecto:
-
+En el capítulo \ref{cha:alcance} se puede observar el EDT que ha sido seguido para la realización de este
+proyecto. Para el desarrollo de cada producto se sigue una metodología de desarrollo iterativa e incremental.
+Al final de cada iteración se genera un producto intermedio, con las características acordadas durante el
+que funcione correctamente con el resto de productos.  A continuación se detallan las fases principales
+del proyecto:
 \begin{itemize}
-	\item \textbf{T1 - Requisitos}: recolección y análisis de requisitos. Organización de requisitos funcionales y no funcionales.
-	
-	\item \textbf{T2 - Nube de conductores}: incluye todas las actividades para el desarrollo de la aplicación de conductores que será desplegada en la nube.
-	
-	\item \textbf{T3 - App de ciclistas}: actividades para el desarrollo de la aplicación de ciclistas y el casco \gls{ble}.
-	
-	\item \textbf{T4 - Aplicaciones vehiculares}: actividades para el desarrollo de la \gls{rsu}, \gls{obu} y \glossary{hmi}.
-	
-	\item \textbf{T5 - Pruebas en la calle}: pruebas que se han desarrollado en la calle para validar diferentes partes del proyecto.
-	
+	\item \textbf{T1 - Requisitos}: recolección y análisis de requisitos. Organización de requisitos funcionales
+	y no funcionales.
+
+	\item \textbf{T2 - Nube de conductores}: incluye todas las actividades para el desarrollo de la aplicación de
+	conductores que será desplegada en la nube.
+
+	\item \textbf{T3 - App de ciclistas}: actividades para el desarrollo de la aplicación de ciclistas y el
+	casco \gls{ble}.
+
+	\item \textbf{T4 - Aplicaciones vehiculares}: actividades para el desarrollo de la \gls{rsu}, \gls{obu} y
+	\glossary{hmi}.
+
+	\item \textbf{T5 - Pruebas en la calle}: pruebas que se han desarrollado en la calle para validar diferentes
+	partes del proyecto.
+
 	\item \textbf{T6 - Grabación de DEMO}: grabación de una demo del funcionamiento del proyecto completo.
-	
-	\item \textbf{T7 - Estudios adjuntos}: estudios realizados para el desarrollo de diferentes áreas del proyecto.
+
+	\item \textbf{T7 - Estudios adjuntos}: estudios realizados para el desarrollo de diferentes áreas del
+	proyecto.
 \end{itemize}
 
-Las iteraciones se realizan dentro de las tareas T2, T3 y T4. En cada uno del las iteraciones se realiza cada una de las siguientes actividades:
+Las iteraciones se realizan dentro de las tareas T2, T3 y T4. En cada uno del las iteraciones se realiza cada
+una de las siguientes actividades:
 \begin{itemize}
-	\item \textbf{Diseño}: selección de las especificaciones a implementar y realización del diseño de las funciones a implementar en la aplicación.
-	
-	\item \textbf{Desarrollo y depuración}: desarrollo y depuración de las funciones diseñadas. 
-	
-	\item \textbf{Documentación}: generación de la documentación de toda la fase (comentarios en código, documentos explicativos, prototipos generados...).
+	\item \textbf{Diseño}: selección de las especificaciones a implementar y realización del diseño de las
+	funciones a implementar en la aplicación.
+
+	\item \textbf{Desarrollo y depuración}: desarrollo y depuración de las funciones diseñadas.
+
+	\item \textbf{Documentación}: generación de la documentación de toda la fase (comentarios en código, documentos
+	explicativos, prototipos generados...).
 \end{itemize}
 
 \section{Tareas}
 \subsection{T1 - Requisitos}
 \begin{itemize}
-	\item \textbf{Plataforma general}: requisitos de la aplicación en la nube y las aplicaciones vehiculares básicas (\gls{obu} y \gls{rsu}).
+	\item \textbf{Plataforma general}: requisitos de la aplicación en la nube y las aplicaciones vehiculares
+	básicas (\gls{obu} y \gls{rsu}).
+
 	\item \textbf{AppCiclistas:} requisitos de la aplicación para los ciclistas y el casco BLE.
+
 	\item \textbf{AppMotoristas:} requisitos de la aplicación para el \gls{hmi} de los vehículos.
 \end{itemize}
 
 \subsection{T2 - Nube de conductores}
 \begin{itemize}
 	\item \textbf{Iteración 1:} implementación de la arquitectura básica, base de datos y acceso a través de sockets.
-	\item \textbf{Iteración 2:} mejora del formato de mensajes utilizado en la comunicación, cambio del acceso por sockets a servlets, e inclusión de algoritmos de predicción de accidentes.
+
+	\item \textbf{Iteración 2:} mejora del formato de mensajes utilizado en la comunicación, cambio del acceso por
+	sockets a servlets, e inclusión de algoritmos de predicción de accidentes.
+
 	\item \textbf{Iteración 3:} cambiada la comunicación con la aplicación de ciclistas a \gls{gcm}.
+
 	\item \textbf{Iteración 4:} optimización de la plataforma.
 \end{itemize}
 
 \subsection{T3 - App de ciclistas}
 \begin{itemize}
 	\item \textbf{Iteración 1:} desarrollo de la base de la aplicación; incluye salidas individuales y en grupo.
-	\item \textbf{Iteración 2:} mejora de la sensibilidad del GPS, prueba con mensajes UDP en salidas en grupo, cambio de comunicación a la nube a través de mensajes \Gls{http/1.1} y soporte a versiones antiguas de Android.
+
+	\item \textbf{Iteración 2:} mejora de la sensibilidad del GPS, prueba con mensajes UDP en salidas en grupo,
+	cambio de comunicación a la nube a través de mensajes \Gls{http/1.1} y soporte a versiones antiguas de Android.
+
 	\item \textbf{Iteración 3:} empleo de \gls{gcm} para la recepción de mensajes y desarrollo del casco \gls{ble}.
 \end{itemize}
 
 \subsection{T4 - Aplicaciones vehiculares}
 \begin{itemize}
 	\item \textbf{Iteración 1:} base de las aplicaciones \gls{obu} y \gls{rsu}.
-	\item \textbf{Iteración 2:} cambio de comunicación a servlets y mejora de los mensajes empleados en la comunicación.
+
+	\item \textbf{Iteración 2:} cambio de comunicación a servlets y mejora de los mensajes empleados en la
+	comunicación.
+
 	\item \textbf{Iteración 3:} optimización de la plataforma e implementación de la aplicación para el \gls{hmi}.
 \end{itemize}
 
 \subsection{T5 - Validación}
-Durante cada iteración de la validación se desarrollan tres actividades: una primera para planificar qué pruebas se desean hacer y qué datos se desean obtener, así como preparar la aplicación para pruebas. Durante la segunda actividad se desarrollan las pruebas. Y finalmente, la tercera actividad, se recogen y estudian los resultados y se proponen mejoras para futuros desarrollos.
+Durante cada iteración de la validación se desarrollan tres actividades: una primera para planificar qué
+pruebas se desean hacer y qué datos se desean obtener, así como preparar la aplicación para pruebas. Durante
+la segunda actividad se desarrollan las pruebas. Y finalmente, la tercera actividad, se recogen y estudian los
+resultados y se proponen mejoras para futuros desarrollos.
 \begin{itemize}
 	\item \textbf{Iteración 1:} pruebas de rendimiento en comunicaciones \gls{v2x}.
+
 	\item \textbf{Iteración 2:} comunicación \gls{v2v} en entornos urbanos.
+
 	\item \textbf{Iteración 3:} prueba del sistema completo.
 \end{itemize}
 
 \subsection{T6 - Estudios adjuntos}
 \begin{itemize}
-	\item \textbf{Estudio de OpenXC}: se desarrolla un estudio sobre la plataforma OpenXC y la posibilidad de su uso en el proyecto.
-	\item \textbf{Estado del arte de Unificación de SDK:} se estudia la creación de un subproyecto para desarrollar aplicaciones en el \gls{hmi} de los vehículos en diferentes plataformas; AndroidAuto, CarPlay...
-	\item \textbf{Paper para sensors}: desarrollo de un artículo para MDPI sobre comunicaciones vehiculares y su uso sobre \gls{vru}.
+	\item \textbf{Estudio de OpenXC}: se desarrolla un estudio sobre la plataforma OpenXC y la posibilidad de
+	su uso en el proyecto.
+
+	\item \textbf{Estado del arte de Unificación de SDK:} se estudia la creación de un subproyecto para
+	desarrollar aplicaciones en el \gls{hmi} de los vehículos en diferentes plataformas; AndroidAuto, CarPlay...
+
+	\item \textbf{Paper para sensors}: desarrollo de un artículo para MDPI sobre comunicaciones vehiculares y
+	su uso sobre \gls{vru}.
 \end{itemize}
 
 \subsection{T7 - Grabación de DEMO}
 \begin{itemize}
-	\item \textbf{Planificación:} Requisitos generales para la grabación: selección de personas que ayuden durante el rodaje, selección de escenas y escenarios, materiales, fechas...
+	\item \textbf{Planificación:} Requisitos generales para la grabación: selección de personas que ayuden durante
+	el rodaje, selección de escenas y escenarios, materiales, fechas...
+
 	\item \textbf{Grabación}.
+
 	\item \textbf{Montaje}: montaje del vídeo y post-producción.
 \end{itemize}

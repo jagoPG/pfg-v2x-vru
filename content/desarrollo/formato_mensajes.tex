@@ -1,21 +1,29 @@
 \subsection{Formato de los mensajes}\label{ssection:FormatoMensajesNC}
-Para poder realizar la conexión desde diferentes plataformas y entornos de desarrollo, se ha optado por buscar el diseño más abierto y flexible posible. Los datos son almacenados y transmitidos en formato plano con la codificación de caracteres \emph{UTF-8}, para que puedan ser manipulados desde cualquier plataforma. Estos mensajes están construidos en formato JavaScript Object Notation (\emph{JSON}) para facilitar su análisis. A continuación, se muestra un ejemplo de la forma que tienen los mensajes recibidos de vehículos a motor:
+Para poder realizar la conexión desde diferentes plataformas y entornos de desarrollo,
+se ha optado por buscar el diseño más abierto y flexible posible. Los datos son almacenados
+y transmitidos en formato plano con la codificación de caracteres \emph{UTF-8}, para
+que puedan ser manipulados desde cualquier plataforma. Estos mensajes están construidos
+en formato \gls{JSON} para facilitar su análisis. A continuación, se muestra un
+ejemplo de la forma que tienen los mensajes recibidos de vehículos a motor:
 
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
 		\begin{minted}[linenos=true]{java}
-{ "type": "motorist_position", "id": "a3553743", "timestamp": "12343242344", 
-"latitude": "43.270880", "longitude": "-2.937973", "altitude": "20", 
-"heading": "53", "speed": "5" }			
+{ "type": "motorist_position", "id": "a3553743", "timestamp": "12343242344",
+"latitude": "43.270880", "longitude": "-2.937973", "altitude": "20",
+"heading": "53", "speed": "5" }
 		\end{minted}
 	\end{minipage}
 	\caption{Formato de mensajes}\label{alg:formatoMensajes}
 \end{listing}
 
-En las siguientes secciones se explica en detalle el formato de los mensajes que son enviados y recibidos a través de la \emph{Nube de Conductores}.
+En las siguientes secciones se explica en detalle el formato de los mensajes que
+son enviados y recibidos a través de la \emph{Nube de Conductores}.
 
 \subsubsection{Mensaje de posición de vehículo a motor}\label{sssection:MensajePosVehMotor}
-Indican la información geográfica de un vehículo. Los mensajes entrantes en la \emph{Nube de Conductores} tienen que tener todos los campos indicados, mientras que los mensajes salientes se usarán los campos que sean necesarios.
+Indican la información geográfica de un vehículo. Los mensajes entrantes en la
+\emph{Nube de Conductores} tienen que tener todos los campos indicados, mientras
+que los mensajes salientes se usarán los campos que sean necesarios.
 
 \begin{table}[H]
 	\centering
@@ -31,13 +39,15 @@ Indican la información geográfica de un vehículo. Los mensajes entrantes en l
 			longitude	&	Double	&	Longitúd en la que se encuentra el vehículo.						\\
 			altitude	&	Integer	&	Altitúd en la que se encuentra el vehículo.						\\
 			heading	&	Float		&	Dirección que mantiene el vehículo respecto al Norte magnético.		\\
-			speed	&	Float		&	Velocidad a la que circula el vehículo.							\\					 
+			speed	&	Float		&	Velocidad a la que circula el vehículo.							\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 \subsubsection{Mensaje de posición de ciclista}\label{sssection:MensajePosCiclista}
-Indican la información geográfica de uno o más ciclistas. Los mensajes entrantes en la \emph{Nube de Conductores} tienen que tener todos los campos indicados, mientras que los mensajes salientes se usarán los campos que sean necesarios
+Indican la información geográfica de uno o más ciclistas. Los mensajes entrantes
+en la \emph{Nube de Conductores} tienen que tener todos los campos indicados, mientras
+que los mensajes salientes se usarán los campos que sean necesarios.
 
 \begin{table}[H]
 	\centering
@@ -54,14 +64,16 @@ Indican la información geográfica de uno o más ciclistas. Los mensajes entran
 			altitude		&	Integer	&	Altitúd en la que se encuentra el vehículo.						\\
 			heading		&	Float		&	Dirección que mantiene el vehículo respecto al Norte magnético.		\\
 			speed		&	Float		&	Velocidad a la que circula el vehículo.							\\
-			components 	&	Integer	&	Número de ciclistas sobre los que se informa.	Permite la creación de 
+			components 	&	Integer	&	Número de ciclistas sobre los que se informa.	Permite la creación de
 				grupos de ciclistas. 																	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 \subsubsection{Mensaje de alerta}\label{sssection:MensajeAlerta}
-Cuando la \emph{Nube de Conductores} detecta que un ciclista y un vehículo a motor tienen una gran probabilidad de encontrarse, se envía este tipo de mensaje para comunicar la distancia entre los vehículos y su posición relativa. 
+Cuando la \emph{Nube de Conductores} detecta que un ciclista y un vehículo a motor
+tienen una gran probabilidad de encontrarse, se envía este tipo de mensaje para
+comunicar la distancia entre los vehículos y su posición relativa.
 
 % TODO INCLUIR UNA REFERENCIA A LA EXPLICACIÓN DEL ÁNGULO RELATIVO.
 \begin{table}[H]

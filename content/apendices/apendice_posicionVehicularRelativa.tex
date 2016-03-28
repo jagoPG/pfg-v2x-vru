@@ -1,13 +1,21 @@
 \section{Posición vehicular relativa}
-La posición vehicular relativa se refiere a en qué lado de un vehículo A se encuentra un vehículo B. Es decir, si se toma como referencia el primer vehículo, en qué lado se encuentra el segundo; derecha, izquierda, delante o detrás.
+La posición vehicular relativa se refiere a en qué lado de un vehículo A se encuentra
+un vehículo B. Es decir, si se toma como referencia el primer vehículo, en qué lado se
+encuentra el segundo; derecha, izquierda, delante o detrás.
 
-El ''heading'' o rumbo, es la dirección hacia la que se está dirigiendo un vehículo con respecto al Norte (0 grados). En la figura \ref{figure:Bearing}, en el eje de coordenadas cartesiano. Cada vez que se realice una operación que involucre los ángulos, se emplea una función para mantenerlos en un rango de entre 0 a 360 grados.
+El ''heading'' o rumbo, es la dirección hacia la que se está dirigiendo un vehículo
+con respecto al Norte (0 grados). En la figura \ref{figure:Bearing}, en el eje de
+coordenadas cartesiano. Cada vez que se realice una operación que involucre los
+ángulos, se emplea una función para mantenerlos en un rango de entre 0 a 360 grados.
 
 El algoritmo \ref{alg:relative_vehicular_pos} mostrado se puede condensar en:
 \begin{enumerate}
-	\item Calcular el ángulo existente entre los dos vehículos, sin tener en cuenta la dirección del primer vehículo.
-	\item Se resta el heading del vehículo de referencia al ángulo que hay entre los dos vehículos.
-	\item Se contrasta con una serie de casos ya conocidos, y se devuelve el ángulo relativo [Imagen \ref{figure:VRP}].
+	\item Calcular el ángulo existente entre los dos vehículos, sin tener en cuenta
+	la dirección del primer vehículo.
+	\item Se resta el heading del vehículo de referencia al ángulo que hay entre
+	los dos vehículos.
+	\item Se contrasta con una serie de casos ya conocidos, y se devuelve el ángulo
+ 	relativo [Imagen \ref{figure:VRP}].
 \end{enumerate}
 
 \begin{listing}

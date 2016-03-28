@@ -1,26 +1,64 @@
 \section{Aplicación de ciclistas}\label{section:appCiclistas}
-Con el objetivo de incrementar la seguridad de los ciclistas en las carreteras, se ha desarrollado una aplicación móvil. Ésta permite propagar información sobre el tránsito de vehículos en la carretera y de esta forma, el ciclista puede colocarse en una mejor posición a la hora de ser adelantado por otro vehículo, ó puede saber qué se va a encontrar en una zona de visibilidad reducida antes de aproximarse.
+Con el objetivo de incrementar la seguridad de los ciclistas en las carreteras, se
+ha desarrollado una aplicación móvil. Ésta permite propagar información sobre el
+tránsito de vehículos en la carretera y de esta forma, el ciclista puede colocarse
+en una mejor posición a la hora de ser adelantado por otro vehículo,
+ó puede saber qué se va a encontrar en una zona de visibilidad reducida antes de
+aproximarse.
 
-Se ha elegido la plataforma Android debido al predominio de este sistema en el mercado actual, de esta forma se puede maximizar la recepción. Para este desarrollo se ha usado la API 23 de Android con retro-compatibilidad hasta la API 15. Si en un futuro se desea ampliar la plataforma a un mayor mercado, la solución tendría que pasar por adaptar el código escrito en Android a C\# y utilizar la plataforma Xamarin para generar una aplicación para cada plataforma.
+Se ha elegido la plataforma Android debido al predominio de este sistema en el mercado
+actual, de esta forma se puede maximizar la recepción. Para este desarrollo se ha
+usado la API 23 de Android con retro-compatibilidad hasta la \gls{api} 15. Si en
+un futuro se desea ampliar la plataforma a un mayor mercado, la solución tendría
+que pasar por adaptar el código escrito en Android a C\# y utilizar la plataforma
+Xamarin para generar una aplicación para cada plataforma.
 
-Esta solución requiere de la \emph{Nube de Conductores} para funcionar, ya que la información de los ciclistas es enviada a la misma y, de la misma forma, se puede recibir información sobre otros vehículos en la carretera, además de las alertas que manda la nube en caso de detectar una aproximación a un vehículo.
+Esta solución requiere de la \emph{Nube de Conductores} para funcionar, ya que la
+información de los ciclistas es enviada a la misma y, de la misma forma, se puede
+recibir información sobre otros vehículos en la carretera, además de las alertas
+que manda la nube en caso de detectar una aproximación a un vehículo.
 
 \subsection{Modos de funcionamiento}\label{ssection:commHUB}
-Existen dos modalidades de funcionamiento diferentes, en se muestra la misma información al ciclista aunque su modo de proceder variará:
-		
+Existen dos modalidades de funcionamiento diferentes, en se muestra la misma
+información al ciclista aunque su modo de proceder variará:
+
 \begin{enumerate}
-	\item Modo individual: el usuario manda mensajes con su posición a través de \emph{HTTP/1.1} a \emph{Driver's Cloud}. Los mensajes provenientes de la nube son mandados al dispositivo mediante el servicio \emph{GCM} de \emph{Google}.	
-	\item Modo grupal: uno de los terminales de los integrantes del pelotón actuará como HUB, y se encargará de gestionar todos los mensajes que lleguen desde la nube; se denomina \emph{líder} del grupo. Este líder retransmitirá los mensajes a los demás miembros del grupo; denominados \emph{seguidores}. Los mensajes que llegan al líder utilizan el mismo método que el modo de funcionamiento individual, pero al reenviar los mensajes que envían datagramas \emph{UDP} dentro del \emph{Hub}. El establecimiento de la comunicación se realiza de la siguiente forma:
+	\item Modo individual: el usuario manda mensajes con su posición a través de
+	\emph{HTTP/1.1} a \emph{Driver's Cloud}. Los mensajes provenientes de la nube
+	son mandados al dispositivo mediante el servicio \emph{GCM} de \emph{Google}.
+
+	\item Modo grupal: uno de los terminales de los integrantes del pelotón actuará
+	como HUB, y se encargará de	gestionar todos los mensajes que lleguen desde la
+	nube; se denomina \emph{líder} del grupo. Este líder retransmitirá los mensajes
+	a los demás miembros del grupo; denominados \emph{seguidores}. Los mensajes que
+	llegan al líder utilizan el mismo método que el modo de funcionamiento individual,
+	pero al reenviar los mensajes que envían datagramas \emph{UDP} dentro del
+	\emph{Hub}. El establecimiento de la comunicación se realiza de la siguiente
+	forma:
+
 	\begin{enumerate}
-		\item El dispositivo que actúa como líder crea el \emph{Hub} automáticamente al entrar en la opción \emph{líder} de la aplicación.
-		\item Los seguidores entran en el modo \"seguidor\" de la aplicación, y seleccionan el grupo al que desean ingresar. El dispositivo enviará una petición al líder.
-		\item El líder al recibir una petición, la acepta o rechaza. Dependiendo si su dispositivo está sincronizando dispositivos o no.
-		\item Si el líder ha aceptado la petición el seguidor queda a la espera hasta que el líder dé comienzo a la salida.
-		\item En cuanto comience la salida el líder mandará mensajes a través de \"broadcast\" cada vez que reciba notificaciones de la nube.
+		\item El dispositivo que actúa como líder crea el \emph{Hub} automáticamente
+		al entrar en la opción \emph{líder} de la aplicación.
+
+		\item Los seguidores entran en el modo \"seguidor\" de la aplicación, y seleccionan
+		el grupo al que desean ingresar. El dispositivo enviará una petición al líder.
+
+		\item El líder al recibir una petición, la acepta o rechaza. Dependiendo si
+		su dispositivo está sincronizando dispositivos o no.
+
+		\item Si el líder ha aceptado la petición el seguidor queda a la espera hasta
+		que el líder dé comienzo a la salida.
+
+		\item En cuanto comience la salida el líder mandará mensajes a través de \"broadcast\"
+		cada vez que reciba notificaciones de la nube.
 	\end{enumerate}
 \end{enumerate}
 
-En las figuras \ref{figure:Hub} y \ref{figure:FollowerJoin} se muestra la interfaz gráfica con la que se encuentra el usuario. Nótese en la interfaz del seguidor que puede buscar un grupo de dos maneras: (1) buscando el grupo de manera manual a través de una lista, ó (2) dejando que la aplicación auto-detecte una red y trate de unirse a ella.			
+En las figuras \ref{figure:Hub} y \ref{figure:FollowerJoin} se muestra la interfaz
+gráfica con la que se encuentra el usuario. Nótese en la interfaz del seguidor
+que puede buscar un grupo de dos maneras: (1) buscando el grupo de manera manual
+a través de una lista, ó (2) dejando que la aplicación auto-detecte una red y trate
+de unirse a ella.
 
 \begin{figure}[H]
 	\begin{minipage}{.5\textwidth}
@@ -38,22 +76,37 @@ En las figuras \ref{figure:Hub} y \ref{figure:FollowerJoin} se muestra la interf
 	\end{center}
 \end{minipage}
 \end{figure}
-		
-Para mantener un registro de la ruta que se esta realizando, un controlador mantiene toda la información sobre la salida que se esta realizando. En la figura \ref{figure:DiagramController} se observa la estructura de este controlador, el funcionamiento es como siguiente:
+
+Para mantener un registro de la ruta que se esta realizando, un controlador mantiene
+toda la información sobre la salida que se esta realizando. En la figura
+\ref{figure:DiagramController} se observa la estructura de este controlador, el
+funcionamiento es como siguiente:
 \begin{description}
-	\item[AJourney y AGroupJourney] interfáz gráfica que se muestra al usuario (figura \ref{figure:Journey}).
+	\item[AJourney y AGroupJourney] interfáz gráfica que se muestra al usuario
+	(figura \ref{figure:Journey}).
+
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale=0.2]{journey}
 			\caption{UI de la salida}
 			\label{figure:Journey}
 		\end{center}
-	\end{figure}			
-	\item[UIUpdateListener] escuchador de los eventos que se generan en cuanto un mensaje es recibido. Actualizará la interfaz gráfica para mostrar la información al usuario.
-	\item[GPSController] encargada de activar el \emph{GPS} y subscribirse a las actualizaciones de posición. Se ha configurado para refrescar la posición cada dos segundos, cuando esto sucede se envía una notificación a la nube con los datos recogidos.
-	\item[JourneyController] gestor de la salida. Controla los datos relacionados con la salida: tiempo, distancia recorrida, ruta y calorías quemadas. Permite ser pausada y reanudada.
+	\end{figure}
+
+	\item[UIUpdateListener] escuchador de los eventos que se generan en cuanto un
+	mensaje es recibido. Actualizará la interfaz gráfica para mostrar la información
+	al usuario.
+
+	\item[GPSController] encargada de activar el \emph{GPS} y subscribirse a las
+	actualizaciones de posición. Se ha configurado para refrescar la posición cada
+	dos segundos, cuando esto sucede se envía una notificación a la nube con los
+	datos recogidos.
+
+	\item[JourneyController] gestor de la salida. Controla los datos relacionados
+	con la salida: tiempo, distancia recorrida, ruta y calorías quemadas. Permite
+	ser pausada y reanudada.
 \end{description}
-		
+
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale=0.4]{fDiagramJourneyController}
@@ -61,9 +114,16 @@ Para mantener un registro de la ruta que se esta realizando, un controlador mant
 	\label{figure:DiagramController}
 	\end{center}
 \end{figure}
-		
+
 \subsection{Comunicación con la nube}\label{ssection:comunicacion_nube}
-Cuando la posición del ciclista es actualizada, se formatean los datos en un objeto JSON y se envían a la nube por medio de un mensaje \emph{HTTP/1.1 POST}. El dominio del servidor es fijo, por lo que siempre se tendrá localizado la dirección de destino [Algoritmo \ref{alg:CyclistSend}]. Cuando el mensaje es recibido por la nube, la aplicación comprobará si el ciclista tiene algún peligro cerca. Si se detecta un vehículo cercano, la aplicación desplegada en la nube contestará con un mensaje de alerta con la información del vehículo detectado y la distancia que les separa.
+Cuando la posición del ciclista es actualizada, se formatean los datos en un objeto
+\ref{json} y se envían a la nube por medio de un mensaje \emph{HTTP/1.1 POST}. El
+dominio del servidor es fijo, por lo que siempre se tendrá localizado la dirección
+de destino [Algoritmo \ref{alg:CyclistSend}]. Cuando el mensaje es recibido por
+la nube, la aplicación comprobará si el ciclista tiene algún peligro cerca. Si
+se detecta un vehículo cercano, la aplicación desplegada en la nube contestará con
+un mensaje de alerta con la información del vehículo detectado y la distancia
+que les separa.
 
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
@@ -71,7 +131,7 @@ Cuando la posición del ciclista es actualizada, se formatean los datos en un ob
 HttpClient httpClient;
 HttpPost httpPost;
 String data;
-							
+
 data ="{\"id\":\"" + cyclist.getIdentifier() + "\"," +
   "\"type\"": + "\"cyclist_position\"," +
   "\"latitude\":\"" + cyclist.getPosition().getLatitud() +  "\"," +
@@ -87,10 +147,19 @@ httpPost.setEntity(new StringEntity(data));
 httpClient.execute(httpPost);
 		\end{minted}
 	\end{minipage}
-	\caption{Envío de peticiones desde la aplicación de ciclistas a la Nube de Ciclistas}\label{alg:CyclistSend}
+	\caption{Envío de peticiones desde la aplicación de ciclistas a la Nube de
+	Ciclistas}\label{alg:CyclistSend}
 \end{listing}
 
-Para la recepción de mensajes, la aplicación tiene que pedir un ''token'' de registro único del servidor \emph{GCM} (\emph{Google Cloud Messaging})\footnote{Servicio de mensajería ofrecido por \emph{Google} para enviar y recibir mensajes desde diferentes plataformas.}. Para ello el dispositivo tiene que tener instalado los servicios \emph{Google Play}. Una vez obtiene el ''token'', cuando se envíe un mensaje al servidor se incluirá este identificador dentro del contenido para que la aplicación en el servidor pueda saber a qué dispositivo debe responder. Tras haber realizado la autentificación con los servicios de Google, un escuchador espera a nuevas notificaciones y los procesa una vez han llegado [\ref{figure:DiagramGCM}].
+Para la recepción de mensajes, la aplicación tiene que pedir un ''token'' de registro
+único del servidor \emph{GCM} (\emph{Google Cloud Messaging})\footnote{Servicio
+de mensajería ofrecido por \emph{Google} para enviar y recibir mensajes desde
+diferentes plataformas.}. Para ello el dispositivo tiene que tener instalado los
+servicios \emph{Google Play}. Una vez obtiene el ''token'', cuando se envíe un
+mensaje al servidor se incluirá este identificador dentro del contenido para que
+la aplicación en el servidor pueda saber a qué dispositivo debe responder. Tras
+haber realizado la autentificación con los servicios de Google, un escuchador
+espera a nuevas notificaciones y los procesa una vez han llegado [\ref{figure:DiagramGCM}].
 \begin{figure}[h]
 	\includegraphics[scale=0.4]{fDiagramGCM}
 	\caption{Estructura de la comunicación GCM}
@@ -98,7 +167,12 @@ Para la recepción de mensajes, la aplicación tiene que pedir un ''token'' de r
 \end{figure}
 
 \subsection{Comunicación del grupo}\label{ssection:comunicacion_grupo}
-Entre los seguidores y el líder se enviarán notificaciones sobre el estado actual de cada nodo (Tabla \ref{table:groupMessages}) a través de del modo \emph{Hub} que tienen los dispositivos; la explicación completa puede encontrarse en la subsección % TODO AÑADIR LA REFERENCIA A LA SUBSECCIÓN
+Entre los seguidores y el líder se enviarán notificaciones sobre el estado actual
+de cada nodo (Tabla \ref{table:groupMessages}) a través de del modo \emph{Hub}
+que tienen los dispositivos; la explicación completa puede encontrarse en la
+subsección    .
+
+% TODO AÑADIR LA REFERENCIA A LA SUBSECCIÓN
 
 \begin{table}[H]
 	\centering
@@ -119,8 +193,20 @@ Entre los seguidores y el líder se enviarán notificaciones sobre el estado act
 		\bottomrule
 	\end{tabular}
 \end{table}
-Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para que la recepción de mensajes sea lo más rápido posible. Al ser un canal poco fiable se ha implementado una capa para garantizar la recepción del mensaje: cuando un mensaje es enviado, se almacena en un HashTable utilizando como clave la IP del destinatario y un número identificativo del mensaje\footnote{El HashTable solo permite una clave, por lo que se ha creado una clase que calcula un Hash en base a las dos claves con que deseamos identificar el datagrama.}. El receptor mandará un ACK al emisor cuando un mensaje le llegue, y este último eliminará del HashMap el registro previamente almacenado. En caso de que un mensaje no llegue, un \emph{timeout} provocará que el emisor vuelva a enviar el mismo mensaje al receptor; el \emph{timeout} se incrementará al doble cada re-envío. En caso de que un mensaje no sea recibido al quinto intento, se dejará de intentarlo (figura \ref{figure:groupComm}).
-		
+Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para
+que la recepción de mensajes sea lo más rápido posible. Al ser un canal poco
+fiable se ha implementado una capa para garantizar la recepción del mensaje:
+cuando un mensaje es enviado, se almacena en un HashTable utilizando como clave
+la IP del destinatario y un número identificativo del mensaje\footnote{El HashTable
+solo permite una clave, por lo que se ha creado una clase que calcula un Hash en
+base a las dos claves con que deseamos identificar el datagrama.}. El receptor
+manda un ACK al emisor cuando un mensaje le llegue, y este último elimina del
+HashMap el registro previamente almacenado. En caso de que un mensaje no llegue,
+un \emph{timeout} provocará que el emisor vuelva a enviar el mismo mensaje al
+receptor; el \emph{timeout} se incrementará al doble cada re-envío. En caso de
+que un mensaje no sea recibido al quinto intento, se dejará de intentarlo(figura
+\ref{figure:groupComm}).
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{fGroupMessaging}
@@ -130,23 +216,56 @@ Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para 
 \end{figure}
 
 \subsection{Casco BLE}\label{ssection:cascoBLE}
-El ciclista no puede estar pendiente de los avisos de su Smartphone continuamente, ya que esto puede poner en riesgo su seguridad. Para que el ciclista pueda mantener la vista en la vía y tenga la posibilidad de saber si hay algún vehículo que pueda ponerle en riesgo, se ha integrado una \emph{mota Texas CC2540} en el casco del ciclista conectado a varios LEDs que según un código de colores le informan al ciclista sobre eventos que sean peligrosos. Si por ejemplo hay un vehículo acercándose por el lado izquierdo, un LED amarillo o rojo se encenderá, dependiendo si la distancia es menor de 50 ó 20 metros respectivamente.
+El ciclista no puede estar pendiente de los avisos de su Smartphone continuamente,
+ya que esto puede poner en riesgo su seguridad. Para que el ciclista pueda mantener
+la vista en la vía y tenga la posibilidad de saber si hay algún vehículo que pueda
+ponerle en riesgo, se ha integrado una \emph{mota Texas CC2540} en el casco del
+ciclista conectado a varios LEDs que según un código de colores le informan al ciclista
+sobre eventos que sean peligrosos. Si por ejemplo hay un vehículo acercándose por
+el lado izquierdo, un LED amarillo o rojo se encenderá, dependiendo si la distancia
+es menor de 50 ó 20 metros respectivamente.
 
-Este dispositivo utiliza el estándar BLE para comunicarse con la aplicación móvil mediante cortos mensajes de 8 bytes, los cuales contienen un código hexadecimal que representa la combinación de LEDs que deben encenderse. % %TODO Añadir en el apéndice información sobre BLE
+Este dispositivo utiliza el estándar BLE para comunicarse con la aplicación móvil
+mediante cortos mensajes de 8 bytes, los cuales contienen un código hexadecimal que
+representa la combinación de LEDs que deben encenderse.
+%% TODO Añadir en el apéndice información sobre BLE
 
 \begin{description}
-	\item[Programación de la mota] La mota contiene un pequeño programa escrito en lenguaje C que se encuentra flasheado en su ROM (Read Only Memory). Este programa configura el micro-controlador para actuar como servidor (denominado \emph{Central}), a la espera de ser emparejado y recibir mensajes. Hasta que se sincroniza con un dispositivo, cada 50 mili segundos propaga una señal para que los dispositivos puedan emparejarse. Cuando un dispositivo se conecta, el micro controlador espera a recibir un pequeño mensaje con el código de la señal que le especificará qué LEDs debe encender. Cuando llega el mensaje, si el código recibido es el correcto enciende el LED correspondiente. Para el desarrollo  de este programa se ha trabajado sobre una plantilla, que provee Texas Instrument junto con el dispositivo CC2540, al que se ha añadido el servicio necesario para encender el LED al recibir una señal. En el algoritmo \ref{alg:mota} se explica cómo se ha implementado un nuevo servicio para gestionar los mensajes entrantes.
-	
-	
-	\item[Programación de la app] La aplicación de ciclistas actúa como cliente, por lo que el usuario debe primero emparejarse con el casco para que pueda comenzar a comunicarse con la mota. El proceso de conexión y envío de mensajes consiste:
+	\item[Programación de la mota] La mota contiene un pequeño programa escrito en
+	lenguaje C que se	encuentra flasheado en su \gls{rom}ROM. Este programa configura
+	el micro-controlador para actuar como servidor (denominado \emph{Central}), a
+	la espera de ser emparejado y recibir mensajes. Hasta que se sincroniza con un
+	dispositivo, cada 50 mili segundos propaga una señal para que los dispositivos
+	puedan emparejarse. Cuando un dispositivo se conecta, el micro controlador espera
+	a recibir un pequeño mensaje con el código de la señal que le especificará qué
+	LEDs debe encender. Cuando llega el mensaje, si el código recibido es el correcto
+	enciende el LED correspondiente. Para el desarrollo de este programa se ha trabajado
+	sobre una plantilla, que provee Texas Instrument junto con el dispositivo CC2540,
+	al que se ha añadido el servicio necesario para encender el LED al recibir una
+	señal. En el algoritmo \ref{alg:mota} se explica cómo se ha implementado un nuevo
+	servicio para gestionar los mensajes entrantes.
+
+	\item[Programación de la app] La aplicación de ciclistas actúa como cliente, por
+	lo que el usuario debe primero emparejarse con el casco para que pueda comenzar
+	a comunicarse con la mota. El proceso de conexión y envío	de mensajes consiste:
 		\begin{enumerate}
 			\item Buscar los servicios Bluetooth disponibles.
+
 			\item Conectar al dispositivo en cuestión.
-			\item Descubrir los servicios que ofrece el dispositivo. Esto devolverá varios UUIDs con los servicios que tiene disponibles la mota. Una vez se sabe cuál es el servicio que controla la recepción de mensajes, hay que obtener una referencia. 
-			\item Descubrir las características que contiene el servicio. Empleando la referencia del servicio, se pueden obtener uno o varios UUID que representan variables en las que se puede escribir un valor. Aquí es donde se depositará el código de combinación de LEDs que se desea encender [\ref{alg:mota1}].
+
+			\item Descubrir los servicios que ofrece el dispositivo. Esto devolverá varios
+			UUIDs con los servicios que tiene disponibles la mota. Una vez se sabe cuál
+			es el servicio que controla la recepción de mensajes, hay que obtener	una
+			referencia.
+
+			\item Descubrir las características que contiene el servicio. Empleando la
+			referencia del servicio, se pueden obtener uno o varios UUID que representan
+			variables en las que se puede escribir un valor. Aquí es donde se deposita
+			el código de combinación de LEDs que se desea encender [\ref{alg:mota1}].
+
 			\item Escribir sobre la característica que gestiona los LEDs [\ref{alg:mota2}].
 		\end{enumerate}
-		
+
 		\begin{listing}
 			\begin{minipage}{.4\textwidth}
 				\begin{minted}[linenos=true]{java}
@@ -154,22 +273,22 @@ public void conectarBLE(Device dispositivo) {
   // El primer argumento indica que la propia clase gestionará los eventos,
   // el segundo argumento que se autoconectará al dispositivo, y el tercer
   // argumento a qué dispositivo va a conectarse.
-  bluetoothGatt = device.connectGatt(this, false, dispositivo);	
+  bluetoothGatt = device.connectGatt(this, false, dispositivo);
 }
 
 public void mandarMensajeBLE(byte msg) {
   // obtener el servicio que contiene la característica que se va a modificar
-  servicio = bluetoothGatt.getService(UUID\_SERVICIO);	
-  
+  servicio = bluetoothGatt.getService(UUID\_SERVICIO);
+
   // obtener la característica (local)
   caracteristica.getCharacteristic(msg);
-  
+
   // modificar el valor de la característica (local)
   caracteristica.setValor(msg);
-  
+
   // aplicar cambios en el dispositivo remoto
-  bluetoothGatt.writeCharacteristic(caracteristica);	
-}	
+  bluetoothGatt.writeCharacteristic(caracteristica);
+}
 				\end{minted}
 			\end{minipage}
 		\caption{Envío de mensajes LED desde la aplicación de ciclistas}\label{alg:appciclistasBLE}
@@ -183,16 +302,23 @@ public void mandarMensajeBLE(byte msg) {
 		\toprule
 		\textbf{SEÑAL} & \emph{MNEMÓNICO} & DESCRIPCIÓN \\
 		\midrule
-		
-		0x00    & NONE    & Sin peligro. Apagar los LED \\
-		0x01    & AL\_RIGHT & Vehículo a menos de 20 metros por la derecha. Encender luz roja derecha. \\
-		0x02    & AL\_LEFT & Vehículo a menos de 20 metros por la izquierda. Encender luz roja izquierda. \\
-		0x03    & AL\_BACK & Vehículo a menos de 20 metros por detrás. Ambas luces rojas encendidas. \\
-		0x04    & AL\_FRONT & Vehículo a menos de 20 metros por delante. Ambas luces rojas encendidas parpadeando. \\
-		0x11    & W\_RIGHT & Vehículo a menos de 50 metros por la derecha. Encender luz amarilla derecha. \\
-		0x12    & W\_LEFT & Vehículo a menos de 50 metros por la izquierda. Endernder luz amarilla izquierda. \\
-		0x13    & W\_BACK & Vehículo a menos de 50 metros por detrás. Ambas luces amarillas encendidas. \\
-		0x14    & W\_FRONT & Vehículo a menos de 50 metros por delante. Ambas luces amarillas parpadeando encendidas.\\
+		0x00 & NONE    & Sin peligro. Apagar los LED \\
+		0x01 & AL\_RIGHT & Vehículo a menos de 20 metros por la derecha. Encender luz
+		roja derecha. \\
+		0x02 & AL\_LEFT & Vehículo a menos de 20 metros por la izquierda. Encender luz
+		roja izquierda. \\
+		0x03 & AL\_BACK & Vehículo a menos de 20 metros por detrás. Ambas luces rojas
+		encendidas. \\
+		0x04 & AL\_FRONT & Vehículo a menos de 20 metros por delante. Ambas luces rojas
+		encendidas parpadeando. \\
+		0x11 & W\_RIGHT & Vehículo a menos de 50 metros por la derecha. Encender luz
+		amarilla derecha. \\
+		0x12 & W\_LEFT & Vehículo a menos de 50 metros por la izquierda. Encender luz
+		amarilla izquierda. \\
+		0x13 & W\_BACK & Vehículo a menos de 50 metros por detrás. Ambas luces amarillas
+		encendidas. \\
+		0x14 & W\_FRONT & Vehículo a menos de 50 metros por delante. Ambas luces amarillas
+		parpadeando encendidas.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
