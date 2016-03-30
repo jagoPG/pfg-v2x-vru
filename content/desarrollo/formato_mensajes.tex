@@ -3,7 +3,7 @@ Para poder realizar la conexión desde diferentes plataformas y entornos de desa
 se ha optado por buscar el diseño más abierto y flexible posible. Los datos son almacenados
 y transmitidos en formato plano con la codificación de caracteres \emph{UTF-8}, para
 que puedan ser manipulados desde cualquier plataforma. Estos mensajes están construidos
-en formato \gls{JSON} para facilitar su análisis. A continuación, se muestra un
+en formato \gls{json} para facilitar su análisis. A continuación, se muestra un
 ejemplo de la forma que tienen los mensajes recibidos de vehículos a motor:
 
 \begin{listing}
@@ -73,9 +73,8 @@ que los mensajes salientes se usarán los campos que sean necesarios.
 \subsubsection{Mensaje de alerta}\label{sssection:MensajeAlerta}
 Cuando la \emph{Nube de Conductores} detecta que un ciclista y un vehículo a motor
 tienen una gran probabilidad de encontrarse, se envía este tipo de mensaje para
-comunicar la distancia entre los vehículos y su posición relativa.
+comunicar la distancia entre los vehículos y su posición relativa [Apéndice \ref{apendice:posicion_relative}].
 
-% TODO INCLUIR UNA REFERENCIA A LA EXPLICACIÓN DEL ÁNGULO RELATIVO.
 \begin{table}[H]
 	\centering
 	\caption{Formato de mensaje Ciclista}\label{tab:CamposMensajePosCiclistaNubeConductores}

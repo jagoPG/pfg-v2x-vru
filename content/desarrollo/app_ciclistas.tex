@@ -167,12 +167,11 @@ espera a nuevas notificaciones y los procesa una vez han llegado [\ref{figure:Di
 \end{figure}
 
 \subsection{Comunicación del grupo}\label{ssection:comunicacion_grupo}
+
+% REVISAR EXPLICACIÓN
 Entre los seguidores y el líder se enviarán notificaciones sobre el estado actual
 de cada nodo (Tabla \ref{table:groupMessages}) a través de del modo \emph{Hub}
-que tienen los dispositivos; la explicación completa puede encontrarse en la
-subsección    .
-
-% TODO AÑADIR LA REFERENCIA A LA SUBSECCIÓN
+que tienen los dispositivos.
 
 \begin{table}[H]
 	\centering
@@ -193,6 +192,7 @@ subsección    .
 		\bottomrule
 	\end{tabular}
 \end{table}
+
 Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para
 que la recepción de mensajes sea lo más rápido posible. Al ser un canal poco
 fiable se ha implementado una capa para garantizar la recepción del mensaje:
@@ -225,10 +225,9 @@ sobre eventos que sean peligrosos. Si por ejemplo hay un vehículo acercándose 
 el lado izquierdo, un LED amarillo o rojo se encenderá, dependiendo si la distancia
 es menor de 50 ó 20 metros respectivamente.
 
-Este dispositivo utiliza el estándar BLE para comunicarse con la aplicación móvil
+Este dispositivo utiliza el estándar BLE [Apéndice \ref{apendice:ble}] para comunicarse con la aplicación móvil
 mediante cortos mensajes de 8 bytes, los cuales contienen un código hexadecimal que
 representa la combinación de LEDs que deben encenderse.
-%% TODO Añadir en el apéndice información sobre BLE
 
 \begin{description}
 	\item[Programación de la mota] La mota contiene un pequeño programa escrito en
