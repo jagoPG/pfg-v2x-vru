@@ -8,14 +8,13 @@ Dos \emph{Handler} independientes se encargan de filtrar los mensajes que no han
 sido correctamente construidos, es decir, tienen un formato inválido, e insertar
 y actualizar los datos de la base de datos.
 
-Para el despliegue de la aplicación se utilizado una máquina virtual
-\emph{Ubuntu Server 14.04 LTS} que cuenta con 2048 MiB de memoria RAM y 2 n\'ucleos
- para procesamiento. También se ha reservado un dominio público para que las peticiones
- puedan ser enviadas al servidor. Gracias a la herramienta \emph{ANT} se puede cambiar
- fácilmente la plataforma donde se distribuya la aplicación, además esta configurada para
- poder ser ejecutada directamente con el comando \emph{run}.
+Para el despliegue de la aplicación se utilizado una máquina virtual \emph{Ubuntu Server
+14.04 LTS} que cuenta con 2048 MiB de memoria RAM y 2 n\'ucleos para procesamiento.
+También se ha reservado un dominio público para que las peticiones puedan ser enviadas
+al servidor. Gracias a la herramienta \emph{ANT} se puede cambiar fácilmente la plataforma
+donde se distribuya la aplicación, además esta configurada para poder ser ejecutada
+directamente con el comando \emph{run}.
 
-% FALTA EXPLICACIÓN
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.4]{DiagComponentes-Nube}
@@ -24,9 +23,8 @@ Para el despliegue de la aplicación se utilizado una máquina virtual
 	\end{center}
 \end{figure}
 
-
 \subsection{Procesos}\label{ssection:procesos}
-A través del API de \emph{Jetty} la aplicación crea un servidor con dos manejadores
+A través del \gls{api} de \emph{Jetty} la aplicación crea un servidor con dos handler
 de mensajes, uno para ciclistas y otro para vehículos a motor. A través de ellos la
 \emph{Nube de Conductores} recibe datos de ciclistas y vehículos a motor, almacenándolos
 en una base de datos interna sin necesidad de utilizar un DBMS, ya que no hace falta
@@ -40,10 +38,13 @@ minuto. Para evitar que emplee información obsoleta, se ejecuta una rutina que 
 solo mantiene en memoria los registros que periódicamente están siendo actualizados;
 ésto se realiza gracias al campo de \emph{timestamp}.
 
-Paralelamente, otro algoritmo compara las posiciones de los vehículos. Cuando se
-detecta que los vehículos a motor y los ciclistas están próximos - en un rango
-menor a 200 metros - se manda a ambos vehículos una alerta avisándoles de su proximidad
-\emph{[Algoritmo \ref{alg:proximidadVehiculos}]}.
+Paralelamente, cada vez que un mensaje es recibido en uno de los handler (conductores o
+ciclistas), otro algoritmo compara la posición obtenida a través del handler con la de los
+vehículos existentes. Si se detecta que algún ciclista ó vehículo a motor están próximos 
+- en un rango menor a 200 metros - se manda a ambos vehículos una alerta avisándoles de 
+su proximidad \emph{[Algoritmo \ref{alg:proximidadVehiculos}]}. En el apéndice
+\ref{apendice:posicion_relative}, se detalla el funcionamiento del algoritmo que se encarga
+de predecir si dos vehículos pueden encontrarse.
 
 \begin{listing}
 	\begin{minipage}{.4\textwidth}

@@ -32,7 +32,7 @@ información al ciclista aunque su modo de proceder variará:
 	nube; se denomina \emph{líder} del grupo. Este líder retransmitirá los mensajes
 	a los demás miembros del grupo; denominados \emph{seguidores}. Los mensajes que
 	llegan al líder utilizan el mismo método que el modo de funcionamiento individual,
-	pero al reenviar los mensajes que envían datagramas \emph{UDP} dentro del
+	pero al reenviar los mensajes que envían paquetes \emph{TCP} dentro del
 	\emph{Hub}. El establecimiento de la comunicación se realiza de la siguiente
 	forma:
 
@@ -50,7 +50,8 @@ información al ciclista aunque su modo de proceder variará:
 		que el líder dé comienzo a la salida.
 
 		\item En cuanto comience la salida el líder mandará mensajes a través de \"broadcast\"
-		cada vez que reciba notificaciones de la nube.
+		cada vez que reciba notificaciones de la nube [Figura \ref{figure:groupComm}]. Así mismo
+		gestiona los eventos de la salida: comienzo, fin, pausa y si un ciclista sale del grupo.
 	\end{enumerate}
 \end{enumerate}
 
@@ -82,7 +83,7 @@ toda la información sobre la salida que se esta realizando. En la figura
 \ref{figure:DiagramController} se observa la estructura de este controlador, el
 funcionamiento es como siguiente:
 \begin{description}
-	\item[AJourney y AGroupJourney] interfáz gráfica que se muestra al usuario
+	\item[AJourney y AGroupJourney] interfaz gráfica que se muestra al usuario
 	(figura \ref{figure:Journey}).
 
 	\begin{figure}[H]
@@ -109,9 +110,17 @@ funcionamiento es como siguiente:
 
 \begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale=0.4]{fDiagramJourneyController}
-	\caption{Controlador de la salida}
-	\label{figure:DiagramController}
+		\includegraphics[scale=0.4]{fDiagramJourneyController}
+		\caption{Controlador de la salida}
+		\label{figure:DiagramController}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{fGroupMessaging}
+		\caption{Comunicación líder-seguidor}
+		\label{figure:groupComm}
 	\end{center}
 \end{figure}
 
@@ -151,11 +160,9 @@ httpClient.execute(httpPost);
 	Ciclistas}\label{alg:CyclistSend}
 \end{listing}
 
-Para la recepción de mensajes, la aplicación tiene que pedir un ''token'' de registro
-único del servidor \emph{GCM} (\emph{Google Cloud Messaging})\footnote{Servicio
-de mensajería ofrecido por \emph{Google} para enviar y recibir mensajes desde
-diferentes plataformas.}. Para ello el dispositivo tiene que tener instalado los
-servicios \emph{Google Play}. Una vez obtiene el ''token'', cuando se envíe un
+Para la recepción de mensajes, la aplicación tiene que pedir un \"token\" de registro
+único del servidor \Gls{gcm}. Para ello el dispositivo tiene que tener instalado los
+servicios \emph{Google Play}. Una vez obtiene el \"token\", cuando se envíe un
 mensaje al servidor se incluirá este identificador dentro del contenido para que
 la aplicación en el servidor pueda saber a qué dispositivo debe responder. Tras
 haber realizado la autentificación con los servicios de Google, un escuchador
@@ -166,19 +173,18 @@ espera a nuevas notificaciones y los procesa una vez han llegado [\ref{figure:Di
 	\label{figure:DiagramGCM}
 \end{figure}
 
-\subsection{Comunicación del grupo}\label{ssection:comunicacion_grupo}
-
-% REVISAR EXPLICACIÓN
-Entre los seguidores y el líder se enviarán notificaciones sobre el estado actual
-de cada nodo (Tabla \ref{table:groupMessages}) a través de del modo \emph{Hub}
-que tienen los dispositivos.
+\subsection{Mensajes del grupo}\label{ssection:comunicacion_grupo}
+En la tabla \ref{tab:MensajesGrupo} se especifican los tipos de mensaje que son
+enviados en el hub de ciclistas. Los mensajes se encuentran en formato \gls{json}
+donde el la clave \"Tipo\" declara cuál es el significado del mensaje a enviar y
+la clave \"Campos extra\" especifica argumentos requeridos por el mensaje.
 
 \begin{table}[H]
 	\centering
 	\caption{Tipo de mensajes en grupo}\label{tab:MensajesGrupo}
 	\begin{tabular}{lll}
 		\toprule
-			\textbf{MENSAJE} & \emph{Descripción} & Campos extra \\
+			\textbf{Tipo} & \emph{Descripción} & Campos extra \\
 		\midrule
 			REGISTER	&	Petición de ingreso de un seguidor al \emph{Hub}. 				& \emph{nombre} 	\\
 			ACCEPT		&	Respuesta de aceptación de ingreso de un seguidor al \emph{Hub}. 	& - 				\\
@@ -193,41 +199,19 @@ que tienen los dispositivos.
 	\end{tabular}
 \end{table}
 
-Los mensajes son enviados a través del protocolo de transporte \emph{UDP} para
-que la recepción de mensajes sea lo más rápido posible. Al ser un canal poco
-fiable se ha implementado una capa para garantizar la recepción del mensaje:
-cuando un mensaje es enviado, se almacena en un HashTable utilizando como clave
-la IP del destinatario y un número identificativo del mensaje\footnote{El HashTable
-solo permite una clave, por lo que se ha creado una clase que calcula un Hash en
-base a las dos claves con que deseamos identificar el datagrama.}. El receptor
-manda un ACK al emisor cuando un mensaje le llegue, y este último elimina del
-HashMap el registro previamente almacenado. En caso de que un mensaje no llegue,
-un \emph{timeout} provocará que el emisor vuelva a enviar el mismo mensaje al
-receptor; el \emph{timeout} se incrementará al doble cada re-envío. En caso de
-que un mensaje no sea recibido al quinto intento, se dejará de intentarlo(figura
-\ref{figure:groupComm}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{fGroupMessaging}
-		\caption{Comunicación líder-seguidor}
-		\label{figure:groupComm}
-	\end{center}
-\end{figure}
-
 \subsection{Casco BLE}\label{ssection:cascoBLE}
 El ciclista no puede estar pendiente de los avisos de su Smartphone continuamente,
 ya que esto puede poner en riesgo su seguridad. Para que el ciclista pueda mantener
 la vista en la vía y tenga la posibilidad de saber si hay algún vehículo que pueda
 ponerle en riesgo, se ha integrado una \emph{mota Texas CC2540} en el casco del
-ciclista conectado a varios LEDs que según un código de colores le informan al ciclista
+ciclista conectado a varios led que según un código de colores le informan al ciclista
 sobre eventos que sean peligrosos. Si por ejemplo hay un vehículo acercándose por
-el lado izquierdo, un LED amarillo o rojo se encenderá, dependiendo si la distancia
+el lado izquierdo, un led amarillo o rojo se encenderá, dependiendo si la distancia
 es menor de 50 ó 20 metros respectivamente.
 
 Este dispositivo utiliza el estándar BLE [Apéndice \ref{apendice:ble}] para comunicarse con la aplicación móvil
 mediante cortos mensajes de 8 bytes, los cuales contienen un código hexadecimal que
-representa la combinación de LEDs que deben encenderse.
+representa la combinación de leds que deben encenderse.
 
 \begin{description}
 	\item[Programación de la mota] La mota contiene un pequeño programa escrito en
@@ -237,10 +221,10 @@ representa la combinación de LEDs que deben encenderse.
 	dispositivo, cada 50 mili segundos propaga una señal para que los dispositivos
 	puedan emparejarse. Cuando un dispositivo se conecta, el micro controlador espera
 	a recibir un pequeño mensaje con el código de la señal que le especificará qué
-	LEDs debe encender. Cuando llega el mensaje, si el código recibido es el correcto
-	enciende el LED correspondiente. Para el desarrollo de este programa se ha trabajado
+	leds debe encender. Cuando llega el mensaje, si el código recibido es el correcto
+	enciende el led correspondiente. Para el desarrollo de este programa se ha trabajado
 	sobre una plantilla, que provee Texas Instrument junto con el dispositivo CC2540,
-	al que se ha añadido el servicio necesario para encender el LED al recibir una
+	al que se ha añadido el servicio necesario para encender el led al recibir una
 	señal. En el algoritmo \ref{alg:mota} se explica cómo se ha implementado un nuevo
 	servicio para gestionar los mensajes entrantes.
 
@@ -260,9 +244,9 @@ representa la combinación de LEDs que deben encenderse.
 			\item Descubrir las características que contiene el servicio. Empleando la
 			referencia del servicio, se pueden obtener uno o varios UUID que representan
 			variables en las que se puede escribir un valor. Aquí es donde se deposita
-			el código de combinación de LEDs que se desea encender [\ref{alg:mota1}].
+			el código de combinación de leds que se desea encender [\ref{alg:mota1}].
 
-			\item Escribir sobre la característica que gestiona los LEDs [\ref{alg:mota2}].
+			\item Escribir sobre la característica que gestiona los leds [\ref{alg:mota2}].
 		\end{enumerate}
 
 		\begin{listing}
@@ -290,18 +274,18 @@ public void mandarMensajeBLE(byte msg) {
 }
 				\end{minted}
 			\end{minipage}
-		\caption{Envío de mensajes LED desde la aplicación de ciclistas}\label{alg:appciclistasBLE}
+		\caption{Envío de mensajes led desde la aplicación de ciclistas}\label{alg:appciclistasBLE}
 	\end{listing}
 \end{description}
 
 \begin{table}[H]
 	\centering
-	\caption{Tabla de la verdad de señales LED}\label{tab:tablaVerdadLED}
+	\caption{Tabla de la verdad de señales led}\label{tab:tablaVerdadLED}
 	\begin{tabular}{lll}
 		\toprule
-		\textbf{SEÑAL} & \emph{MNEMÓNICO} & DESCRIPCIÓN \\
+		\textbf{Señal} & \emph{Mnemónico} & Descripción \\
 		\midrule
-		0x00 & NONE    & Sin peligro. Apagar los LED \\
+		0x00 & NONE    & Sin peligro. Apagar los led \\
 		0x01 & AL\_RIGHT & Vehículo a menos de 20 metros por la derecha. Encender luz
 		roja derecha. \\
 		0x02 & AL\_LEFT & Vehículo a menos de 20 metros por la izquierda. Encender luz
