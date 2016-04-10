@@ -261,7 +261,7 @@ public void conectarBLE(Device dispositivo) {
 
 public void mandarMensajeBLE(byte msg) {
   // obtener el servicio que contiene la característica que se va a modificar
-  servicio = bluetoothGatt.getService(UUID\_SERVICIO);
+  servicio = bluetoothGatt.getService(UUID_SERVICIO);
 
   // obtener la característica (local)
   caracteristica.getCharacteristic(msg);

@@ -69,7 +69,13 @@ esto último aumenta el tamaño de los mensajes.
 	\caption{Envío de mensajes mediante GCM}\label{alg:gcmformato}
 \end{listing}
 
-% FALTA EXPLICAR
+Cuando se inicia una salida, cada vez que el ciclista recibe una posición actualizada
+y fiable del GPS, envía un mensaje a la \emph{Nube de Conductores}. Ésta actualiza
+la última posición conocida del ciclista, y busca vehículos cercanos al ciclista. Si se
+encuentra algún resultado, se responde al ciclista con las posiciones de los vehículos
+que tiene cercanos. Así mismo, si se detecta que los vehículos están muy cerca, se
+envía una alerta al ciclista y al vehículo, de esta forma se les avisa de que puede haber
+un adelantamiento entre los dos vehículos [Figura \ref{fig:DiagSecuencia-OBU_Cloud}].
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.30]{DiagSecuencia-Ciclistas_Cloud}
@@ -89,6 +95,14 @@ en la \emph{Nube de Conductores}. La \gls{obu} al recibir el mensaje lo muestra 
 un Interfaz Humano-Máquina (\emph{HMI}) que posee el vehículo. La información del vehículo
 puede ser recogida a través de un interfaz \emph{OpenXC} ó/y la \gls{obu}, dependiendo
 de la tecnología que se emplee para ello.
+
+En la figura \ref{fig:DiagSecuencia-OBU_Cloud} se muestra cómo actúan los componentes
+cuando un vehículo envía una posición. El \gls{obu} envía una posición a través del canal
+broadcast de la red vehicular, cuando un \gls{rsu} escucha este mensaje, lo redirige inmediatamente
+a la nube. Una vez en la nube se actualiza la posición del vehículo, o se añade si no existiese.
+Seguidamente, se comprueba si existe un ciclista cercano, si existiese, se enviaría las posiciones
+de los ciclistas encontrados al \gls{rsu}, el cual redirigiría al vehículo el mensaje. De poder producirse
+un adelantamiento o cruce, se enviaría una notificación a ambos vehículos.
 
 Los mensajes enviados a los vehículos a motor siguen el formato mostrado en la sección
 \ref{ssection:FormatoMensajesNC}. La \emph{Nube de Conductores} envía mensajes HTTP/1.1

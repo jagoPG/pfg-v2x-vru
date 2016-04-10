@@ -81,6 +81,14 @@ un vehículo. Por lo que para detectar una posible colisión es necesario un alg
 que emplee la posición vehicular relativa, la distancia entre los dos vehículos y el
 sentido en que circulan ambos.
 
+Mediante el algoritmo \ref{alg:deteccion_colisiones} se detecta si dos vehículos pueden
+cruzarse en un rango de distancia especificado. Para ello, se requiere la posición de
+ambos vehículos y la dirección hacia la que circulan. Se aplica un algoritmo para calcular
+la nueva posición de ambos vehículos en el rango de distancia que se desee. Con las cuatro
+posiciones obtenidas, primero se calcula si existe un punto de intersección, entre las dos
+rectas. Finalmente, se comprueba si las rectas cortan entre las posiciones hacia la que se
+dirigen los vehículos.
+
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
 		\begin{minted}[linenos=true]{javascript}
@@ -101,7 +109,7 @@ function isCollisionDanger(headingA, latitudeA, longitudeA, headingB, latitudeB,
 	
   var x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4))
     / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4));
-	var y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4))
+  var y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4))
 	/ ((x1 - x2)*(y3 - y4) - (y1 - y2) * (x3 - x4));
 	
   if (isNaN(x) || isNaN(y)) {
@@ -145,4 +153,3 @@ function isCollisionDanger(headingA, latitudeA, longitudeA, headingB, latitudeB,
 \end{minipage}
 \caption{Algoritmo de previsión de colisiones.}\label{alg:deteccion_colisiones}
 \end{listing}
-% FALTA EXPLICAR LOS ALGORITMOS QUE SE APLICAN JUNTO CON ESTE PARA DETECTAR PROXIMIDAD
