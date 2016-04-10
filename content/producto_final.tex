@@ -1,18 +1,103 @@
 \chapter{Producto final}
 El producto final se divide en tres grupos de aplicaciones que están presentes en diferentes
-agentes de la carretera. El primer grupo se trata del sistema en la nube que se encarga de
-comunicar el lado de vehículos a motor y ciclistas. Además, detecta situaciones de peligro
-y pone en aviso a cada agente implicado.
+agentes de la carretera. Cada grupo de aplicaciones está formado por software y hardware
+y constituye una unidad desde el punto de vista de usuario.
+
+El primer grupo se trata del sistema en la nube que se encarga de comunicar el lado de
+vehículos a motor y ciclistas. Además, detecta situaciones de peligro y pone en aviso a
+cada agente implicado. Estas son las funciones que debe cumplir:
+\begin{itemize}
+	\item \textbf{Aplicación web:} la nube debe poder accederse a través de una aplicación
+	web, empleando servlets para recibir y procesar la información.
+	
+	\item \textbf{Base de datos:} se deben poder almacenar datos de las peticiones enviadas
+	por los vehículos. No es necesario que los datos sean persistentes, cuando la aplicación
+	se cierra los datos deben ser eliminados.
+	
+	\item \textbf{Algoritmos para la detección de colisiones:} se implantarán algoritmos para detectar
+	la proximidad entre dos vehículos, para actuar en consecuencia.
+	
+	\item \textbf{Sistema de avisos:} debe poder enviar mensajes a diferentes plataformas a
+	través de redes móviles.
+	
+	\item \textbf{Sistema cloud:} la aplicación debe estar preparada para ser desplegada y
+	ejecutada en la nube.
+\end{itemize}
 
 El segundo grupo se trata de todas las aplicaciones encargadas de obtener información en la
-red vehicular, y recibir la información generada en la nube: \gls{rsu}, \gls{obu} y \gls{hmi}.
+red vehicular, y recibir la información generada en la nube: \gls{rsu}, \gls{obu} y \gls{hmi}. Por
+una parte, el \gls{obu} debe cumplir los siguientes requisitos:
+\begin{itemize}
+	\item \textbf{Comunicación vehicular:} debe poder comunicarse con otros dispositivos que
+	componen la red vehicular.
+	
+	\item \textbf{Sistema de navegación:} debe implementar un sistema de navegación GPS para
+	poder obtener las posiciones del vehículo en todo momento. Se requiere que estos datos sean
+	altamente precisos.
+	
+	\item \textbf{Canal para sincronizar dispositivos:} debe ser posible emparejar un dispositivo
+	móvil para mostrar la información obtenida al usuario.
+\end{itemize}
+
+Los requisitos que debe cumplir el \gls{hmi} son:
+\begin{itemize}
+	\item \textbf{Canal para sincronizar dispositivos:} el dispositivo debe poder emparejarse a la
+	infraestructura del vehículo. Preferiblemente se desea que de forma inalámbrica.
+	
+	\item \textbf{Universalidad:} la aplicación a desarrollar debe ser desplegada al mayor número
+	de usuarios posible.
+	
+	\item \textbf{No debe ser una distracción:} emplear el menor número de elementos dinámicos
+	posibles, ya que al ser usado durante la conducción no debe distraer al conductor. Emplear
+	forma visual y sonora para notificar al usuario de los eventos en carretera.
+\end{itemize}
+
+Por otra parte los requisitos del \gls{rsu} son:
+\begin{itemize}
+	\item \textbf{Comunicación vehicular:} debe poder comunicarse con otros dispositivos que
+	componen la red vehicular.
+	
+	\item \textbf{Comunicación móvil:} debe tener acceso a Internet a través de una red móvil.
+	
+	\item \textbf{Sistema de retransmisión:} debe poder retransmitir los mensajes que recibe de
+	la red de conductores, con la menor latencia posible.
+\end{itemize}
 
 Finalmente, el último grupo es la aplicación de ciclistas y servidor \gls{gcm} que provee
 notificaciones a los ciclistas sobre los eventos en carretera, y al mismo tiempo permite a
-los ciclistas mandar información sobre su posición. Además del casco \glossary{ble} que permite
-notificar al ciclista de un peligro inminente a través de leds instalados en el casco de
-seguridad.
+los ciclistas mandar información sobre su posición. Además del casco \glossary{ble} que 
+permite notificar al ciclista de un peligro inminente a través de leds instalados en el casco
+de seguridad. Deben cumplir:
+\begin{itemize}
+	\item \textbf{Comunicación con la nube:} debe tener acceso a Internet a través de una red
+	móvil para poder transmitir a la nube la información sobre la posición del ciclista.
+	
+	\item \textbf{Sistema de navegación:} debe implementar un sistema de navegación GPS para
+	poder obtener las posiciones del ciclista en todo momento. Se requiere que estos datos sean
+	lo más precisos posibles sin un alto consumo de batería.
+	
+	\item \textbf{No debe ser una distracción:} emplear el menor número de elementos dinámicos
+	posibles, ya que al ser usado durante la conducción no debe distraer al ciclista. Emplear
+	forma visual y sonora para notificar al usuario de los eventos en carretera.
+	
+	\item \textbf{Salidas en individual y en grupo:} debe poder usarse para salidas de ciclismo
+	de forma individual y en grupo, sin necesidad de conocimientos técnicos para poder emplear
+	la aplicación con soltura.
+	
+	\item \textbf{Emparejamiento:} debe poder emparejarse la aplicación con el casco de ciclistas
+	a través de tecnología \gls{ble}.
+\end{itemize}
 
 Así mismo, a través de las pruebas realizadas, los resultados obtenidos y las conclusiones
 generadas, se puede generar diferentes estudios que motiven nuevos desarrollos dentro del
-dominio de los \gls{vru}.
+dominio de los \gls{vru}:
+\begin{itemize}
+	\item \textbf{Rendimiento de módulos NEC Linkbird MX}.
+	
+	\item \textbf{Empleo de comunicaciones \gls{wave} en entornos urbanos}.
+	
+	\item \textbf{Eficiencia de algoritmos para la predicción de colisiones.}
+	
+	\item \textbf{Conclusiones de la implementación de un sistema en la nube
+		en un entorno vehicular.}
+\end{itemize}
