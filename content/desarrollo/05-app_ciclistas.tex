@@ -3,12 +3,12 @@ Con el objetivo de incrementar la seguridad de los ciclistas en las carreteras, 
 ha desarrollado una aplicación móvil. Ésta permite propagar información sobre el
 tránsito de vehículos en la carretera y de esta forma, el ciclista puede colocarse
 en una mejor posición a la hora de ser adelantado por otro vehículo,
-ó puede saber qué se va a encontrar en una zona de visibilidad reducida antes de
+o puede saber qué se va a encontrar en una zona de visibilidad reducida antes de
 aproximarse.
 
 Se ha elegido la plataforma Android debido al predominio de este sistema en el mercado
 actual, de esta forma se puede maximizar la recepción. Para este desarrollo se ha
-usado la API 23 de Android con retro-compatibilidad hasta la \gls{api} 15. Si en
+usado la API 23 de Android con retrocompatibilidad hasta la \gls{api} 15. Si en
 un futuro se desea ampliar la plataforma a un mayor mercado, la solución tendría
 que pasar por adaptar el código escrito en Android a C\# y utilizar la plataforma
 Xamarin para generar una aplicación para cada plataforma.
@@ -58,7 +58,7 @@ información al ciclista aunque su modo de proceder variará:
 En las figuras \ref{figure:Hub} y \ref{figure:FollowerJoin} se muestra la interfaz
 gráfica con la que se encuentra el usuario. Nótese en la interfaz del seguidor
 que puede buscar un grupo de dos maneras: (1) buscando el grupo de manera manual
-a través de una lista, ó (2) dejando que la aplicación auto-detecte una red y trate
+a través de una lista, o (2) dejando que la aplicación auto-detecte una red y trate
 de unirse a ella.
 
 \begin{figure}[H]
@@ -79,9 +79,10 @@ de unirse a ella.
 \end{figure}
 
 Para mantener un registro de la ruta que se esta realizando, un controlador mantiene
-toda la información sobre la salida que se esta realizando. En la figura
+toda la información sobre la salida que se esta realizando. Además, el controlador
+gestiona el funcionamiento y los eventos del \gls{gps} integrado en el smartphone. En la figura
 \ref{figure:DiagramController} se observa la estructura de este controlador, el
-funcionamiento es como siguiente:
+funcionamiento es el siguiente:
 \begin{description}
 	\item[AJourney y AGroupJourney] interfaz gráfica que se muestra al usuario
 	[Figura \ref{figure:Journey}].
@@ -160,9 +161,9 @@ httpClient.execute(httpPost);
 	Ciclistas}\label{alg:CyclistSend}
 \end{listing}
 
-Para la recepción de mensajes, la aplicación tiene que pedir un \"token\" de registro
+Para la recepción de mensajes, la aplicación tiene que pedir un ''token'' de registro
 único del servidor \Gls{gcm}. Para ello el dispositivo tiene que tener instalado los
-servicios \emph{Google Play}. Una vez obtiene el \"token\", cuando se envíe un
+servicios \emph{Google Play}. Una vez obtiene el ''token'', cuando se envíe un
 mensaje al servidor se incluirá este identificador dentro del contenido para que
 la aplicación en el servidor pueda saber a qué dispositivo debe responder. Tras
 haber realizado la autentificación con los servicios de Google, un escuchador
@@ -176,8 +177,8 @@ espera a nuevas notificaciones y los procesa una vez han llegado [\ref{figure:Di
 \subsection{Mensajes del grupo}\label{ssection:comunicacion_grupo}
 En la tabla \ref{tab:MensajesGrupo} se especifican los tipos de mensaje que son
 enviados en el hub de ciclistas. Los mensajes se encuentran en formato \gls{json}
-donde el la clave \"Tipo\" declara cuál es el significado del mensaje a enviar y
-la clave \"Campos extra\" especifica argumentos requeridos por el mensaje.
+donde el la clave ''Tipo'' declara cuál es el significado del mensaje a enviar y
+la clave ''Campos extra'' especifica argumentos requeridos por el mensaje.
 
 \begin{table}[H]
 	\centering
@@ -246,7 +247,9 @@ representa la combinación de leds que deben encenderse.
 			variables en las que se puede escribir un valor. Aquí es donde se deposita
 			el código de combinación de leds que se desea encender [\ref{alg:mota1}].
 
-			\item Escribir sobre la característica que gestiona los leds [\ref{alg:mota2}].
+			\item Escribir sobre la característica que gestiona los leds [\ref{alg:mota2}]. En la tabla
+			\ref{tab:tablaVerdadLED} se encuentran todas las señales que pueden ser enviadas
+			a la mota.
 		\end{enumerate}
 
 		\begin{listing}
@@ -286,21 +289,21 @@ public void mandarMensajeBLE(byte msg) {
 		\textbf{Señal} & \emph{Mnemónico} & Descripción \\
 		\midrule
 		0x00 & NONE    & Sin peligro. Apagar los led \\
-		0x01 & AL\_RIGHT & Vehículo a menos de 20 metros por la derecha. Encender luz
+		0x01 & AL\_RIGHT & Vehículo < 20 metros por la derecha. Encender luz
 		roja derecha. \\
-		0x02 & AL\_LEFT & Vehículo a menos de 20 metros por la izquierda. Encender luz
+		0x02 & AL\_LEFT & Vehículo < 20 metros por la izquierda. Encender luz
 		roja izquierda. \\
-		0x03 & AL\_BACK & Vehículo a menos de 20 metros por detrás. Ambas luces rojas
+		0x03 & AL\_BACK & Vehículo < 20 metros por detrás. Ambas luces rojas
 		encendidas. \\
-		0x04 & AL\_FRONT & Vehículo a menos de 20 metros por delante. Ambas luces rojas
+		0x04 & AL\_FRONT & Vehículo < 20 metros por delante. Ambas luces rojas
 		encendidas parpadeando. \\
-		0x11 & W\_RIGHT & Vehículo a menos de 50 metros por la derecha. Encender luz
+		0x11 & W\_RIGHT & Vehículo < 50 metros por la derecha. Encender luz
 		amarilla derecha. \\
-		0x12 & W\_LEFT & Vehículo a menos de 50 metros por la izquierda. Encender luz
+		0x12 & W\_LEFT & Vehículo < 50 metros por la izquierda. Encender luz
 		amarilla izquierda. \\
-		0x13 & W\_BACK & Vehículo a menos de 50 metros por detrás. Ambas luces amarillas
+		0x13 & W\_BACK & Vehículo < 50 metros por detrás. Ambas luces amarillas
 		encendidas. \\
-		0x14 & W\_FRONT & Vehículo a menos de 50 metros por delante. Ambas luces amarillas
+		0x14 & W\_FRONT & Vehículo < 50 metros por delante. Ambas luces amarillas
 		parpadeando encendidas.\\
 		\bottomrule
 	\end{tabular}

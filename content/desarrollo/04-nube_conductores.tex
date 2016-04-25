@@ -9,11 +9,18 @@ sido correctamente construidos, es decir, tienen un formato inválido, e inserta
 y actualizar los datos de la base de datos.
 
 Para el despliegue de la aplicación se utilizado una máquina virtual \emph{Ubuntu Server
-14.04 LTS} que cuenta con 2048 MiB de memoria RAM y 2 n\'ucleos para procesamiento.
+14.04 LTS} que cuenta con 2048 MiB de memoria RAM y 2 núcleos para procesamiento.
 También se ha reservado un dominio público para que las peticiones puedan ser enviadas
 al servidor. Gracias a la herramienta \emph{ANT} se puede cambiar fácilmente la plataforma
 donde se distribuya la aplicación, además esta configurada para poder ser ejecutada
 directamente con el comando \emph{run}.
+
+Como puede observarse en la figura \ref{fig:DiagComponentes-Nube} los clientes acceden
+a la nube a través de dos gestores independientes a través de mensajes HTTP/1.1. Los datos
+son almacenados en HashMap para acceder directamente a los datos. Estos datos son
+empleados por el calculador de alertas para predecir si dos vehículos pueden colisionarse; en
+caso de que pueda suceder, se emplea el emisor de alertas para enviar un mensaje a través
+de HTTP/1.1 al cliente correspondiente.
 
 \begin{figure}[H]
 	\begin{center}
@@ -36,11 +43,11 @@ se colapse.
 Un registro se considera antiguo cuando no ha sido refrescado en un período de un
 minuto. Para evitar que emplee información obsoleta, se ejecuta una rutina que tan
 solo mantiene en memoria los registros que periódicamente están siendo actualizados;
-ésto se realiza gracias al campo de \emph{timestamp}.
+esto se realiza gracias al campo de \emph{timestamp}.
 
 Paralelamente, cada vez que un mensaje es recibido en uno de los handler (conductores o
 ciclistas), otro algoritmo compara la posición obtenida a través del handler con la de los
-vehículos existentes. Si se detecta que algún ciclista ó vehículo a motor están próximos 
+vehículos existentes. Si se detecta que algún ciclista o vehículo a motor están próximos 
 - en un rango menor a 200 metros - se manda a ambos vehículos una alerta avisándoles de 
 su proximidad \emph{[Algoritmo \ref{alg:proximidadVehiculos}]}. En el apéndice
 \ref{apendice:posicion_relative}, se detalla el funcionamiento del algoritmo que se encarga

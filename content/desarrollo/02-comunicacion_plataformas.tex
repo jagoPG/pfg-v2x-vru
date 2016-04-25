@@ -7,7 +7,7 @@ desarrolladas en el lado de los motoristas (Sección \ref{section:comunicacion_v
 y el de los ciclistas (Sección \ref{section:appCiclistas}).
 
 \subsubsection{Mensajes a ciclistas}\label{sssection:mensajes_ciclistas}
-Gracias al actual predominio de Smartphones en la vida de todos los habitantes, el
+Gracias al actual predominio de smartphones en la vida de todos los habitantes, el
 despliegue de aplicaciones móviles vehiculares es bastante sencillo. Se han convertido
 en dispositivos potentes y versátiles, los cuales permiten utilizarlos para una gran
 variedad de utilidades. Gracias que tienen GPS integrado podemos obtener una posición
@@ -17,7 +17,7 @@ de conexiones como Bluetooth, USB, Wi-Fi, LTE, GSM, UMTS y NFC.
 
 Actualmente el predomino del mercado se encuentra en el Sistema Operativo móvil Android.
 Este sistema, actualmente en desarrollo por Alphabet, esta orientado principalmente a
-dispositivos móviles y embebidos. Esta basado en Linux, y es un proyecto que tiene
+dispositivos móviles y embebidos. Está basado en Linux, y es un proyecto que tiene
 devoción por los estándares abiertos existentes; prueba de ello es la pertenencia a
 la alianza comercial Open Handset Alliance, la cual se dedica a desarrollar estándares
 abiertos para su uso en dispositivos móviles.
@@ -29,16 +29,16 @@ instalación del IDE de desarrollo Android Studio, ó descargar el SDK de Androi
 integrarlo con el IDE que se desee. Los lenguajes de programación con los que es
 posible desarrollar son Java y C/C++, aunque este segundo solo se recomienda su uso
 para el desarrollo de librerías que requieran de un gran rendimiento. La aplicación
-resultante es un paquete apk que es ejecutado en un Sandbox dentro de Android.
+resultante es un paquete apk que es ejecutado en un sandbox dentro de Android.
 
 Se ha desarrollado una aplicación \emph{Android} desde la cual se manda a la nube
 actualizaciones sobre la posición del usuario o el grupo que el usuario haya creado.
-\'Este recibe notificaciones sobre las posiciones de los vehículos próximos, y otros
+Éste recibe notificaciones sobre las posiciones de los vehículos próximos, y otros
 diferentes eventos que pueden darse en la carretera; por ejemplo, un accidente de
 tráfico. Se ha contemplado la posibilidad de salidas en grupo de ciclistas, para ello
 se ha habilitado una modalidad específica mediante la cual se crea un grupo que se
 comunica entre sus miembros a través de una red privada \emph{Wi-Fi 802.11}. Los
-diferentes miembros se mantienen actualizados sobre los diferentes eventos a través
+miembros se mantienen actualizados entre ellos sobre los diferentes eventos a través
 de un nodo denominado líder, el cual es el enlace a la nube tanto para reportar la
 posición del grupo de ciclistas como para recibir mensajes de la nube y retransmitir
 éstos al resto de miembros.
@@ -47,7 +47,7 @@ Para comunicarse con los dispositivos Android se requiere un sistema de comunica
 por el cual aunque los ciclistas no tengan en un momento determinado cobertura, los
 mensajes no se pierdan. Se ha elegido la plataforma \gls{gcm}, la cual se encarga de
 gestionar que los mensajes lleguen al destino aunque éste se encuentre temporalmente
-inaccesible mediante tecnología \emph{Push} [\ref{alg:gcmFuncionamientoMensajes}].
+inaccesible mediante notificaciones \emph{Push} [\ref{alg:gcmFuncionamientoMensajes}].
 
 El mensaje debe respetar el formato que la API de GCM indica y puede observarse en
 el algoritmo \ref{alg:gcmformato}, donde \emph{ID\_ANDROID} es el identificador del
@@ -70,17 +70,17 @@ esto último aumenta el tamaño de los mensajes.
 \end{listing}
 
 Cuando se inicia una salida, cada vez que el ciclista recibe una posición actualizada
-y fiable del GPS, envía un mensaje a la \emph{Nube de Conductores}. Ésta actualiza
+y fiable del GPS, envía un mensaje a la \emph{Nube de Conductores}. La nube actualiza
 la última posición conocida del ciclista, y busca vehículos cercanos al ciclista. Si se
 encuentra algún resultado, se responde al ciclista con las posiciones de los vehículos
 que tiene cercanos. Así mismo, si se detecta que los vehículos están muy cerca, se
 envía una alerta al ciclista y al vehículo, de esta forma se les avisa de que puede haber
-un adelantamiento entre los dos vehículos [Figura \ref{fig:DiagSecuencia-OBU_Cloud}].
+un adelantamiento entre los dos vehículos [Figura \ref{fig:DiagSecuencia-Ciclista_Cloud}].
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.30]{DiagSecuencia-Ciclistas_Cloud}
 		\caption{Ejecución entre Ciclista y la Nube}
-		\label{fig:DiagSecuencia-OBU_Cloud}
+		\label{fig:DiagSecuencia-Ciclista_Cloud}
 	\end{center}
 \end{figure}
 
@@ -93,7 +93,7 @@ provenientes por el puerto 8080. Por tanto puede decirse, que las \gls{rsu} act�
 \emph{gateway} de comunicaciones entre los vehículos y las aplicaciones desplegadas
 en la \emph{Nube de Conductores}. La \gls{obu} al recibir el mensaje lo muestra en
 un Interfaz Humano-Máquina (\emph{HMI}) que posee el vehículo. La información del vehículo
-puede ser recogida a través de un interfaz \emph{OpenXC} ó/y la \gls{obu}, dependiendo
+puede ser recogida a través de un interfaz \emph{OpenXC} o/y la \gls{obu}, dependiendo
 de la tecnología que se emplee para ello.
 
 En la figura \ref{fig:DiagSecuencia-OBU_Cloud} se muestra cómo actúan los componentes

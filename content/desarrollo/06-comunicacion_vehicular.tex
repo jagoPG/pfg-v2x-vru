@@ -62,7 +62,7 @@ en los vehículos y la nube. Cuando se despliegue el sistema, es necesario conec
 primero tanto el cable procedente del router como el Modem-USB, seguidamente hay que
 establecer que los mensajes procedentes de la red vehicular empleen la interfaz eth0,
 y los mensajes que viajan a Internet empleen la interfaz wlan0; esto se puede hacer
-mediante la herramienta \"routes\" que proporciona cualquier sistema GNU/Linux. El \gls{rsu}
+mediante la herramienta ''routes'' que proporciona cualquier sistema GNU/Linux. El \gls{rsu}
 escucha y escribe a través de dos canales:
 \begin{enumerate}
 	\item En el canal \gls{lte} recibe los mensajes \Gls{http/1.1} que provienen de la
@@ -78,7 +78,7 @@ Al recibir un mensaje el \gls{rsu} se comporta de la siguiente forma:
 \begin{enumerate}
 	\item Se comprueba que el formato del mensaje es correcto. Si no lo es, se descarta.
 
-	\item Lectura del campo \"TYPE\" del mensaje. Dependiendo de su contenido se aplica
+	\item Lectura del campo ''TYPE'' del mensaje. Dependiendo de su contenido se aplica
 	un proceso diferente: el mensaje puede ser retransmitido a través de Broadcast, se
 	puede mostrar una notificación en un panel informativo en carretera...
 \end{enumerate}
