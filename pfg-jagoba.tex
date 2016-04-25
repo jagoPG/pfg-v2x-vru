@@ -6,7 +6,6 @@
 \usepackage{glossaries}
 \usepackage{rotating}
 
-
 \graphicspath{ {fig/diagramas/}, {fig/diagramas/gantt/},{fig/},
 	 {fig/screenshots/}, {fig/ejemplos/}, {fig/pruebas/} }
 \DeclareGraphicsExtensions{ .png, .jpg, .jpeg, .pdf }
@@ -17,7 +16,6 @@
   	 Vehiculares Vulnerables en el contexto de una Ciudad Inteligente},
 }
 
-\bibliography{biblio}
 \makeglossary
 \begin{document}
 
@@ -47,14 +45,13 @@
 \input{content/08-presupuestos}
 \input{content/09-desarrollo}
 \input{content/10-resultados}
-\input{content/11-conclusiones}
 
-% Incluir la bibliografía
-\printbibliography[heading=bibintoc]
+% Bibliografía
+\input{content/bibliografia}
 
 % Incluir apendices
-\input{content/12-apendices}
-\input{content/13-glosario}
+\input{content/11-apendices}
+\input{content/12-glosario}
 
 \backmatter
 \end{document}
