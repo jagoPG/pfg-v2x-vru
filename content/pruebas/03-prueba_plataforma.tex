@@ -1,45 +1,20 @@
 \section{Prueba 3: validación de la plataforma}
-El objetivo de esta prueba es realizar una validación de la plataforma
-completa. Se debe comprobar que todas las aplicaciones realizadas
-cumplen los requisitos funcionales acordados, así como detectar
-posibles \emph{bugs} del software para poder corregirlos posteriormente.
+El objetivo de esta prueba es realizar una validación de la plataforma completa. Se debe comprobar que todas las aplicaciones realizadas
+cumplen los requisitos funcionales acordados, así como detectar posibles \emph{bugs} del software para poder corregirlos posteriormente.
+
 Para validar el sistema se han realizado dos pruebas diferentes:
 
 \begin{itemize}
-	\item Simulación en un entorno reducido: se ha realizado una simulación
-	del sistema en el campus Universitario. Se ha instalado en un carro el
-	\emph{obu} y \emph{hmi}, y a un lado de la vía la \emph{rsu}. Se ha 
-	instalado la aplicación del ciclista en un móvil, y desplegado la nube
-	de conductores en un servidor de la Universidad.
+	\item Simulación en un entorno reducido: se ha realizado una simulación	del sistema en el campus Universitario. Se ha instalado en un carro el	\emph{obu} y \emph{hmi}, y a un lado de la vía la \emph{rsu}. Se ha instalado la aplicación del ciclista en un móvil, y desplegado la nube de conductores en un servidor de la Universidad.
 	
-	\item Simulación en un entorno real: se ha comprobado el correcto
-	funcionamiento del sistema haciendo un trayecto en la carretera de
-	San Vicente (Barakaldo). Se ha desplegado el \emph{obu} y \emph{hmi}
-	en un vehículo,	y el \emph{rsu} en otro vehículo situado en el
-	arcén de la carretera. Un ciclista ha realizado también el recorrido
-	con la aplicación de ciclistas instalada en un dispositivo móvil. La
-	\emph{Nube de conductores} ha sido desplegada en un servidor privado.
+	\item Simulación en un entorno real: se ha comprobado el correcto funcionamiento del sistema haciendo un trayecto en la carretera de San Vicente (Barakaldo). Se ha desplegado el \emph{obu} y \emph{hmi}	en un vehículo,	y el \emph{rsu} en otro vehículo situado en el arcén de la carretera. Un ciclista ha realizado también el recorrido con la aplicación de ciclistas instalada en un dispositivo móvil. La \emph{Nube de conductores} ha sido desplegada en un servidor privado.
 \end{itemize}
 
-Durante las dos pruebas se han comprobado los mismos aspectos: correcto
-funcionamiento de los algoritmos de alerta, visualización de las posiciones
-de los vehículos en las aplicaciones de \emph{hmi} y ciclistas, notificación
-de los mensajes de alerta enviados por la \emph{Nube de Conductores} y
-funcionamiento del casco \emph{BLE}.
+Durante las dos pruebas se han comprobado los mismos aspectos: correcto funcionamiento de los algoritmos de alerta, visualización de las posiciones de los vehículos en las aplicaciones de \emph{hmi} y ciclistas, notificación de los mensajes de alerta enviados por la \emph{Nube de Conductores} y funcionamiento del casco \emph{BLE}.
 
 \subsection{Resultados}
-Las pruebas realizadas dentro del campus Universitario tuvieron que repetirse
-debido a fallos en la aplicación. Las posiciones \gls{gps} obtenidas a través
-de la aplicación móvil no eran suficientemente precisas como para garantizar
-que las notificaciones enviadas por la nube no eran falsos positivos. Además
-se detectó un fallo en la comunicación entre la \gls{rsu} y la \emph{Nube de
-conductores} debido a que el proxy de la Universidad filtraba los paquetes
-enviados; por lo que la comunicación era imposible establecerse. Para solucionar
-el problema, se desplegó la aplicación de \emph{Nube de conductores} en un
-servidor privado externo a la Universidad con los puertos necesarios abiertos.
+Las pruebas realizadas dentro del campus Universitario tuvieron que repetirse debido a fallos en la aplicación. Las posiciones \gls{gps} obtenidas a través de la aplicación móvil no eran suficientemente precisas como para garantizar que las notificaciones enviadas por la nube no eran falsos positivos. Además se detectó un fallo en la comunicación entre la \gls{rsu} y la \emph{Nube de conductores} debido a que el proxy de la Universidad filtraba los paquetes enviados; por lo que la comunicación era imposible establecerse. Para solucionar el problema, se desplegó la aplicación de \emph{Nube de conductores} en un servidor privado externo a la Universidad con los puertos necesarios abiertos.
 
-Las pruebas fuera del campus fueron realizadas satisfactoriamente. Tan solo
-se detectó el mismo problema que en el campus: las posiciones \gls{gps}
-que se obtienen a través del dispositivo móvil no son, en muchas ocasiones,
-suficientemente precisas para garantizar que las notificaciones recibidas
-no son falsos positivos.
+Las pruebas fuera del campus fueron realizadas satisfactoriamente. Tan solo se detectó el mismo problema que en el campus: las posiciones \gls{gps} que se obtienen a través del dispositivo móvil no son, en muchas ocasiones, suficientemente precisas para garantizar que las notificaciones recibidas no son falsos positivos. Por lo que es necesario que los terminales donde se ejecute la aplicación de ciclistas posea un dispositivo GPS de alta precisión; de esta forma se garantizaría que los datos son suficientemente fiables como para hacer buenas predicciones.
+
+Mediante los registros que indicaban el envío y recepción de un mensaje, se ha estimado que el tiempo necesario desde la notificación de un mensaje a la recepción del mismo por el destino, siendo menor al tiempo máximo establecido por el estándar; siendo de 100 milisegundos.
