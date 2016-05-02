@@ -1,39 +1,50 @@
 \chapter{Presupuestos}
-Se ha realizado una recopilación de todos los gastos que se han dado en el proyecto. Estos costes
-tienen que ver con la adquisición de equipo, contratación de diferentes servicios y software para
-ser posible el estudio, desarrollo, verificación y documentación del sistema.
+Se ha realizado una recopilación de todos los gastos que se han dado en el proyecto. Estos costes tienen que ver con la adquisición de equipo, contratación de diferentes servicios y software para ser posible el estudio, desarrollo, verificación y documentación del sistema.
 
-Se requiere que los gastos sean lo más bajos posibles, ya que se trata de un proyecto para la
-investigación y no está pensado para ser comercializado. Debido a ello se han empleado plataformas
-Open Source para el desarrollo y despliegue de las aplicaciones, ya que no generan ningún tipo de
-gasto. Al desarrollarse el proyecto bajo amparo de la Universidad de Deusto, existen gastos de
-instalaciones, mantenimiento, servicios y plataformas que son nulos; como por ejemplo el acceso
-repositorios Git.
+Se requiere que los gastos sean lo más bajos posibles, ya que se trata de un proyecto para la investigación y no está pensado para ser comercializado. Debido a ello se han empleado plataformas Open Source para el desarrollo y despliegue de las aplicaciones, ya que no generan ningún tipo de gasto. Al desarrollarse el proyecto bajo amparo de la Universidad de Deusto, existen gastos de
+instalaciones, mantenimiento, servicios y plataformas que son nulos; como por ejemplo el acceso repositorios Git.
 
-Los beneficios de esta investigación se traducen en el impacto que tengan los artículos que puedan ser
-generados y publicados en diferentes revistas, diarios...
+Los beneficios de esta investigación se traducen en el impacto que tengan los artículos que puedan ser generados y publicados en diferentes revistas, diarios...
 
-Los costes se han dividido en tres categorías diferentes: los gastos de material y equipo necesario
-[\ref{tab:presupuestoMaterial}], costes laborales del personal [\ref{tab:presupuestoLaboral}] y el
-coste de otros proyectos subcontratados [\ref{tab:presupuestoSubcontrataciones}]. Finalmente, se
-presenta un resumen de todos los gastos [\ref{tab:presupuestoResumen}].
+Los costes se han dividido en tres categorías diferentes: los gastos de material y equipo necesario [\ref{tab:presupuestoMaterial}], costes laborales del personal [\ref{tab:presupuestoLaboral}]. Los costes que tengan añadido en el concepto un asterisco (*) quiere decir que es equipo que se emplea en varios proyectos, y por lo tanto se valora un coste en el proyecto de un 5\% del valor real.
 
-\begin{table}
+\begin{table}[h]
+	\centering
+	\caption{Costes laborales}\label{tab:presupuestoLaboral}
+	\begin{tabular}{lccl}
+		\toprule
+		\textbf{Concepto} & \textbf{Coste por hora} & \textbf{Horas} & \textbf{Coste total} \\
+		\midrule
+		Estudios módulos NEC. & 5 & 20 & 100,00 EUR \\
+		Desarrollo de prototipos para pruebas. & 5 & 20 & 100,00 EUR \\
+		Análisis de requisitos del sistema. & 30 & 23 & 690,00 EUR \\
+		Formación en Android SDK. & 5 & 20 & 100,00 EUR \\
+		Desarrollo de la Nube de Conductores. & 5 & 114 & 570,00 EUR \\
+		Desarrollo de las aplicaciones vehiculares  & 5 & 91 & 455,00 EUR \\
+		Desarrollo de la aplicación de ciclistas. & 5 & 170 & 850,00 EUR \\
+		Pruebas en la calle. & 30 & 43 & 1.290,00 EUR \\
+		Generar documentación. & 30 & 55 & 1.650,00 EUR \\
+		& & & \textbf{5.805,00 EUR} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[ht]
 	\centering
 	\caption{Costes de material y equipo}\label{tab:presupuestoMaterial}
 	\begin{tabular}{llcll}
 		\toprule
-		\textbf{Concepto} & \textbf{Tipo} & \textbf{Unidades} & \textbf{Coste por unidad} & \textbf{Coste total} \\
+		\textbf{Concepto} & \textbf{Tipo} & \textbf{Unidades} & \textbf{Coste por unidad} & \textbf{Coste real} \\
 		\midrule
-		NEC Linkbird MX & Hardware & 2 & 2.960,00 EUR & 5.920,00 EUR \\
-		Dell Latitude D520 & Hardware & 1 & 134,75 EUR & 134,75 EUR \\
-		Acer Aspire 4810TZG & Hardware & 1 & 596,87 EUR & 596,87 EUR \\
-		Estación de trabajo & Hardware & 1 & 799,00 EUR & 799,00 EUR \\
+		NEC Linkbird MX* & Hardware & 2 & 2.960,00 EUR & 296,00 EUR \\
+		Dell Latitude D520* & Hardware & 1 & 134,75 EUR & 6,73 EUR \\
+		Acer Aspire 4810TZG* & Hardware & 1 & 596,87 EUR & 29,84 EUR \\
+		Estación de trabajo* & Hardware & 1 & 799,00 EUR & 39,95 EUR \\
 		Cable UTP & Hardware & 2 & 0,00 EUR & 0,00 EUR \\
 		Adaptador RS-232 Hembra a Macho & Hardware & 2 & 1,00 EUR & 2,00 EUR \\
 		Adaptador RS-232 Null & Hardware & 2 & 1,00 EUR & 2,00 EUR \\
 		HI 204-III GPS USB & Hardware & 2 & 59,00 EUR & 59,00 EUR \\
-		Fuente de alimentación Belkin & Hardware & 2 & 50,00 EUR & 100,00 EUR \\
+		Fuente de alimentación Belkin* & Hardware & 2 & 50,00 EUR & 5,00 EUR \\
 		Casco BLE + Texas CC2540 & Hardware & 1 & 65,00 EUR & 65,00 EUR \\
 		Sistemas operativos: Ubuntu y Debian & Software & 3 & 0,00 EUR & 0,00 EUR \\
 		Sistema operativo Windows 7 & Software & 1 & 0,00 EUR & 0,00 EUR \\
@@ -46,56 +57,7 @@ presenta un resumen de todos los gastos [\ref{tab:presupuestoResumen}].
 		Repositorio GitLab & Servicio & 1 & 0,00 EUR & 0,00 EUR \\
 		Google Cloud Messaging & Servicio & 1 & 0,00 EUR & 0,00 EUR \\
 		Google Maps & Servicio & 1 & 0,00 EUR & 0,00 EUR \\
-		& & & & \textbf{7,732.62 EUR}\\
-		\bottomrule
-	\end{tabular}
-\end{table}
-\begin{table}
-	\centering
-	\caption{Costes laborales}\label{tab:presupuestoLaboral}
-	\begin{tabular}{lccl}
-		\toprule
-		\textbf{Concepto} & \textbf{Coste por hora} & \textbf{Horas} & \textbf{Coste total} \\
-		\midrule
-		Estudios módulos NEC. & 5 & 20 & 100,00 EUR \\
-		Desarrollo de prototipos para pruebas. & 5 & 20 & 100,00 EUR \\
-		Recolección de requisitos del sistema. & 30 & 23 & 690,00 EUR \\
-		Formación en Android SDK. & 5 & 20 & 100,00 EUR \\
-		Desarrollo de la Nube de Conductores. & 5 & 114 & 570,00 EUR \\
-		Desarrollo de la OBU/RSU. & 5 & 74 & 370,00 EUR \\
-		Desarrollo del HMI. & 5 & 17 & 85,00 EUR \\
-		Desarrollo de CiclistasApp. & 5 & 170 & 850,00 EUR \\
-		Pruebas en la calle. & 30 & 43 & 1.290,00 EUR \\
-		Generar documentación. & 30 & 55 & 1.650,00 EUR \\
-		& & & \textbf{5.805,00 EUR} \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-\begin{table}
-	\centering
-	\caption{Costes de subcontrataciones}\label{tab:presupuestoSubcontrataciones}
-	\begin{tabular}{ll}
-		\toprule
-		\textbf{Concepto} & \textbf{Coste total} \\
-		\midrule
-		PFG de Idoia de la Iglesia. & 32.310,00 EUR \\
-		& \textbf{32.310,00 EUR} \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-\begin{table}[tp]
-	\centering
-	\caption{Resumen de costes}\label{tab:presupuestoResumen}
-	\begin{tabular}{ll}
-		\toprule
-		\textbf{Concepto} & \textbf{Coste total} \\
-		\midrule
-		Hardware & 7.737,62 EUR \\
-		Software & 0,00 EUR \\
-		Servicios & 0,00 EUR \\
-		Personal & 5.805,00 EUR \\
-		Subcontrataciones & 32.310,00 EUR \\
-		& \textbf{45.852,62 EUR} \\
+		& & & & \textbf{505,52 EUR}\\
 		\bottomrule
 	\end{tabular}
 \end{table}
