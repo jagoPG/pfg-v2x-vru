@@ -1,21 +1,26 @@
 \section{Bluetooth Low Energy}\label{apendice:ble}
-Bluetooth Low Energy. A diferencia del clásico Bluetooth, está diseñado para consumir una cantidad
-significativamente más pequeña de energía. Algunas diferencias durante el desarrollo respecto
-Bluetooth estándar a tener en cuenta en BLE son:
+A diferencia del clásico Bluetooth, está diseñado para
+consumir una cantidad significativamente más pequeña de energía. Algunas
+diferencias durante el desarrollo respecto Bluetooth estándar a tener en cuenta
+en \gls{ble} son:
 \begin{enumerate}
-	\item El dispositivo está continuamente durmiendo y despertándose para ahorrar batería.
-	\item La cantidad de información transmitida es pequeña, como máximo 216 bytes.
-	\item La transmisión de información se hace de manera rápida para poder poner el dispositivo
-	a dormir tan pronto como se haya terminado de transmitir la información; latencias de hasta
-	2 milisegundos por ráfaga.
+	\item El dispositivo está continuamente durmiendo y despertándose para
+	ahorrar batería.
+	\item La cantidad de información transmitida es pequeña, como máximo 216
+	bytes.
+	\item La transmisión de información se hace de manera rápida para poder poner
+	el dispositivo a dormir tan pronto como se haya terminado de transmitir la
+	información; latencias de hasta	2 milisegundos por ráfaga.
 \end{enumerate}
 
-\subsection{GATT}
-Generic Attribute Profile. Establece cómo se va a transmitir la información sobre los perfiles y
-datos en la conexión BLE. GATT emplea el ATT (Attribute Protocol) como protocolo de transporte para
-intercambiar datos entre los dispositivos. Los datos están organizados jerárquicamente en secciones
-llamadas ''servicios'', los cuales tienen piezas relacionadas con ellos denomienadas ''características''.
+\subsection{General Attribute Profile}
+Establece cómo se va a transmitir la información sobre los perfiles y datos en
+la conexión \gls{ble}. \gls{gatt} emplea el \gls{att} como protocolo de
+transporte para intercambiar datos entre los dispositivos. Los datos están
+organizados jerárquicamente en secciones llamadas ''servicios'', los cuales
+tienen piezas relacionadas con ellos denominadas ''características''.
 
-\subsection{UUID}
-Universal Unique Identifier. Es un identificador de 128 bits que está garantizado que es único. Los
-UUID nos permiten identificar los servicios y características, además de poder operar con ellos.
+\subsection{Universal Unique Identifier}
+Es un identificador de 128 bits que está garantizado que es único. Los UUID
+permiten identificar los servicios y características, además de poder operar
+con ellos.

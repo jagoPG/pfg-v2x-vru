@@ -1,0 +1,28 @@
+\section{Tecnología}
+En esta sección se va a analizar las herramientas y tecnologías empleadas en
+el proyecto. La sección ha sido dividida entre software y hardware debido a que
+ambas presentan gran importancia en el proyecto.
+
+\subsection{Software}
+
+\subsection{Hardware}
+El hardware empleado se puede dividir en dos grupos: por un lado el hardware
+empleado por el \gls{obu} y \gls{rsu}, y por el otro el casco \gls{ble} que
+visten los ciclistas para saber en qué dirección se aproxima el vehículo.
+
+El hardware que integran los vehículos y la infraestructura de las carreteras
+se trata de la plataforma experimental NEC Linkbird-MX. Es una minicomputador
+que posee una tarjeta de red que le permite comunicarse con otros dispositivos
+Linkbird-MX a través de una red \Gls{802.11p}; a esta tarjeta de red se puede
+conectar dos antenas. Requiere de un \gls{gps} \gls{usb} para recibir la
+posición del vehículo, aunque esta característica es opcional.
+
+El casco \gls{ble} posee un microcontrolador \gls{SoC} \emph{ Texas Instruments
+CC2540} para realizar aplicaciones de bajo consumo empleando Bluetooth. Este
+dispositivo de bajo presupuesto permite realizar nodos maestros o esclavos
+a través de \gls{ble}. Este dispositivo permite flashear programas de hasta
+128 KB, suficiente para hacer la aplicación que se requiere en este proyecto.
+Aunque no se encuentre soportado oficialmente, este dispositivo tiene varios
+puertos \gls{gpio}, los cuales se van a emplear para conectar los led. Estos
+microcontroladores se emplean para aplicaciones donde no se requiera gran
+capacidad de computo, y se necesite que exista una buena autonomía.

@@ -1,17 +1,33 @@
 \chapter{Planificación}
-En la figura \ref{fig:edt} se puede observar el EDT que ha sido seguido para la realización de este proyecto. Se ha estimado la realización del proyecto en un plazo inicial de 2 años, comenzando en Octubre, 2014 y finalizando en Octubre de 2016; se han distribuido las tareas como puede observarse en el diagrama de Gantt ilustrado en la Figura \ref{fig:gantt}. Para el desarrollo de cada producto se sigue una metodología de desarrollo iterativa e incremental. Al final de cada iteración se genera un producto intermedio, con las características acordadas durante el que funcione correctamente con el resto de productos.  A continuación se detallan las fases principales del proyecto:
+En la figura \ref{fig:edt} se puede observar el EDT que ha sido seguido para la
+realización de este proyecto. Se ha estimado la realización del proyecto en un
+plazo inicial de 2 años, comenzando en Octubre, 2014 y finalizando en Octubre de
+2016; se han distribuido las tareas como puede observarse en el diagrama de
+Gantt ilustrado en la Figura \ref{fig:gantt}. Para el desarrollo de cada
+producto se sigue una metodología de desarrollo iterativa e incremental. Al
+final de cada iteración se genera un producto intermedio, con las
+características acordadas durante el que funcione correctamente con el resto de
+productos.  A continuación se detallan las fases principales del proyecto:
 \begin{itemize}
-	\item T1 - Análisis de requisitos: recolección y análisis de requisitos. Organización de requisitos funcionales y no funcionales.
+	\item T1 - Análisis de requisitos: recolección y análisis de requisitos.
+	Organización de requisitos funcionales y no funcionales.
 
-	\item T2 - Desarrollo de la Nube de conductores: incluye todas las actividades para el	desarrollo de la aplicación de conductores que será desplegada en la nube.
+	\item T2 - Desarrollo de la Nube de conductores: incluye todas las actividades
+	para el	desarrollo de la aplicación de conductores que será desplegada en la
+	nube.
 
-	\item T3 - Desarrollo de la aplicación de ciclistas: actividades para el desarrollo de la aplicación de ciclistas y el casco \gls{ble}.
+	\item T3 - Desarrollo de la aplicación de ciclistas: actividades para el
+	desarrollo 	de la aplicación de ciclistas y el casco \gls{ble}.
 
-	\item T4 - Desarrollo de las aplicaciones vehiculares: actividades para el desarrollo de la \gls{rsu}, \gls{obu} y \glossary{hmi}.
+	\item T4 - Desarrollo de las aplicaciones vehiculares: actividades para el
+	desarrollo de la \gls{rsu}, \gls{obu} y \glossary{hmi}.
 
-	\item T5 - Validación: pruebas que se han desarrollado en la calle para validar diferentes partes del proyecto, y grabación de una demo del funcionamiento del proyecto completo.
+	\item T5 - Validación: pruebas que se han desarrollado en la calle para
+	validar diferentes partes del proyecto, y grabación de una demo del
+	funcionamiento del proyecto completo.
 
-	\item T6 - Estudios adjuntos: estudios realizados para el desarrollo de diferentes áreas del proyecto.
+	\item T6 - Estudios adjuntos: estudios realizados para el desarrollo de
+	diferentes áreas del proyecto.
 \end{itemize}
 
 \begin{figure}[t]
@@ -32,23 +48,18 @@ En la figura \ref{fig:edt} se puede observar el EDT que ha sido seguido para la 
 	\label{fig:gantt}
 \end{figure}
 
-Las iteraciones se realizan dentro de las tareas T2, T3 y T4. En cada uno del las iteraciones se realiza cada una de las siguientes actividades:
+Las iteraciones se realizan dentro de las tareas T2, T3 y T4. En cada uno del
+las iteraciones se realiza cada una de las siguientes actividades:
 \begin{itemize}
-	\item Diseño: selección de las especificaciones a implementar y realización 	del diseño de las funciones a implementar en la aplicación.
+	\item Diseño: selección de las especificaciones a implementar y realización
+	del diseño de las funciones a implementar en la aplicación.
 
-	\item Desarrollo y depuración: desarrollo y depuración de las funciones diseñadas.
+	\item Desarrollo y depuración: desarrollo y depuración de las funciones
+	diseñadas.
 
-	\item Documentación: generación de la documentación de toda la fase (comentarios en código, documentos explicativos, prototipos generados...).
+	\item Documentación: generación de la documentación de toda la fase
+	(comentarios en código, documentos explicativos, prototipos generados...).
 \end{itemize}
-
-La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig:estrategia}. Inicialmente se reúnen los requisitos necesarios y se realiza un diseño de las funcionalidades a incluir, se producen varias iteraciones hasta que todos los requisitos son satisfechos. Una vez finalizado el diseño se pasa al desarrollo, el cual incluye depuración y pruebas unitarias. Cuando el desarrollo ha finalizado correctamente, se pueden añadir nuevos requisitos o pasar a pruebas en calle si han sido programadas con anterioridad; algunas pruebas requieren de adaptar parte del programa al carácter de las pruebas. Una vez finalizadas las pruebas, si se han descubierto fallos en el software, es reparado y si se decide que es requerido ampliar la plataforma se vuelve a iniciar el ciclo.
-\begin{figure}[t]
-	\begin{center}
-		\includegraphics[scale=0.4]{diagrama-estrategia}
-		\caption{Estrategia del desarrollo}
-		\label{fig:estrategia}
-	\end{center}
-\end{figure}
 \FloatBarrier
 \section{Paquetes de trabajo}
 \begin{table}[ht]
@@ -60,20 +71,25 @@ La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig
 		\midrule
 		\textbf{Duración} & 4 días \\
 		\midrule
-		\textbf{Objetivos} & 
+		\textbf{Objetivos} &
 		\begin{tabular}{p{0.8\textwidth}}
-			Recolección y análisis de requisitos. Organización de requisitos funcionales y no funcionales.
+			Recolección y análisis de requisitos. Organización de requisitos
+			funcionales y no funcionales.
 		\end{tabular} \\
 		\midrule
 		\textbf{Descripción} &
 		 \begin{tabular}{p{0.8\textwidth}}
 		 	\begin{itemize}
-		 		\item Iteración 1: implementación de la arquitectura básica, base de datos y acceso a través de sockets.
-		 		
-		 		\item Iteración 2: mejora del formato de mensajes utilizado en la comunicación, cambio del acceso por sockets a servlets, e inclusión de algoritmos de predicción de accidentes.
-		 		
-		 		\item Iteración 3: cambiada la comunicación con la aplicación de ciclistas a \gls{gcm}.
-		 		
+		 		\item Iteración 1: implementación de la arquitectura básica,base de
+				datos y acceso a través de sockets.
+
+		 		\item Iteración 2: mejora del formato de mensajes utilizado en la
+				comunicación, cambio del acceso por sockets a servlets, e inclusión de
+				algoritmos de predicción de accidentes.
+
+		 		\item Iteración 3: cambiada la comunicación con la aplicación de
+				ciclistas a \gls{gcm}.
+
 		 		\item Iteración 4: optimización de la plataforma.
 		 	\end{itemize}
 		 \end{tabular} \\
@@ -90,20 +106,25 @@ La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig
 		\midrule
 		\textbf{Duración} & 102 días \\
 		\midrule
-		\textbf{Objetivos} & 
+		\textbf{Objetivos} &
 		\begin{tabular}{p{0.8\textwidth}}
-			Diseño, desarrollo, depuración y despliegue en la nube de la aplicación ''Nube de conductores''.
+			Diseño, desarrollo, depuración y despliegue en la nube de la aplicación
+			''Nube de conductores''.
 		\end{tabular} \\
 		\midrule
 		\textbf{Descripción} &
 		\begin{tabular}{p{0.8\textwidth}}
 			\begin{itemize}
-				\item Iteración 1: implementación de la arquitectura básica, base de datos y acceso a través de sockets.
-				
-				\item Iteración 2: mejora del formato de mensajes utilizado en la comunicación, cambio del acceso por sockets a servlets, e inclusión de algoritmos de predicción de accidentes.
-				
-				\item Iteración 3: cambiada la comunicación con la aplicación de ciclistas a \gls{gcm}.
-				
+				\item Iteración 1: implementación de la arquitectura básica,
+				base de datos y acceso a través de sockets.
+
+				\item Iteración 2: mejora del formato de mensajes utilizado en la
+				comunicación, cambio del acceso por sockets a servlets, e inclusión de
+				algoritmos de predicción de accidentes.
+
+				\item Iteración 3: cambiada la comunicación con la aplicación de
+				ciclistas a \gls{gcm}.
+
 				\item Iteración 4: optimización de la plataforma.
 			\end{itemize}
 		\end{tabular} \\
@@ -116,23 +137,29 @@ La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig
 	\caption{T3 - Desarrollo de la aplicación de ciclistas}
 	\begin{tabular}{ll}
 		\toprule
-		\multicolumn{2}{c}{\textbf{T3 - Desarrollo de la aplicación de ciclistas}} \\
+		\multicolumn{2}{c}{\textbf{T3 - Desarrollo de la aplicación de ciclistas}}\\
 		\midrule
 		\textbf{Duración} & 94 días \\
 		\midrule
-		\textbf{Objetivos} & 
+		\textbf{Objetivos} &
 		\begin{tabular}{p{0.8\textwidth}}
-			Diseño, desarrollo, depuración de la aplicación para ciclistas y el casco de seguridad \gls{ble}.
+			Diseño, desarrollo, depuración de la aplicación para ciclistas y el casco
+			de seguridad \gls{ble}.
 		\end{tabular} \\
 		\midrule
 		\textbf{Descripción} &
 		\begin{tabular}{p{0.8\textwidth}}
 			\begin{itemize}
-				\item Iteración 1: desarrollo de la base de la aplicación; incluye salidas individuales y en grupo.
-				
-				\item Iteración 2: mejora de la sensibilidad del GPS, prueba con mensajes UDP en salidas en grupo, cambio de comunicación a la nube a través de mensajes \Gls{http/1.1} y soporte a versiones antiguas de Android.
-				
-				\item Iteración 3: empleo de \gls{gcm} para la recepción de mensajes y desarrollo del casco \gls{ble}.
+				\item Iteración 1: desarrollo de la base de la aplicación; incluye
+				salidas individuales y en grupo.
+
+				\item Iteración 2: mejora de la sensibilidad del \gs{gps}, prueba con
+				mensajes \gls{UDP} en salidas en grupo, cambio de comunicación a la nube
+				a través de mensajes \Gls{http/1.1} y soporte a versiones antiguas de
+				Android.
+
+				\item Iteración 3: empleo de \gls{gcm} para la recepción de mensajes y
+				desarrollo del casco \gls{ble}.
 			\end{itemize}
 		\end{tabular} \\
 		\bottomrule
@@ -144,23 +171,26 @@ La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig
 	\caption{T4 - Desarrollo de las aplicaciones vehiculares}
 	\begin{tabular}{ll}
 		\toprule
-		\multicolumn{2}{c}{\textbf{T4 - Desarrollo de las aplicaciones vehiculares}} \\
+		\multicolumn{2}{c}{\textbf{T4 - Desarrollo de las aplicaciones vehiculares}}\\
 		\midrule
 		\textbf{Duración} & 65 días \\
 		\midrule
-		\textbf{Objetivos} & 
+		\textbf{Objetivos} &
 		\begin{tabular}{p{0.8\textwidth}}
-			Diseño, desarrollo, depuración y despliegue de las tres aplicaciones para vehículos: \gls{obu}, \gls{rsu} y \gls{hmi}.
+			Diseño, desarrollo, depuración y despliegue de las tres aplicaciones para
+			vehículos: \gls{obu}, \gls{rsu} y \gls{hmi}.
 		\end{tabular} \\
 		\midrule
 		\textbf{Descripción} &
 		\begin{tabular}{p{0.8\textwidth}}
 			\begin{itemize}
 				\item Iteración 1: base de las aplicaciones \gls{obu} y \gls{rsu}.
-				
-				\item Iteración 2: cambio de comunicación a servlets y mejora de los mensajes empleados en la comunicación.
-				
-				\item Iteración 3: optimización de la plataforma e implementación de la aplicación para el \gls{hmi}.
+
+				\item Iteración 2: cambio de comunicación a servlets y mejora de los
+				mensajes empleados en la comunicación.
+
+				\item Iteración 3: optimización de la plataforma e implementación de la
+				aplicación para el \gls{hmi}.
 			\end{itemize}
 		\end{tabular} \\
 		\bottomrule
@@ -176,27 +206,35 @@ La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig
 		\midrule
 		\textbf{Duración} & 94 días \\
 		\midrule
-		\textbf{Objetivos} & 
+		\textbf{Objetivos} &
 		\begin{tabular}{p{0.8\textwidth}}
-			Durante cada iteración de la validación se desarrollan tres actividades: una primera para planificar qué pruebas se desean hacer y qué datos se desean obtener, así como preparar la aplicación para pruebas. Durante la segunda actividad se
-			desarrollan las pruebas. Y finalmente, la tercera actividad, se recogen y estudian los resultados y se proponen mejoras para futuros desarrollos. Para realizar las estadísticas de los datos obtenidos durante las pruebas se ha empleado la librería \emph{matplotlib} de \emph{Python}.
+			Durante cada iteración de la validación se desarrollan tres actividades:
+			una primera para planificar qué pruebas se desean hacer y qué datos se
+			desean obtener, así como preparar la aplicación para pruebas. Durante la
+			segunda actividad se desarrollan las pruebas. Y finalmente, la tercera
+			actividad, se recogen y estudian los resultados y se proponen mejoras
+			para futuros desarrollos. Para realizar las estadísticas de los datos
+			obtenidos durante las pruebas se ha empleado la librería \emph{matplotlib}
+			de \emph{Python}.
 		\end{tabular} \\
 		\midrule
 		\textbf{Descripción} &
 		\begin{tabular}{p{0.8\textwidth}}
 			\begin{itemize}
 				\item Iteración 1: pruebas de rendimiento en comunicaciones \gls{v2x}.
-				
+
 				\item Iteración 2: comunicación \gls{v2v} en entornos urbanos.
-				
+
 				\item Iteración 3: prueba del sistema completo.
-				
-				\item Grabación de la demo: 
+
+				\item Grabación de la demo:
 				\begin{itemize}
-					\item Planificación: Requisitos generales para la grabación: selección de personas que ayuden durante el rodaje, selección de escenas y escenarios, materiales, fechas...
-					
+					\item Planificación: Requisitos generales para la grabación:
+					selección de personas que ayuden durante el rodaje, selección de
+					escenas y escenarios, materiales, fechas...
+
 					\item Grabación.
-					
+
 					\item Montaje: montaje del vídeo y post-producción.
 				\end{itemize}
 			\end{itemize}
@@ -214,19 +252,25 @@ La estrategia seguida durante el proyecto puede observarse en la imagen \ref{fig
 		\midrule
 		\textbf{Duración} & 32 días \\
 		\midrule
-		\textbf{Objetivos} & 
+		\textbf{Objetivos} &
 		\begin{tabular}{p{0.8\textwidth}}
-			Documentar los estudios realizados durante el desarrollo de las diferentes áreas del proyecto para ser publicadas o para facilitar futuros desarrollos.
+			Documentar los estudios realizados durante el desarrollo de las diferentes
+			áreas del proyecto para ser publicadas o para facilitar futuros
+			desarrollos.
 		\end{tabular} \\
 		\midrule
 		\textbf{Descripción} &
 		\begin{tabular}{p{0.8\textwidth}}
 			\begin{itemize}
-			\item Estudio de OpenXC: se desarrolla un estudio sobre la plataforma OpenXC y la posibilidad de su uso en el proyecto.
-			
-			\item Estado del arte de Unificación de SDK: se estudia la creación de	un subproyecto para	desarrollar aplicaciones en el \gls{hmi} de los vehículos en	diferentes plataformas; AndroidAuto, CarPlay...
-			
-			\item Paper para sensors: desarrollo de un artículo para MDPI sobre comunicaciones vehiculares y su uso sobre \gls{vru}.
+			\item Estudio de OpenXC: se desarrolla un estudio sobre la plataforma
+			OpenXC y la posibilidad de su uso en el proyecto.
+
+			\item Estado del arte de Unificación de SDK: se estudia la creación de un
+			subproyecto para	desarrollar aplicaciones en el \gls{hmi} de los
+			vehículos en	diferentes plataformas; AndroidAuto, CarPlay...
+
+			\item Paper para sensors: desarrollo de un artículo para MDPI sobre
+			comunicaciones vehiculares y su uso sobre \gls{vru}.
 			\end{itemize}
 		\end{tabular} \\
 		\bottomrule

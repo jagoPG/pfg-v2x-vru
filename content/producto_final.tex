@@ -1,66 +1,112 @@
 \chapter{Producto final}
-El producto final se divide en tres grupos de aplicaciones que están presentes en diferentes agentes de la carretera. Cada grupo de aplicaciones está formado por software y hardware y constituye una unidad desde el punto de vista de usuario.
+El producto final se divide en tres grupos de aplicaciones que están presentes
+en diferentes agentes de la carretera. Cada grupo de aplicaciones está formado
+por software y hardware y constituye una unidad desde el punto de vista de
+usuario.
 
-El primer grupo se trata del sistema en la nube que se encarga de comunicar el lado de vehículos a motor y ciclistas. Además, detecta situaciones de peligro y pone en aviso a cada agente implicado. Estas son las funciones que debe cumplir:
+El primer grupo se trata del sistema en la nube que se encarga de comunicar el
+lado de vehículos a motor y ciclistas. Además, detecta situaciones de peligro y
+pone en aviso a cada agente implicado. Estas son las funciones que debe cumplir:
 \begin{itemize}
-	\item Aplicación web: la nube debe poder accederse a través de una aplicación web, empleando servlets para recibir y procesar la información.
-	
-	\item Base de datos: se deben poder almacenar datos de las peticiones enviadas por los vehículos. No es necesario que los datos sean persistentes, cuando la aplicación	se cierra los datos deben ser eliminados.
-	
-	\item Algoritmos para la detección de colisiones: se implantarán algoritmos para detectar la proximidad entre dos vehículos, para actuar en consecuencia.
-	
-	\item Sistema de avisos: debe poder enviar mensajes a diferentes plataformas a través de redes móviles.
-	
-	\item Sistema cloud: la aplicación debe estar preparada para ser desplegada y ejecutada en la nube.
+	\item Aplicación web: la nube debe poder accederse a través de una aplicación
+	web, empleando servlets para recibir y procesar la información.
+
+	\item Base de datos: se deben poder almacenar datos de las peticiones enviadas
+	por los vehículos. No es necesario que los datos sean persistentes, cuando la
+	aplicación	se cierra los datos deben ser eliminados.
+
+	\item Algoritmos para la detección de colisiones: se implantarán algoritmos
+	para detectar la proximidad entre dos vehículos, para actuar en consecuencia.
+
+	\item Sistema de avisos: debe poder enviar mensajes a diferentes plataformas
+	a través de redes móviles.
+
+	\item Sistema cloud: la aplicación debe estar preparada para ser desplegada
+	y ejecutada en la nube.
 \end{itemize}
 
-El segundo grupo se trata de todas las aplicaciones encargadas de obtener información en la red vehicular, y recibir la información generada en la nube: \gls{rsu}, \gls{obu} y \gls{hmi}. Por una parte, el \gls{obu} debe cumplir los siguientes requisitos:
+El segundo grupo se trata de todas las aplicaciones encargadas de obtener
+información en la red vehicular, y recibir la información generada en la nube:
+\gls{rsu}, \gls{obu} y \gls{hmi}. Por una parte, el \gls{obu} debe cumplir los
+siguientes requisitos:
+
 \begin{itemize}
-	\item Comunicación vehicular: debe poder comunicarse con otros dispositivos que	componen la red vehicular.
-	
-	\item Sistema de navegación: debe implementar un sistema de navegación GPS para	poder obtener las posiciones del vehículo en todo momento. Se requiere que estos datos sean altamente precisos.
-	
-	\item Canal para sincronizar dispositivos: debe ser posible emparejar un dispositivo móvil para mostrar la información obtenida al usuario.
+	\item Comunicación vehicular: debe poder comunicarse con otros dispositivos
+	que	componen la red vehicular.
+
+	\item Sistema de navegación: debe implementar un sistema de navegación
+	\gls{gps} para poder obtener las posiciones del vehículo en todo momento. Se
+	requiere que estos datos sean altamente precisos.
+
+	\item Canal para sincronizar dispositivos: debe ser posible emparejar un
+	dispositivo móvil para mostrar la información obtenida al usuario.
 \end{itemize}
 
 Los requisitos que debe cumplir el \gls{hmi} son:
 \begin{itemize}
-	\item Canal para sincronizar dispositivos: el dispositivo debe poder emparejarse a la infraestructura del vehículo. Preferiblemente se desea que de forma inalámbrica.
-	
-	\item Universalidad: la aplicación a desarrollar debe ser desplegada al mayor número de usuarios posible.
-	
-	\item No debe ser una distracción: emplear el menor número de elementos dinámicos posibles, ya que al ser usado durante la conducción no debe distraer al conductor. Emplear forma visual y sonora para notificar al usuario de los eventos en carretera.
+	\item Canal para sincronizar dispositivos: el dispositivo debe poder
+	emparejarse a la infraestructura del vehículo. Preferiblemente se desea que
+	de forma inalámbrica.
+
+	\item Universalidad: la aplicación a desarrollar debe ser desplegada para dar
+	servicio al mayor	número de usuarios posible.
+
+	\item No debe ser una distracción: emplear el menor número de elementos
+	dinámicos posibles, ya que al ser usado durante la conducción no debe
+	distraer al conductor. Emplear forma visual y sonora para notificar al
+	usuario de los eventos en carretera.
 \end{itemize}
 
 Por otra parte los requisitos del \gls{rsu} son:
 \begin{itemize}
-	\item Comunicación vehicular: debe poder comunicarse con otros dispositivos que componen la red vehicular.
-	
-	\item Comunicación móvil: debe tener acceso a Internet a través de una red móvil.
-	
-	\item Sistema de retransmisión: debe poder retransmitir los mensajes que recibe de la red de conductores, con la menor latencia posible.
+	\item Comunicación vehicular: debe poder comunicarse con otros dispositivos
+	que componen la red vehicular.
+
+	\item Comunicación móvil: debe tener acceso a Internet a través de una red
+	móvil.
+
+	\item Sistema de retransmisión: debe poder retransmitir los mensajes que
+	recibe de la red de conductores, con la menor latencia posible.
 \end{itemize}
 
-Finalmente, el último grupo es la aplicación de ciclistas y servidor \gls{gcm} que provee notificaciones a los ciclistas sobre los eventos en carretera, y al mismo tiempo permite a los ciclistas mandar información sobre su posición. Además del casco \glossary{ble} que permite notificar al ciclista de un peligro inminente a través de leds instalados en el casco de seguridad. Deben cumplir:
+Finalmente, el último grupo es la aplicación de ciclistas y servidor \gls{gcm}
+que provee notificaciones a los ciclistas sobre los eventos en carretera, y al
+mismo tiempo permite a los ciclistas mandar información sobre su posición.
+Además del casco \glossary{ble} que permite notificar al ciclista de un peligro
+inminente a través de leds instalados en el casco de seguridad. Deben cumplir:
 \begin{itemize}
-	\item Comunicación con la nube: debe tener acceso a Internet a través de una red móvil para poder transmitir a la nube la información sobre la posición del ciclista.
-	
-	\item Sistema de navegación: debe implementar un sistema de navegación GPS para poder obtener las posiciones del ciclista en todo momento. Se requiere que estos datos sean lo más precisos posibles sin un alto consumo de batería.
-	
-	\item No debe ser una distracción: emplear el menor número de elementos dinámicos posibles, ya que al ser usado durante la conducción no debe distraer al ciclista. Emplear forma visual y sonora para notificar al usuario de los eventos en carretera.
-	
-	\item Salidas en individual y en grupo: debe poder usarse para salidas de ciclismo de forma individual y en grupo, sin necesidad de conocimientos técnicos para poder emplear la aplicación con soltura.
-	
-	\item Emparejamiento: debe poder emparejarse la aplicación con el casco de ciclistas a través de tecnología \gls{ble}.
+	\item Comunicación con la nube: debe tener acceso a Internet a través de una
+	red móvil para poder transmitir a la nube la información sobre la posición
+	del ciclista.
+
+	\item Sistema de navegación: debe implementar un sistema de navegación
+	\gls{gps} para poder obtener las posiciones del ciclista en todo momento. Se
+	requiere que estos datos sean lo más precisos posibles sin un alto consumo de
+	batería.
+
+	\item No debe ser una distracción: emplear el menor número de elementos
+	dinámicos posibles, ya que al ser usado durante la conducción no debe
+	distraer al ciclista. Emplear forma visual y sonora para notificar al usuario
+	de los eventos en carretera.
+
+	\item Salidas en individual y en grupo: debe poder usarse para salidas de
+	ciclismo de forma individual y en grupo, sin necesidad de conocimientos
+	técnicos para poder emplear la aplicación con soltura.
+
+	\item Emparejamiento: debe poder emparejarse la aplicación con el casco de
+	ciclistas a través de tecnología \gls{ble}.
 \end{itemize}
 
-Así mismo, a través de las pruebas realizadas, los resultados obtenidos y las conclusiones generadas, se puede generar diferentes estudios que motiven nuevos desarrollos dentro del dominio de los \gls{vru}:
+Así mismo, a través de las pruebas realizadas, los resultados obtenidos y las
+conclusiones generadas, se puede generar diferentes estudios que motiven nuevos
+desarrollos dentro del dominio de los \gls{vru}:
 \begin{itemize}
 	\item Rendimiento de módulos NEC Linkbird MX.
-	
+
 	\item Empleo de comunicaciones \gls{wave} en entornos urbanos.
-	
+
 	\item Eficiencia de algoritmos para la predicción de colisiones.
-	
-	\item Conclusiones de la implementación de un sistema en la nube en un entorno vehicular.
+
+	\item Conclusiones de la implementación de un sistema en la nube en un
+	entorno vehicular.
 \end{itemize}

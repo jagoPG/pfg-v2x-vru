@@ -1,5 +1,11 @@
 \subsection{Formato de los mensajes}\label{ssection:FormatoMensajesNC}
-Para poder realizar la conexión desde diferentes plataformas y entornos de desarrollo, se ha optado por buscar el diseño más abierto y flexible posible. Los datos son almacenados y transmitidos en formato plano con la codificación de caracteres \emph{UTF-8}, para que puedan ser manipulados desde cualquier plataforma. Estos mensajes están construidos en formato \gls{json} para facilitar su análisis. En el algoritmo \ref{alg:formatoMensajes} se muestra un ejemplo de la forma que tienen los mensajes recibidos de vehículos a motor.
+Para poder realizar la conexión desde diferentes plataformas y entornos de
+desarrollo, se ha optado por buscar el diseño más abierto y flexible posible.
+Los datos son almacenados y transmitidos en formato plano con la codificación
+de caracteres \gls{UTF-8}, para que puedan ser manipulados desde cualquier
+plataforma. Estos mensajes están construidos en formato \gls{json} para
+facilitar su análisis. En el algoritmo \ref{alg:formatoMensajes} se muestra un
+ejemplo de la forma que tienen los mensajes recibidos de vehículos a motor.
 
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
@@ -12,32 +18,44 @@ Para poder realizar la conexión desde diferentes plataformas y entornos de desa
 	\caption{Formato de mensajes}\label{alg:formatoMensajes}
 \end{listing}
 
-En las siguientes secciones se explica en detalle el formato de los mensajes que son enviados y recibidos a través de la Nube de Conductores.
+En las siguientes secciones se explica en detalle el formato de los mensajes
+que son enviados y recibidos a través de la Nube de Conductores.
 
 \subsubsection{Mensaje de posición de vehículo a motor}\label{sssection:MensajePosVehMotor}
-Indican la información geográfica de un vehículo. Los mensajes entrantes en la Nube de Conductores tienen que tener todos los campos indicados, mientras que los mensajes salientes se usarán los campos que sean necesarios. En la \ref{tab:CamposMensajePosVehMotNubeConductores} se muestra el formato que deben seguir los mensajes.
+Indican la información geográfica de un vehículo. Los mensajes entrantes en
+la Nube de Conductores tienen que tener todos los campos indicados, mientras
+que los mensajes salientes se usarán los campos que sean necesarios. En la
+\ref{tab:CamposMensajePosVehMotNubeConductores} se muestra el formato que deben
+seguir los mensajes.
 
 \begin{table}[H]
 	\centering
-	\caption{Formato de mensaje Vehículo a Motor}\label{tab:CamposMensajePosVehMotNubeConductores}
+	\caption{Formato de mensaje Vehículo a Motor}
+	\label{tab:CamposMensajePosVehMotNubeConductores}
 	\begin{tabular}{lll}
 		\toprule
 			\textbf{Tipo} & \emph{Uso} & \emph{Descripción}\\
 		\midrule
-			type		&	String	&	Identificador del tipo de mensaje. Su valor es \emph{motorist\_position}.	\\
-			id		&	String	&	Identificador del vehículo. Se emplea el ID del router Linkbird-MX		\\
-			timestamp	&	Integer	&	Marca de fecha y hora a la que se envía el mensaje.					\\
-			latitude	&	Double	&	Latitud en la que se encuentra el vehículo. 						\\
-			longitude	&	Double	&	Longitud en la que se encuentra el vehículo.						\\
-			altitude	&	Integer	&	Altitud en la que se encuentra el vehículo.						\\
-			heading	&	Float		&	Dirección que mantiene el vehículo respecto al Norte magnético.		\\
-			speed	&	Float		&	Velocidad a la que circula el vehículo.							\\
+			type			&	String	&	Identificador del tipo de mensaje. Su valor es
+														\emph{motorist\_position}.	\\
+			id				&	String	&	Identificador del vehículo. Se emplea el
+														identificador del router Linkbird-MX.	\\
+			timestamp	&	Integer	&	Marca de fecha y hora a la que se envía el mensaje.	\\
+			latitude	&	Double	&	Latitud en la que se encuentra el vehículo. \\
+			longitude	&	Double	&	Longitud en la que se encuentra el vehículo.	\\
+			altitude	&	Integer	&	Altitud en la que se encuentra el vehículo.	\\
+			heading		&	Float		&	Dirección que mantiene el vehículo respecto al
+														norte magnético.	\\
+			speed			&	Float		&	Velocidad a la que circula el vehículo.	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 \subsubsection{Mensaje de posición de ciclista}\label{sssection:MensajePosCiclista}
-Indican la información geográfica de uno o más ciclistas. Los mensajes entrantes en la Nube de Conductores tienen que tener todos los campos indicados, mientras que los mensajes salientes se usarán los campos que sean necesarios (Tabla \ref{tab:CamposMensajePosCiclistaNubeConductores}).
+Indican la información geográfica de uno o más ciclistas. Los mensajes entrantes
+en la Nube de Conductores tienen que tener todos los campos indicados, mientras
+que los mensajes salientes se usarán los campos que sean necesarios (Tabla
+\ref{tab:CamposMensajePosCiclistaNubeConductores}).
 
 \begin{table}[H]
 	\centering
@@ -46,33 +64,44 @@ Indican la información geográfica de uno o más ciclistas. Los mensajes entran
 		\toprule
 			\textbf{Tipo} & \emph{Uso} & \emph{Descripción}\\
 		\midrule
-			type			&	String	&	Identificador del tipo de mensaje. Su valor es \emph{cyclist\_position}.	\\
-			id			&	String	&	Identificador del vehículo. Se emplea el identificador de Android.		\\
-			timestamp		&	Integer	&	Marca de fecha y hora a la que se envía el mensaje.					\\
-			latitude		&	Double	&	Latitud en la que se encuentra el vehículo. 						\\
-			longitude		&	Double	&	Longitud en la que se encuentra el vehículo.						\\
-			altitude		&	Integer	&	Altitud en la que se encuentra el vehículo.						\\
-			heading		&	Float		&	Dirección que mantiene el vehículo respecto al Norte magnético.		\\
-			speed		&	Float		&	Velocidad a la que circula el vehículo.							\\
-			components 	&	Integer	&	Número de ciclistas sobre los que se informa.	Permite la creación de
-				grupos de ciclistas. 																	\\
+			type			&	String	&	Identificador del tipo de mensaje. Su valor es
+														\emph{cyclist\_position}.	\\
+			id				&	String	&	Identificador del vehículo. Se emplea el
+														identificador de Android.		\\
+			timestamp	&	Integer	&	Marca de fecha y hora a la que se envía el mensaje.	\\
+			latitude	&	Double	&	Latitud en la que se encuentra el vehículo.	\\
+			longitude	&	Double	&	Longitud en la que se encuentra el vehículo.\\
+			altitude	&	Integer	&	Altitud en la que se encuentra el vehículo.	\\
+			heading		&	Float		&	Dirección que mantiene el vehículo respecto al
+														norte magnético.		\\
+			speed			&	Float		&	Velocidad a la que circula el vehículo.	\\
+			components 	&	Integer	&	Número de ciclistas sobre los que se informa.
+															Permite la creación de grupos de ciclistas. \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 \subsubsection{Mensaje de alerta}\label{sssection:MensajeAlerta}
-Cuando la \emph{Nube de Conductores} detecta que un ciclista y un vehículo a motor tienen una gran probabilidad de encontrarse, se envía este tipo de mensaje para comunicar la distancia entre los vehículos y su posición relativa (Apéndice \ref{apendice:posicion_relative}). Los datos que pueden se incluirse en el mensaje se muestran en la tabla \ref{tab:CamposMensajePosCiclistaNubeConductores}.
+Cuando la Nube de Conductores} detecta que un ciclista y un vehículo a
+motor tienen una gran probabilidad de encontrarse, se envía este tipo de
+mensaje para comunicar la distancia entre los vehículos y su posición relativa
+(Apéndice \ref{apendice:posicion_relative}). Los datos que pueden se incluirse
+en el mensaje se muestran en la tabla
+\ref{tab:CamposMensajePosCiclistaNubeConductores}.
 
 \begin{table}[H]
 	\centering
-	\caption{Formato de mensaje Ciclista}\label{tab:CamposMensajePosCiclistaNubeConductores}
+	\caption{Formato de mensaje Ciclista}
+	\label{tab:CamposMensajePosCiclistaNubeConductores}
 	\begin{tabular}{lll}
 		\toprule
 			\textbf{Tipo} & \emph{Uso} & \emph{Descripción}\\
 		\midrule
-			type			&	String	&	Identificador del tipo de mensaje. Su valor es \emph{alert}.	\\
-			distance		&	String	&	Distancia a la que se encuentra un vehículo.				\\
-			relative\_angle	&	Integer	&	\'Angulo relativo al que se encuentra el vehículo.			\\
+			type						&	String	&	Identificador del tipo de mensaje. Su valor es
+														\emph{alert}.	\\
+			distance				&	String	&	Distancia a la que se encuentra un vehículo.\\
+			relative\_angle	&	Integer	&	Ángulo relativo al que se encuentra
+											el vehículo.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
