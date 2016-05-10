@@ -2,7 +2,7 @@
 Para poder realizar la conexión desde diferentes plataformas y entornos de
 desarrollo, se ha optado por buscar el diseño más abierto y flexible posible.
 Los datos son almacenados y transmitidos en formato plano con la codificación
-de caracteres \gls{UTF-8}, para que puedan ser manipulados desde cualquier
+de caracteres \gls{utf-8}, para que puedan ser manipulados desde cualquier
 plataforma. Estos mensajes están construidos en formato \gls{json} para
 facilitar su análisis. En el algoritmo \ref{alg:formatoMensajes} se muestra un
 ejemplo de la forma que tienen los mensajes recibidos de vehículos a motor.
@@ -28,7 +28,7 @@ que los mensajes salientes se usarán los campos que sean necesarios. En la
 \ref{tab:CamposMensajePosVehMotNubeConductores} se muestra el formato que deben
 seguir los mensajes.
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Formato de mensaje Vehículo a Motor}
 	\label{tab:CamposMensajePosVehMotNubeConductores}
@@ -50,14 +50,14 @@ seguir los mensajes.
 		\bottomrule
 	\end{tabular}
 \end{table}
-
+\FloatBarrier
 \subsubsection{Mensaje de posición de ciclista}\label{sssection:MensajePosCiclista}
 Indican la información geográfica de uno o más ciclistas. Los mensajes entrantes
 en la Nube de Conductores tienen que tener todos los campos indicados, mientras
 que los mensajes salientes se usarán los campos que sean necesarios (Tabla
 \ref{tab:CamposMensajePosCiclistaNubeConductores}).
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Formato de mensaje Ciclista}\label{tab:CamposMensajePosCiclistaNubeConductores}
 	\begin{tabular}{lll}
@@ -80,16 +80,16 @@ que los mensajes salientes se usarán los campos que sean necesarios (Tabla
 		\bottomrule
 	\end{tabular}
 \end{table}
-
+\FloatBarrier
 \subsubsection{Mensaje de alerta}\label{sssection:MensajeAlerta}
-Cuando la Nube de Conductores} detecta que un ciclista y un vehículo a
+Cuando la Nube de Conductores detecta que un ciclista y un vehículo a
 motor tienen una gran probabilidad de encontrarse, se envía este tipo de
 mensaje para comunicar la distancia entre los vehículos y su posición relativa
 (Apéndice \ref{apendice:posicion_relative}). Los datos que pueden se incluirse
 en el mensaje se muestran en la tabla
 \ref{tab:CamposMensajePosCiclistaNubeConductores}.
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Formato de mensaje Ciclista}
 	\label{tab:CamposMensajePosCiclistaNubeConductores}

@@ -1,7 +1,7 @@
 \section{Código fuente Casco BLE}
 \begin{listing}
-		\begin{minipage}{.4\textwidth}
-			\begin{minted}[linenos=true]{c}
+\begin{minipage}{.4\textwidth}
+\begin{minted}[linenos=true]{c}
 // Declarar el UUID del perfil ATT (Atribute Protocol)
 #define PROFILE_VEHICULAR POS   5
 
@@ -16,14 +16,15 @@ CONST uint8 simpleVehicularPositionProfileUUID[ATT_BT_UUID_SIZE] = {
 };
 static uint8 vehicularPositionProps = GATT_PROP_WRITE;
 static uint8 vehicularPosition = 0;
-		\end{minted}
-	\end{minipage}
-	\caption{Declaración del servicio LED}\label{alg:mota1}
+
+\end{minted}
+\end{minipage}
+\caption{Declaración del servicio LED}\label{alg:mota1}
 \end{listing}
 
 \begin{listing}
-	\begin{minipage}{.4\textwidth}
-		\begin{minted}[linenos=true]{c}
+\begin{minipage}{.4\textwidth}
+\begin{minted}[linenos=true]{c}
 // gestionar que se ha hecho una escritura en la característica
 static bStatus_t simpleProfile_writeAttrCB(uint16 connHandle, gattAttribute_t *PAttr,
     uint8 *pValue, uint8 len, uint16 offset) {
@@ -53,7 +54,7 @@ bStatus_t SimpleProfile_SetParameter(uint8 param, uint8 len, void* value) {
     break;
 [...]
 }
-		\end{minted}
-	\end{minipage}
-	\caption{Implementación del callback para el servicio LED}\label{alg:mota2}
+\end{minted}
+\end{minipage}
+\caption{Implementación del callback para el servicio LED}\label{alg:mota2}
 \end{listing}

@@ -24,7 +24,7 @@ alertas para predecir si dos vehículos pueden colisionarse; en caso de que
 pueda suceder, se emplea el emisor de alertas para enviar un mensaje a través
 de \Gls{http/1.1} al cliente correspondiente.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.4]{DiagComponentes-Nube}
 		\caption{Arquitectura de la Nube de Conductores}
@@ -32,6 +32,7 @@ de \Gls{http/1.1} al cliente correspondiente.
 	\end{center}
 \end{figure}
 
+\FloatBarrier
 \subsection{Procesos}\label{ssection:procesos}
 A través del \gls{api} de Jetty la aplicación crea un servidor con dos
 \emph{handler} de mensajes, uno para ciclistas y otro para vehículos a motor. A
@@ -52,7 +53,7 @@ Paralelamente, cada vez que un mensaje es recibido en uno de los \emph{handler}
 del handler con la de los vehículos existentes. Si se detecta que algún
 ciclista o vehículo a motor están próximos - en un rango menor a 200 metros -
 se manda a ambos vehículos una alerta avisándoles de su proximidad (Algoritmo
-\ref{alg:proximidadVehiculos})}. En la sección \ref{ssection:algPrediccion}, se
+\ref{alg:proximidadVehiculos}). En la sección \ref{ssection:algPrediccion}, se
 detalla el funcionamiento del algoritmo que se encarga de predecir si dos
 vehículos pueden encontrarse.
 
@@ -73,6 +74,7 @@ for (Motorist m : lMotorist) {
 	\label{alg:proximidadVehiculos}
 \end{listing}
 
+\FloatBarrier
 \subsection{Algoritmos de predicción}\label{ssection:algPrediccion}
 \subsubsection{Posición vehicular relativa}
 La posición vehicular relativa se refiere a en qué lado de un vehículo A se
@@ -84,7 +86,7 @@ El sistema de coordenadas \gls{gps} emplea un sistema diferente del cartesiano;
 el ángulo 0 comienza donde en el sistema tradicional (cartesiano) serían 90º.
 Además, en vez de ir aumentando los grados de forma antihoraria lo hace al
 contrario, es decir, aumenta los grados en sentido horario (Figura
-\ref{figure:rumbo_gps}).
+\ref{fig:rumbo_gps}).
 
 El heading representa la dirección hacia la que un vehículo se está moviendo,
 empleando el norte (0º) como referencia. Esta información, junto con la
@@ -99,7 +101,7 @@ Finalmente, si el ángulo relativo se encuentra entre 15º y 345º, se considera
 que está delante; entre 120º y 230º, se encuentra detrás de su posición; entre
 15º y 120º se considera que está a su derecha; y entre 230º y 345º, a su
 izquierda. Estos cálculos son realizados en cada vehículo. En la Figura
-\ref{figure:demo_pos_relativa} se muestra un ejemplo del funcionamiento del
+\ref{fig:demo_pos_relativa} se muestra un ejemplo del funcionamiento del
 algoritmo en un entorno real.
 
 El funcionamiento del Algoritmo \ref{alg:relative_vehicular_pos} se puede
@@ -145,16 +147,18 @@ function calcularAnguloEntreDosPuntos(ox, oy, x, y) {
 	\begin{center}
 		\includegraphics[scale=0.7]{bearing-1427303542791}
 		\caption{Rumbo: el ángulo 0º está desplazado 90º con respecto al eje cartesiano.}
-		\label{figure:rumbo_gps}
+		\label{fig:rumbo_gps}
 	\end{center}
 \end{figure}
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.3]{demo-pos-relativa}
 		\caption{Posición relativa vehicular.}
-		\label{figure:demo_pos_relativa}
+		\label{fig:demo_pos_relativa}
 	\end{center}
 \end{figure}
+
+\FloatBarrier
 \subsubsection{Previsor de accidentes}
 El algoritmo de posición vehicular relativa por sí solo no es suficiente para
 detectar cuándo dos vehículos pueden encontrarse, tan solo prevé por dónde se
@@ -170,4 +174,24 @@ vehículos en el rango de distancia que se desee. Con las cuatro posiciones
 obtenidas, primero se calcula si existe un punto de intersección, entre las
 dos rectas. Finalmente, se comprueba si las rectas cortan entre las posiciones
 hacia la que se dirigen los vehículos.
-\FloatBarrier
+
+\subsubsection{Validación de algoritmos}
+Para verificar y validar el correcto funcionamiento de los algoritmos
+desarrollados para la previsión de colisiones, se ha realizado un pequeño
+simulador en JavaScript, HTML y CSS. Se ha elegido estas plataformas ya que
+permiten un desarrollo rápido y sencillo, y al no tener mayor trascendencia que
+la de dar validez a los algoritmos no se requiere gastar más recursos en el
+desarrollo. En la Figura \ref{fig:simulador-algoritmos} se puede observar
+representados dos vehículso como triángulos, y una línea recta que representa
+la distancia que predice el algoritmo (en este caso, los 100 m por delante
+del vehículo). Cuando las dos líneas se cruzan se detecta una colisión entre
+los dos vehículos. Como información adicional se provee la posición relativa
+vehicular del vehículo rojo respecto del vehículo azul.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.3]{algorithm-simulator}
+		\caption{Simulador de algoritmos de detección de colisiones}
+		\label{fig:simulador-algoritmos}
+	\end{center}
+\end{figure}

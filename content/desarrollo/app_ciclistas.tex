@@ -65,7 +65,7 @@ del seguidor que puede buscar un grupo de dos maneras: (1) buscando el grupo
 de manera manual a través de una lista, o (2) dejando que la aplicación
 auto-detecte una red y trate de unirse a ella.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{minipage}{.5\textwidth}
 		\begin{center}
 			\includegraphics[scale=0.15]{leader_sync}
@@ -91,7 +91,7 @@ estructura de este controlador, el funcionamiento es el siguiente:
 	\item[AJourney y AGroupJourney] interfaz gráfica que se muestra al usuario
 	(Figura \ref{figure:Journey}).
 
-	\begin{figure}[H]
+	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[scale=0.15]{journey}
 			\caption{UI de la salida}
@@ -113,7 +113,7 @@ estructura de este controlador, el funcionamiento es el siguiente:
 	ser pausada y reanudada.
 \end{description}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.4]{DiagClases-Controlador_salidas}
 		\caption{Controlador de la salida}
@@ -121,7 +121,7 @@ estructura de este controlador, el funcionamiento es el siguiente:
 	\end{center}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.5]{DiagSecuencia-Com_Grupo}
 		\caption{Comunicación líder-seguidor}
@@ -186,7 +186,7 @@ son enviados en el hub de ciclistas. Los mensajes se encuentran en formato
 mensaje a enviar y la clave ''Campos extra'' especifica argumentos requeridos
 por el mensaje.
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Tipo de mensajes en grupo}\label{tab:MensajesGrupo}
 	\begin{tabular}{lll}
@@ -211,6 +211,7 @@ por el mensaje.
 	\end{tabular}
 \end{table}
 
+\FloatBarrier
 \subsection{Casco BLE}\label{ssection:cascoBLE}
 El ciclista no puede estar pendiente de los avisos de su smartphone
 continuamente, ya que esto puede poner en riesgo su seguridad. Para que el
@@ -295,7 +296,7 @@ public void mandarMensajeBLE(byte msg) {
 \label{alg:appciclistasBLE}
 \end{listing}
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Tabla de la verdad de señales led}\label{tab:tablaVerdadLED}
 	\begin{tabular}{lll}

@@ -7,9 +7,12 @@
 \usepackage{rotating}
 \usepackage{multirow}
 
-\graphicspath{ {fig/diagramas/}, {fig/diagramas/gantt/},{fig/},
-	 {fig/screenshots/}, {fig/ejemplos/}, {fig/pruebas/} }
+\graphicspath{{fig/diagramas/}, {fig/diagramas/gantt/},{fig/},
+	 {fig/screenshots/}, {fig/ejemplos/}, {fig/pruebas/}, {fig/hardware/}}
 \DeclareGraphicsExtensions{ .png, .jpg, .jpeg, .pdf }
+
+% Elimina justifición de texto vertical
+\raggedbottom
 
 \hypersetup{
   pdfauthor={Jagoba Pérez},
@@ -48,8 +51,8 @@
 \input{content/planificacion}
 \input{content/descripcion_realizacion}
 \input{content/desarrollo}
-\input{content/presupuestos}
 \input{content/resultados}
+\input{content/presupuestos}
 \input{content/conclusion}
 
 % Bibliografía

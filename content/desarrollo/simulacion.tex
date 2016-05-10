@@ -8,7 +8,7 @@ aplicación en un escenario simulado con más vehículos (4), más ciclistas (8)
 y modelando los parámetros de comunicaciones; los cuales son críticos para la
 fiabilidad de la aplicación.
 
-\begin{figure}[t]
+\begin{figure}[h]
 	\includegraphics[scale=0.6]{simulacion-vehiculos}
 	\caption{Descripción de la arquitectura simulada}
 	\label{fig:simulacion-vehiculos}
@@ -67,7 +67,7 @@ mueven durante 600 segundos en una carretera de 5 km. La Tabla
 \ref{tab:parametros_simulacion} detalla los detalles de la simulación empleados
 durante la evaluación.
 
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Tipo de mensajes en grupo}\label{tab:parametros_simulacion}
 	\begin{tabular}{lll}
@@ -112,13 +112,13 @@ Las siguientes mediciones son considerados en este estudio:
 	recibido el vehículo.
 \end{itemize}
 
-\begin{figure}[t]
+\begin{figure}[h]
 	\includegraphics[scale=0.6]{delay-recepcion-ciclista}
 	\caption{Retraso en recepción del ciclista}
 	\label{fig:delay-recepcion-ciclista}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[h]
 	\includegraphics[scale=0.6]{delay-recepcion-vehiculo}
 	\caption{Retraso en recepción del vehículo}
 	\label{fig:delay-recepcion-vehiculo}
@@ -198,7 +198,7 @@ Figura \ref{fig:simulacion-diagrama-secuencia}, hay un retraso desde que el
 hasta el \gls{tmc} ya que el líder de ciclistas está generando un nuevo mensaje
 con la información del grupo de ciclistas.
 
-\begin{figure}[ht]
+\begin{figure}[h]
 	\includegraphics[scale=0.6]{simulacion-diagrama-secuencia}
 	\caption{Diagrama de secuencia del sistema}
 	\label{fig:simulacion-diagrama-secuencia}
