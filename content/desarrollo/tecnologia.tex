@@ -12,8 +12,8 @@ para desarrollar las simulaciones de los algoritmos de previsión de accidentes
 se ha empleado el JavaScript, HTML y CSS.
 
 Para el desarrollo de las aplicaciones vehiculares se ha empleado Java con la
-\gls{api} que provee NEC para desarrollar con los microcomputadores
-Linkbird-MX. Para realizar las funcionalidades de \emph{logging} se ha usado
+\gls{api} que provee NEC para desarrollar con los módulos Linkbird-MX
+\cite{14}. Para realizar las funcionalidades de \emph{logging} se ha usado
 la librería \emph{log4j} de Apache. Se ha empleado la notación \gls{json} para
 el envío de mensajes, para facilitar el manejo de este tipo de cadenas se ha
 usado la librería \emph{JSON-java} realizada por el usuario de GitHub
@@ -35,7 +35,7 @@ cual es el sistema más extendido en el mercado. Para la comunicación de los
 ciclistas con la nube mediante comunicación \emph{push} se ha empleado la
 \gls{api} \gls{gcm}, lo cual permite enviar mensajes a los ciclistas sin
 peligro de que pierdan una notificación si en algún momento pierden la
-cobertura.
+cobertura \cite{15}.
 
 Se ha empleado el editor IntelliJ IDEA para realizar el desarrollo en Java por
 las avanzadas funciones que posee de navegación de código. Este editor ha sido
@@ -50,8 +50,8 @@ empleado Python 2.7, con las librerías \emph{matplotlib}, \emph{numpy} y
 los datos obtenidos y generar a partir de ellos unas gráficas. Para realizar
 el \gls{ui} se ha empleado \emph{Qt4} ya que es multiplataforma y permite
 el desarrollo con Python. Se ha dibujado las ventanas con QtDesigner y se ha
-empleado la librería \emph{PyQt4} para gestionar las ventanas desde Python. Para
-el desarrollo en Python se ha empleado el editor Sublime Text 2 por su
+empleado la librería \emph{PyQt4} para gestionar las ventanas desde Python.
+Para el desarrollo en Python se ha empleado el editor Sublime Text 2 por su
 simplicidad, las utilidades para gestionar el código y ya que recalca el léxico
 del lenguaje.
 
@@ -90,7 +90,7 @@ se distribuye de forma gratuita como \emph{shareware} con el único inconvenient
 de que aparece una ventana ofreciendo la versión completa cada cierto tiempo.
 Para desarrollar otros diagramas y figuras se ha empleado LibreOffice Draw y
 Gimp. Para la gestión de tiempos del proyecto se ha empleado Microsoft Project
-que ofrece a los estudiantes la Universidad de Deusto; ya que es la plataforma
+que ofrece a los estudiantes la Universidad de Deusto, ya que es la plataforma
 recomendada por la universidad para este fin.
 
 En la estación de trabajo se ha empleado el sistema operativo \emph{Debian
@@ -112,14 +112,14 @@ El hardware que integran los vehículos y la infraestructura de las carreteras
 se trata de la plataforma experimental NEC Linkbird-MX (Figura
 \ref{fig:linkbird-mx}). Es un minicomputador que posee una tarjeta de red que
 le permite comunicarse con otros dispositivos Linkbird-MX a través de una red
-\Gls{802.11p}; a esta tarjeta de red se puede conectar dos antenas. Requiere
+\Gls{802.11p}, a esta tarjeta de red se puede conectar dos antenas. Requiere
 de un \gls{gps} \gls{usb} para recibir la posición del vehículo, aunque esta
 característica es opcional, por lo que ha empleado un \gls{gps} de alta
-precisión \emph{HI 204-III GPS USB} (Figura \ref{hi_204III_usb}) para equipar
+precisión \emph{HI 204-III GPS USB} (Figura \ref{fig:hi204III}) para equipar
 el \gls{obu}.
 
 El casco \gls{ble} posee un microcontrolador \gls{SoC} \emph{Texas Instruments
-CC2540} (Figura \ref{cc2540}) para realizar aplicaciones de bajo consumo
+CC2540} (Figura \ref{fig:cc2540}) para realizar aplicaciones de bajo consumo
 empleando Bluetooth. Este dispositivo de bajo presupuesto permite realizar
 nodos maestros o esclavos a través de \gls{ble}. Este dispositivo permite
 flashear programas de hasta 128 KB, suficiente para hacer la aplicación que se
@@ -141,7 +141,7 @@ autonomía.
 	\begin{center}
 		\includegraphics[scale=0.2]{hi_204III_usb}
 		\caption{GPS de alta precisión HI 204-III}
-		\label{fig:cc2540}
+		\label{fig:hi204III}
 	\end{center}s
 \end{figure}
 

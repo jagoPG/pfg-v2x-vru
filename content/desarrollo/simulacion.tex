@@ -9,7 +9,7 @@ y modelando los parámetros de comunicaciones; los cuales son críticos para la
 fiabilidad de la aplicación.
 
 \begin{figure}[h]
-	\includegraphics[scale=0.6]{simulacion-vehiculos}
+	\includegraphics[scale=0.55]{simulacion-vehiculos}
 	\caption{Descripción de la arquitectura simulada}
 	\label{fig:simulacion-vehiculos}
 \end{figure}
@@ -55,13 +55,13 @@ fases principales:
 El objetivo principal de la simulación es mostrar la viabilidad y el
 rendimiento de la arquitectura anteriormente propuesta. Por lo tanto, esta
 arquitectura es evaluada empleando un simulador en red de eventos discretos
-NS-3 \cite{14}, el cual es open source y validado por la comunidad de
+NS-3 \cite{16}, el cual es open source y validado por la comunidad de
 investigación. Además, NS-3.21 provee de modelos para la asistencia de redes
 vehiculares heterogéneas, incluyendo modelos de comunicaciones de corto alcance
 como Wi-Fi y \gls{802.11p} y redes móviles como \gls{lte}. Para generar las
 rutas que realizarán los vehículos y bicicletas durante la simulación NS-3,
-se emplea el simulador de tráfico\gls{sumo} [15]. El escenario simulado es un
-área suburbana de Bilbao donde hay normalmente hay múltiples grupos de
+se emplea el simulador de tráfico\gls{sumo} \cite{17}. El escenario simulado es
+un área suburbana de Bilbao donde hay normalmente hay múltiples grupos de
 ciclistas y el flujo de vehículos es irregular. Los vehículos y bicicletas se
 mueven durante 600 segundos en una carretera de 5 km. La Tabla
 \ref{tab:parametros_simulacion} detalla los detalles de la simulación empleados
@@ -70,7 +70,7 @@ durante la evaluación.
 \begin{table}[h]
 	\centering
 	\caption{Tipo de mensajes en grupo}\label{tab:parametros_simulacion}
-	\begin{tabular}{lll}
+	\begin{tabular}{llp{5cm}}
 		\toprule
 		\textbf{Tipo} & \emph{Parámetro} & Valor \\
 		\midrule
@@ -198,8 +198,13 @@ Figura \ref{fig:simulacion-diagrama-secuencia}, hay un retraso desde que el
 hasta el \gls{tmc} ya que el líder de ciclistas está generando un nuevo mensaje
 con la información del grupo de ciclistas.
 
+
 \begin{figure}[h]
-	\includegraphics[scale=0.6]{simulacion-diagrama-secuencia}
+	\begin{center}
+	\rotatebox{90}{
+		\includegraphics[scale=0.7]{simulacion-diagrama-secuencia}
+	}
+	\end{center}
 	\caption{Diagrama de secuencia del sistema}
 	\label{fig:simulacion-diagrama-secuencia}
 \end{figure}
