@@ -5,7 +5,7 @@ con firmware de OpenXC instalado, se traducen los mensajes que manda por
 \gls{can} el \Gls{obd-ii} del coche a un formato de mensaje estándar que ha
 desarrollado OpenXC.
 
-Los vehículos que soportan el estándar son los de marca \"Ford\" puestos
+Los vehículos que soportan el estándar son los de marca Ford puestos
 en venta a partir del año 2008. Otras industrias pueden estar implementando el
 estándar, pero no está registrado aún; hay que preguntar por fabricante.
 
@@ -16,7 +16,7 @@ que mayor flexibilidad ofrece.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.4]{openxc_comunicacion}
+		\includegraphics[scale=0.3]{openxc_comunicacion}
 		\caption{Comunicación entre componentes en un vehículo con OpenXC instalado.}
 		\label{fig:openxc_comunicacion}
 	\end{center}
@@ -27,7 +27,7 @@ En la figura \ref{fig:openxc_comunicacion}, se expone una posible
 implementación del sistema completo. \Gls{obd-ii} es el sistema que obtiene los
 datos de sensores que se encuentran integrados en los vehículos, a través de un
 dispositivo móvil por un conector tipo \gls{can}, es posible leer la información
-obtenida por el \Gls{obd-ii}. En este punto es donde entra el Interfaz OpenXC,
+obtenida por el \Gls{obd-ii}. En este punto es donde entra el interfaz OpenXC,
 el cual está conectado al \Gls{obd-ii} y traduce los datos obtenidos a un
 lenguaje estándar para todos los vehículos; es decir, actúa como un \gls{api}
 del vehículo. Al interfaz OpenXC podemos conectar un dispositivo con Android
