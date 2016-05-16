@@ -1,6 +1,6 @@
 \documentclass{DeustoFDP}
 
-\usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
+%\usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
 \usepackage{spverbatim}
 \usepackage{placeins}
 \usepackage{glossaries}
@@ -20,28 +20,30 @@
   	 Vehiculares Vulnerables en el contexto de una ciudad inteligente},
 }
 
-\makeglossary
+\makeglossaries
 
 % Las siguientes tres líneas sirven para situar las tablas en la parte superior de la página
 \makeatletter
 \setlength{\@fptop}{0pt}
 \makeatother
+
+\bibliography{bibliografia}
+
 \begin{document}
 
 \frontmatter
 \pagestyle{plain}
 
-% Las siguientes lineas (21--26) se pueden eliminar del documento final.
+% Las siguientes lineas (37--42) se pueden eliminar del documento final.
 % Notese que en ese caso es necesario descomentar la linea 28 para que las
 % paginas esten correctamente numeradas.
-\begin{titlepage}
-  \newgeometry{left=0cm,right=0cm,bottom=0cm,top=0cm}
-  \includegraphics{fig/portada}
-  \restoregeometry
-\end{titlepage}
-\cleardoublepage
-
-%\setcounter{page}{3}
+%\begin{titlepage}
+%  \newgeometry{left=0cm,right=0cm,bottom=0cm,top=0cm}
+%  \includegraphics{fig/portada}
+%  \restoregeometry
+%\end{titlepage}
+%\cleardoublepage
+\setcounter{page}{3}
 
 % Incluir las páginas del proyecto
 \input{content/resumen}
@@ -54,7 +56,7 @@
 \input{content/conclusion}
 
 % Bibliografía
-\input{content/bibliografia}
+\printbibliography[heading=bibintoc]
 
 % Incluir apendices
 \input{content/apendices}

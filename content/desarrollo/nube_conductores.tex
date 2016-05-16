@@ -120,8 +120,10 @@ resumir de la siguiente forma:
 \begin{listing}
 	\begin{minipage}{.4\textwidth}
 		\begin{minted}[linenos=true]{javascript}
-function calcularPosicionRelativa(heading, oLatitude, oLongitude, pLatitude, pLongitude) {
-  var degrees = calculateAngleBetweenTwoPoints(oLatitude, oLongitude, pLatitude, pLongitude);
+function calcularPosicionRelativa(heading, oLatitude, oLongitude,
+    pLatitude, pLongitude) {
+  var degrees = calculateAngleBetweenTwoPoints(oLatitude, oLongitude,
+      pLatitude, pLongitude);
   var relativeAngle = correctDegrees(degrees - heading);
 
   if (relativeAngle <= 15 && >= 0 || relativeAngle >= 345 && relativeAngle < 360)

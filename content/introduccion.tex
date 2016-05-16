@@ -1,19 +1,19 @@
 \chapter{Introducción}
 Según la Directiva General de la Comisión Europea para el Transporte y la
-Movilidad \cite{1}, en 2014, algo más de 25.700 accidentes de tráfico fueron
-informados en la Unión Europea. Aunque el número de accidentes se reduce
-sustancialmente, el informe sobre Transporte \cite{2} ha anunciado un objetivo
-estratégico para la seguridad en las carreteras europeas para el período de
-2011 a 2020: reducir el número de muertes en carretera a la mitad. Si las
-estadísticas son analizadas, en el período de 2010 a 2012, el número de
-ciclistas muertos en siniestros ha aumentado un 6\%; siendo el único agente
-de la carretera cuyos resultados vayan a peor. Esto se explica, al menos
-parcialmente, por un aumento de la presencia ciclista en la carretera. Se
-podría decir que el ciclismo es un medio de transporte donde los \gls{vru}
-tienen un mayor contacto con el tráfico de mayor afluencia y velocidad. Cuando
-están involucrados en un accidente, son los que sufren las consecuencias más
-graves derivadas de una colisión con otro agente de la carretera; ya que están
-completamente expuestos a otros vehículos.
+Movilidad \cite{road_safety_eu}, en 2014, algo más de 25.700 accidentes de
+tráfico fueron informados en la Unión Europea. Aunque el número de accidentes
+se reduce sustancialmente, el informe sobre Transporte
+\cite{road_safety_vademecum} ha anunciado un objetivo estratégico para la
+seguridad en las carreteras europeas para el período de 2011 a 2020: reducir el
+número de muertes en carretera a la mitad. Si las estadísticas son analizadas,
+en el período de 2010 a 2012, el número de ciclistas muertos en siniestros ha
+aumentado un 6\%; siendo el único agente de la carretera cuyos resultados vayan
+a peor. Esto se explica, al menos parcialmente, por un aumento de la presencia
+ciclista en la carretera. Se podría decir que el ciclismo es un medio de
+transporte donde los \gls{vru} tienen un mayor contacto con el tráfico de mayor
+afluencia y velocidad. Cuando están involucrados en un accidente, son los que
+sufren las consecuencias más graves derivadas de una colisión con otro agente
+de la carretera; ya que están completamente expuestos a otros vehículos.
 
 Basados en estos estudios, los accidentes en la que están involucrados
 \gls{vru}s ocurren frecuentemente en vías diseñadas para viandantes y ciclistas;
@@ -77,14 +77,15 @@ sistemas en las infraestructuras de las carreteras europeas. Tras docenas de
 proyectos de I+D como \gls{cvis}, \gls{team}, el desarrollo masivo de sistemas
 \gls{cits} está más cerca. Un ejemplo es el \gls{mou} firmado por la industria
 automovilística y las organizaciones de infraestructuras con el objetivo de
-desplegar soluciones basadas en \gls{cits} en 2015 \cite{3}. Las
+desplegar soluciones basadas en \gls{cits} en 2015 \cite{c2c_consortium}. Las
 administraciones públicas también están trabajando en la misma dirección,
 resaltando el acuerdo alcanzado en Alemania, Austria y Holanda para desplegar
 un ''pasillo'' entre estos tres países equipados con tecnologías \gls{cits}
-\cite{4}. Merece la pena recalcar el anuncio publicado en Febrero del 2014 por
-la \gls{nhtsa}, perteneciente al \gls{usdot}, de su intención de tomar los
-pasos necesarios para el despliegue de sistemas cooperativos \gls{v2v} en los
-años venideros, concretamente desde 2017, para vehículos comerciales.
+\cite{amsterdam_group}. Merece la pena recalcar el anuncio publicado en Febrero
+del 2014 por la \gls{nhtsa}, perteneciente al \gls{usdot}, de su intención de
+tomar los pasos necesarios para el despliegue de sistemas cooperativos
+\gls{v2v} en los años venideros, concretamente desde 2017, para vehículos
+comerciales.
 
 En un escenario \gls{cits}, hay generalmente cuatro agentes a considerar: dos
 entidades móviles (\gls{obu}s y peatones), y dos entidades estacionarias (la
@@ -119,8 +120,8 @@ cuenta requisitos estratégicos, económicos y de organización, característica
 del sistema así como requisitos legales y de estandarización, el Comité del
 Instituto Técnico Europeo de Estándares en la Telecomunicación ha definido un
 conjunto básico de aplicaciones para usar como referencia en ITS para
-desarrolladores \cite{5}. Entre ellos, los avisos a \gls{vru}s tratan de
-proveer notificaciones a los vehículos sobre la presencia de usuarios
+desarrolladores \cite{etsi_2009}. Entre ellos, los avisos a \gls{vru}s tratan
+de proveer notificaciones a los vehículos sobre la presencia de usuarios
 vulnerables, por ejemplo ciclistas, y en caso de existir situaciones de peligro
 también se avisa a los \gls{vru} sobre la presencia de un vehículo cercano.
 
@@ -144,29 +145,30 @@ muchos años, se han desarrollado sistemas que han empleado diferentes técnicas
 para detectar principalmente peatones. El reconocimiento de imágenes es
 probablemente el campo científico en el que se han realizado mayores esfuerzos
 para minimizar el impacto de posibles accidentes entre peatones y vehículos.
-En \cite{6}, Takahashi \emph{et al.} implementaron un entorno de clasificación
-de usuarios de carretera urbanos empleando descripciones de características
-locales y modelos ocultos de Markov (HMM) para detectar peatones, ciclistas y
-motociclistas. En la aproximación definida por Fardi \emph{et al.} \cite{7},
-se ha definido un sistema multisensor basado en sensores al lado de cámaras
-infrarrojas y \gls{wpan}, proveyendo un seguimiento de \gls{vru}s en un rango
-de 60 metros.
+En \cite{uru_classif}, Takahashi \emph{et al.} implementaron un entorno de
+clasificación de usuarios de carretera urbanos empleando descripciones de
+características locales y modelos ocultos de Markov (HMM) para detectar
+peatones, ciclistas y motociclistas. En la aproximación definida por Fardi
+\emph{et al.} \cite{vru_recognizion}, se ha definido un sistema multisensor
+basado en sensores al lado de cámaras infrarrojas y \gls{wpan}, proveyendo un
+seguimiento de \gls{vru}s en un rango de 60 metros.
 
 Otras aplicaciones están basadas en sistemas de radares. Por ejemplo, Heuel
-\emph{et al.} \cite{8} fueron capaces de medir el rango del objetivo y la
-velocidad radial gracias a un radar de 24 GHz desplegado en la parte superior
-del vehículo. Por otra parte, Schaffer \emph{et al.} \cite{9} proponen un
-sistema más complejo que emplea un esquema de radar secundario para detectar y
-localizar \gls{vru}s, infraestructuras y otros vehículos equipados con emisores
-de radio con la intención de mejorar la seguridad vial, incluso sin tener
-puntos muertos.
+\emph{et al.} \cite{pedestrian_classif} fueron capaces de medir el rango del
+objetivo y la velocidad radial gracias a un radar de 24 GHz desplegado en la
+parte superior del vehículo. Por otra parte, Schaffer \emph{et al.}
+\cite{coop_transp_sys} proponen un sistema más complejo que emplea un esquema
+de radar secundario para detectar y localizar \gls{vru}s, infraestructuras y
+otros vehículos equipados con emisores de radio con la intención de mejorar la
+seguridad vial, incluso sin tener puntos muertos.
 
-Aplicaciones como \cite{10-12} han sido configuradas en base al intercambio de
-datos entre vehículos y \gls{vru} empleando dispositivos nómadas, pero usando,
-en cualquier caso, plataformas con comunicación de corto alcance y sin combinar
-enlaces de corto y largo alcance como en el presente proyecto. En otros casos,
-estas aproximaciones no han sido consideradas aplicaciones cooperativas ya que
-no soportan la comunicación entre diferentes usuarios de la carretera.
+Aplicaciones como \cite{v2p_comm}, \cite{wifi_honk} y \cite{safety_apps} han
+sido configuradas en base al intercambio de datos entre vehículos y \gls{vru}
+empleando dispositivos nómadas, pero usando, en cualquier caso, plataformas con
+comunicación de corto alcance y sin combinar enlaces de corto y largo alcance
+como en el presente proyecto. En otros casos, estas aproximaciones no han sido
+consideradas aplicaciones cooperativas ya que no soportan la comunicación entre
+diferentes usuarios de la carretera.
 
 Sin embargo, las soluciones basadas en sensores tienen problemas para operar
 de noche o en condiciones de poca visibilidad, con mal tiempo, o si los
@@ -186,4 +188,4 @@ cual es necesario para desplegar cualquier hardware integrado a bordo. Es
 verdad que se han empleado unidades de comunicación \Gls{802.11p}, pero de
 hecho se espera que esta tecnología sea la que provea de comunicaciones
 inalámbricas a los vehículos combinando comunicaciones de largo alcance como
-\gls{lte}\cite{13}.
+\gls{lte} \cite{lte_802.11p}.

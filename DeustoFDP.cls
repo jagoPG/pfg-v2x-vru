@@ -6,8 +6,9 @@
 \RequirePackage[spanish,es-tabla]{babel}% Castellanizamos LaTeX
 \RequirePackage{csquotes}               % Usamos comillas espa\~nolas
 \RequirePackage[citestyle=numeric-comp, % Paquete para definir el estilo de la Bibliograf\'ia
-                bibstyle=numeric,
-                %style=trad-plain,
+                %bibstyle=numeric,
+                style=numeric,
+                sorting=none,
                 %backref=true,
                 maxnames=99,
                 backrefstyle=two,
