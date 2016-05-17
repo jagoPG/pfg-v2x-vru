@@ -218,15 +218,23 @@ continuamente, ya que esto puede poner en riesgo su seguridad. Para que el
 ciclista pueda mantener la vista en la vía y tenga la posibilidad de saber si
 hay algún vehículo que pueda ponerle en riesgo, se ha integrado una \emph{mota
 Texas CC2540} en el casco del ciclista conectado a varios led que según un
-código de colores le informan al ciclista sobre eventos que sean peligrosos.
-Si por ejemplo hay un vehículo acercándose por el lado izquierdo, un led
-amarillo o rojo se encenderá, dependiendo si la distancia es menor de 50 ó 20
-metros respectivamente.
+código de colores le informan al ciclista sobre eventos que sean peligrosos
+(Figura \ref{fig:casco-ble}). Si por ejemplo hay un vehículo acercándose por el
+lado izquierdo, un led amarillo o rojo se encenderá, dependiendo si la
+distancia es menor de 50 ó 20 metros respectivamente.
 
 Este dispositivo utiliza el estándar \gls{ble} (Apéndice \ref{apendice:ble})
 para comunicarse con la aplicación móvil mediante cortos mensajes de 8 bytes,
 los cuales contienen un código hexadecimal que representa la combinación de
 leds que deben encenderse.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{casco-ble}
+		\caption{Casco de ciclista gls{ble}}
+		\label{fig:casco-ble}
+	\end{center}
+\end{figure}
 
 La mota contiene un pequeño programa escrito en	lenguaje C que se encuentra
 flasheado en su \gls{rom}. Este programa configura el microcontrolador para
