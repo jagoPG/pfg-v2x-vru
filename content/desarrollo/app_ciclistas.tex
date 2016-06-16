@@ -228,14 +228,6 @@ para comunicarse con la aplicación móvil mediante cortos mensajes de 8 bytes,
 los cuales contienen un código hexadecimal que representa la combinación de
 leds que deben encenderse.
 
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=0.5]{casco-ble}
-		\caption{Casco de ciclista \gls{ble}}
-		\label{fig:casco-ble}
-	\end{center}
-\end{figure}
-
 La mota contiene un pequeño programa escrito en	lenguaje C que se encuentra
 flasheado en su \gls{rom}. Este programa configura el microcontrolador para
 actuar como servidor (denominado \emph{Central}), a la espera de ser
@@ -250,6 +242,14 @@ dispositivo CC2540,	al que se ha añadido el servicio necesario para encender
 el led al recibir una señal. En el algoritmo \ref{alg:mota1} y \ref{alg:mota2}
 se explica cómo se ha implementado un nuevo servicio para gestionar los
 mensajes entrantes.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.45]{casco-ble}
+		\caption{Casco de ciclista \gls{ble}}
+		\label{fig:casco-ble}
+	\end{center}
+\end{figure}
 
 La aplicación de ciclistas actúa como cliente, por lo que el usuario debe
 primero emparejarse con el casco para que pueda comenzar a comunicarse con
