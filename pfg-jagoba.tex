@@ -1,6 +1,5 @@
 \documentclass{DeustoFDP}
 
-%\usepackage{hologo} % Paquete no necesario. Borrar en la memoria final al sustituir el texto
 \usepackage{spverbatim}
 \usepackage{placeins}
 \usepackage{glossaries}
@@ -34,16 +33,12 @@
 \frontmatter
 \pagestyle{plain}
 
-% Las siguientes lineas (37--42) se pueden eliminar del documento final.
-% Notese que en ese caso es necesario descomentar la linea 28 para que las
-% paginas esten correctamente numeradas.
-%\begin{titlepage}
-%  \newgeometry{left=0cm,right=0cm,bottom=0cm,top=0cm}
-%  \includegraphics{fig/portada}
-%  \restoregeometry
-%\end{titlepage}
-%\cleardoublepage
-\setcounter{page}{3}
+\begin{titlepage}
+  \newgeometry{left=0cm,right=0cm,bottom=0cm,top=0cm}
+  \includegraphics{fig/portada}
+  \restoregeometry
+\end{titlepage}
+\cleardoublepage
 
 % Incluir las páginas del proyecto
 \input{content/resumen}
